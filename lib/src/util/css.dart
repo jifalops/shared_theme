@@ -17,17 +17,17 @@ abstract class CssEntity implements ScssMap {
     sb = StringBuffer();
     cssValues.keys
         .forEach((key) => sb.writeln("$key: themed($prefix '$key');"));
-    return ''''
-    @mixin $name {
-      @include themify {
-        ${sb.toString()}
-      }
-    } ''';
+    return '''
+      @mixin $name {
+        @include themify {
+          ${sb.toString()}
+        }
+      } ''';
   }
 }
 
 abstract class CssEntityContainer implements ScssMap {
-
+  List<String> getMixins(List<String> parentKeys);
 }
 
 abstract class ScssMap {

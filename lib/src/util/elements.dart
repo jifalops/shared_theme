@@ -4,11 +4,6 @@ import 'package:abstract_theme/src/util/fonts.dart';
 import 'package:abstract_theme/src/util/colors.dart';
 import 'package:abstract_theme/src/util/borders.dart';
 
-export 'package:abstract_theme/src/util/css.dart';
-export 'package:abstract_theme/src/util/fonts.dart';
-export 'package:abstract_theme/src/util/colors.dart';
-export 'package:abstract_theme/src/util/borders.dart';
-
 /// Combines a [ColorPair], [Border], [Font], and [BoxSpacing].
 class Element extends CssEntity {
   const Element({

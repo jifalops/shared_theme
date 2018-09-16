@@ -5,7 +5,7 @@ import 'package:abstract_theme/src/util/css.dart';
 export 'package:abstract_theme/src/util/colors.dart';
 
 /// The named colors in a theme.
-class ThemeColors implements ScssMap {
+class ThemeColors implements CssEntityContainer {
   const ThemeColors({
     @required this.primary,
     @required this.primaryLight,
@@ -75,4 +75,25 @@ class ThemeColors implements ScssMap {
     error: ${error.asScssMap()},
     notice: ${notice.asScssMap()},
   )''';
+
+  @override
+  List<String> getMixins(List<String> parentKeys) => <String>[
+        primary.asThemifiedMixin('primary-color', parentKeys..add('primary')),
+        primaryLight.asThemifiedMixin(
+            'primary-color-light', parentKeys..add('primaryLight')),
+        primaryDark.asThemifiedMixin(
+            'primary-color-dark', parentKeys..add('primaryDark')),
+        secondary.asThemifiedMixin(
+            'secondary-color', parentKeys..add('secondary')),
+        secondaryLight.asThemifiedMixin(
+            'secondary-color-light', parentKeys..add('secondaryLight')),
+        secondaryDark.asThemifiedMixin(
+            'secondary-color-dark', parentKeys..add('secondaryDark')),
+        background.asThemifiedMixin(
+            'background-color', parentKeys..add('background')),
+        surface.asThemifiedMixin('surface-color', parentKeys..add('surface')),
+        divider.asThemifiedMixin('divider', parentKeys..add('divider')),
+        error.asThemifiedMixin('error', parentKeys..add('error')),
+        notice.asThemifiedMixin('notice', parentKeys..add('notice')),
+      ];
 }
