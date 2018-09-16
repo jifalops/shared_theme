@@ -18,45 +18,33 @@ class ThemeColors {
     @required this.error,
     @required this.notice,
   });
-  ThemeColors.contrast(ThemeColors other)
-      : primary = Color.contrast(other.primary),
-        primaryLight = Color.contrast(other.primaryLight),
-        primaryDark = Color.contrast(other.primaryDark),
-        secondary = Color.contrast(other.secondary),
-        secondaryLight = Color.contrast(other.secondaryLight),
-        secondaryDark = Color.contrast(other.secondaryDark),
-        background = Color.contrast(other.background),
-        surface = Color.contrast(other.surface),
-        divider = Color.contrast(other.divider),
-        error = Color.contrast(other.error),
-        notice = Color.contrast(other.notice);
 
-  final Color primary;
-  final Color primaryLight;
-  final Color primaryDark;
-  final Color secondary;
-  final Color secondaryLight;
-  final Color secondaryDark;
+  final ColorPair primary;
+  final ColorPair primaryLight;
+  final ColorPair primaryDark;
+  final ColorPair secondary;
+  final ColorPair secondaryLight;
+  final ColorPair secondaryDark;
 
-  final Color background;
-  final Color surface;
-  final Color divider;
+  final ColorPair background;
+  final ColorPair surface;
+  final ColorPair divider;
 
-  final Color error;
-  final Color notice;
+  final ColorPair error;
+  final ColorPair notice;
 
   ThemeColors copyWith({
-    Color primary,
-    Color primaryLight,
-    Color primaryDark,
-    Color secondary,
-    Color secondaryLight,
-    Color secondaryDark,
-    Color background,
-    Color surface,
-    Color divider,
-    Color error,
-    Color notice,
+    ColorPair primary,
+    ColorPair primaryLight,
+    ColorPair primaryDark,
+    ColorPair secondary,
+    ColorPair secondaryLight,
+    ColorPair secondaryDark,
+    ColorPair background,
+    ColorPair surface,
+    ColorPair divider,
+    ColorPair error,
+    ColorPair notice,
   }) =>
       ThemeColors(
         primary: primary ?? this.primary,

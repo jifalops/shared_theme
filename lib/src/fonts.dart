@@ -29,4 +29,6 @@ class ThemeFonts {
   final Font body1;
   final Font caption;
   final Font button;
+
+
 }

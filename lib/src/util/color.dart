@@ -46,16 +46,18 @@ class Color {
 ///
 /// At least one of [bg] and [fg] must be specified.
 class ColorPair extends Themable {
-  ColorPair({Color bg, Color fg})
-      : assert(bg != null || fg != null),
-        bg = bg ?? Color.contrast(fg),
-        fg = fg ?? Color.contrast(bg);
+  ColorPair(this.bg) : fg = Color.contrast(bg);
+  ColorPair.foreground(this.fg) : bg = Color.contrast(fg);
+  const ColorPair.both(this.bg, this.fg);
 
   /// Background color.
   final Color bg;
 
   /// Foreground color.
   final Color fg;
+
+  ColorPair copyWith({Color fg, Color bg}) =>
+      ColorPair.both(bg ?? this.bg, fg ?? this.fg);
 
   @override
   Map<String, String> get cssValues => {
