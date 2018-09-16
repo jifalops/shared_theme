@@ -1,10 +1,11 @@
 import 'package:meta/meta.dart';
 import 'package:abstract_theme/src/util/colors.dart';
+import 'package:abstract_theme/src/util/css.dart';
 
 export 'package:abstract_theme/src/util/colors.dart';
 
 /// The named colors in a theme.
-class ThemeColors {
+class ThemeColors implements ScssMap {
   const ThemeColors({
     @required this.primary,
     @required this.primaryLight,
@@ -59,4 +60,19 @@ class ThemeColors {
         error: error ?? this.error,
         notice: notice ?? this.notice,
       );
+
+  @override
+  String asScssMap() => '''(
+    primary: ${primary.asScssMap()},
+    primaryLight: ${primaryLight.asScssMap()},
+    primaryDark: ${primaryDark.asScssMap()},
+    secondary: ${secondary.asScssMap()},
+    secondaryLight: ${secondaryLight.asScssMap()},
+    secondaryDark: ${secondaryDark.asScssMap()},
+    background: ${background.asScssMap()},
+    surface: ${surface.asScssMap()},
+    divider: ${divider.asScssMap()},
+    error: ${error.asScssMap()},
+    notice: ${notice.asScssMap()},
+  )''';
 }

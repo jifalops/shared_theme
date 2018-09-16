@@ -1,5 +1,5 @@
-abstract class Themable {
-  const Themable();
+abstract class CssEntity implements ScssMap {
+  const CssEntity();
 
   Map<String, String> get cssValues;
 
@@ -24,4 +24,12 @@ abstract class Themable {
       }
     } ''';
   }
+}
+
+abstract class CssEntityContainer implements ScssMap {
+
+}
+
+abstract class ScssMap {
+  String asScssMap();
 }

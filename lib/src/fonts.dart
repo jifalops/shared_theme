@@ -1,10 +1,11 @@
 import 'package:meta/meta.dart';
+import 'package:abstract_theme/src/util/css.dart';
 import 'package:abstract_theme/src/util/fonts.dart';
 
 export 'package:abstract_theme/src/util/fonts.dart';
 
 /// The named fonts in a theme.
-class ThemeFonts {
+class ThemeFonts implements ScssMap {
   const ThemeFonts({
     this.display4: Fonts.display4Black,
     this.display3: Fonts.display3Black,
@@ -30,5 +31,18 @@ class ThemeFonts {
   final Font caption;
   final Font button;
 
-
+  @override
+  String asScssMap() => '''(
+    display4: ${display4.asScssMap()},
+    display3: ${display3.asScssMap()},
+    display2: ${display2.asScssMap()},
+    display1: ${display1.asScssMap()},
+    headline: ${headline.asScssMap()},
+    title: ${title.asScssMap()},
+    subhead: ${subhead.asScssMap()},
+    body2: ${body2.asScssMap()},
+    body1: ${body1.asScssMap()},
+    caption: ${caption.asScssMap()},
+    button: ${button.asScssMap()},
+  )''';
 }

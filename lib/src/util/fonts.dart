@@ -1,8 +1,8 @@
 import 'package:meta/meta.dart';
 import 'package:abstract_theme/src/util/colors.dart';
-import 'package:abstract_theme/src/util/themable.dart';
+import 'package:abstract_theme/src/util/css.dart';
 
-class Font extends Themable {
+class Font extends CssEntity {
   const Font({
     @required this.size,
     this.family: 'Roboto',
@@ -52,7 +52,7 @@ class Font extends Themable {
   Map<String, String> get cssValues => {
         'font': '$style $weight ${size}px/$height $family',
         'text-decoration': '$decoration',
-        'color': '${color.cssValue}',
+        'color': color.toString(),
         'letter-spacing': '${letterSpacing}px',
         'word-spacing': '${wordSpacing}px',
       };
@@ -86,7 +86,7 @@ class TextDecoration {
   @override
   String toString() => lines.isEmpty
       ? 'none'
-      : '${lines.join(' ')} $style ${color?.cssValue ?? ''}';
+      : '${lines.join(' ')} $style ${color?.toString() ?? ''}';
 }
 
 class TextDecorationLine {
@@ -129,7 +129,7 @@ class FontFace {
   final int weight;
   final FontStyle style;
 
-  String get cssValue => '''
+  String asCssFontFace() => '''
     @font-face {
       font-family: '$family';
       font-weight: $weight;

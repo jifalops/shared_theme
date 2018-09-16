@@ -1,4 +1,4 @@
-import 'package:abstract_theme/src/util/themable.dart';
+import 'package:abstract_theme/src/util/css.dart';
 
 /// Platform independent representation of a color in the red-green-blue scheme
 /// with an optional alpha (opacity) component.
@@ -27,7 +27,9 @@ class Color {
   int get rgb => argb & 0xFFFFFF;
   int get rgba => (rgb << 8) & alphaByte;
 
-  String get cssValue => 'rgba($red, $green, $blue, $alpha)';
+  /// CSS value
+  @override
+  String toString() => 'rgba($red, $green, $blue, $alpha)';
 
   /// Calculates the luminence of this color and considers it dark if below a
   /// certain level. Does *not* take alpha into consideration.
@@ -45,7 +47,7 @@ class Color {
 /// A contrasting pair of colors, e.g. for text-on-background.
 ///
 /// At least one of [bg] and [fg] must be specified.
-class ColorPair extends Themable {
+class ColorPair extends CssEntity {
   ColorPair(this.bg) : fg = Color.contrast(bg);
   ColorPair.foreground(this.fg) : bg = Color.contrast(fg);
   const ColorPair.both(this.bg, this.fg);
@@ -61,7 +63,7 @@ class ColorPair extends Themable {
 
   @override
   Map<String, String> get cssValues => {
-        'background-color': bg.cssValue,
-        'color': fg.cssValue,
+        'background-color': bg.toString(),
+        'color': fg.toString(),
       };
 }
