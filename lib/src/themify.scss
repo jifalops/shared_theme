@@ -1,0 +1,38 @@
+// See https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
+
+/// Wrap themed variables in this mixin.
+///
+/// ```sass
+/// .primary-color {
+///   @include themify {
+///     background-color: themed('primaryColor');
+///     color: themed('onPrimaryColor');
+///   }
+/// }
+/// ```
+@mixin themify {
+  @each $theme, $map in $themes {
+
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+
+  }
+}
+
+/// Get a theme variable arbitrarily deep in the $theme-map.
+/// <key1>, [key2, key3, ...]
+@function themed($keys...) {
+  $map: $theme-map;
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
