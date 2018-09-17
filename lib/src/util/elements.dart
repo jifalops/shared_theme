@@ -4,6 +4,8 @@ import 'package:abstract_theme/src/util/fonts.dart';
 import 'package:abstract_theme/src/util/colors.dart';
 import 'package:abstract_theme/src/util/borders.dart';
 
+export 'package:abstract_theme/src/util/borders.dart';
+
 /// Combines a [ColorPair], [Border], [Font], and [BoxSpacing].
 class Element extends CssEntity {
   const Element({
@@ -12,7 +14,11 @@ class Element extends CssEntity {
     this.border: const Border(),
     this.margin: const BoxSpacing(),
     this.padding: const BoxSpacing(),
-  });
+  })  : assert(color != null),
+        assert(font != null),
+        assert(border != null),
+        assert(margin != null),
+        assert(padding != null);
 
   final Color color;
   final Font font;

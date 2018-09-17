@@ -14,7 +14,11 @@ class Theme implements CssEntityContainer {
     @required this.colors,
     @required this.fonts,
     @required this.elements,
-  });
+  })  : assert(name != null),
+        assert(colors != null),
+        assert(fonts != null),
+        assert(elements != null);
+
   final String name;
   final ThemeColors colors;
   final ThemeFonts fonts;
@@ -34,7 +38,9 @@ class Theme implements CssEntityContainer {
 }
 
 class ThemeSet implements CssEntityContainer {
-  const ThemeSet({@required this.themes, this.fontFaces});
+  const ThemeSet({@required this.themes, this.fontFaces: const []})
+      : assert(themes != null),
+        assert(fontFaces != null);
 
   final List<Theme> themes;
   final List<FontFace> fontFaces;

@@ -157,7 +157,7 @@ class FontFormat {
     if (format.endsWith('.woff2')) return woff2;
     if (format.endsWith('.eot')) return eot;
     if (format.endsWith('.svg')) return svg;
-    return null;
+    return FontFormat._('');
   }
 
   /// CSS value

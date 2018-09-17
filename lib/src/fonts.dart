@@ -59,4 +59,6 @@ class ThemeFonts implements CssEntityContainer {
         caption.asThemifiedMixin('font-caption', parentKeys..add('caption')),
         button.asThemifiedMixin('font-button', parentKeys..add('button')),
       ];
+
+  static const dark = ThemeFonts();
 }
