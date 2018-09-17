@@ -1,5 +1,5 @@
 name: abstract_theme
-description: Share a theme between Flutter and Web.
+description: Share a theme between Flutter and Web apps.
 version: 0.0.1
 author: Jacob Phillips <jifalops@gmail.com>
 homepage: https://github.com/jifalops/abstract_theme

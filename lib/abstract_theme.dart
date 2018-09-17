@@ -10,6 +10,7 @@ export 'package:abstract_theme/src/elements.dart';
 
 class Theme implements CssEntityContainer {
   const Theme({
+    @required this.name,
     @required this.colors,
     @required this.fonts,
     @required this.elements,
@@ -27,26 +28,27 @@ class Theme implements CssEntityContainer {
   )''';
 
   @override
-  List<String> getMixins(List<String> parentKeys) =>
-      colors.getMixins(['colors'])
-        ..addAll(fonts.getMixins(['fonts']))
-        ..addAll(elements.getMixins(['elements']));
+  List<String> getMixins(_) => colors.getMixins(['colors'])
+    ..addAll(fonts.getMixins(['fonts']))
+    ..addAll(elements.getMixins(['elements']));
 }
 
 class ThemeSet implements CssEntityContainer {
+  const ThemeSet({@required this.themes, this.fontFaces});
+
   final List<Theme> themes;
   final List<FontFace> fontFaces;
 
   @override
-  String asScssMap() => '''(
-    colors: ${colors.asScssMap()},
-    fonts: ${fonts.asScssMap()},
-    elements: ${elements.asScssMap()},
-  )''';
+  String asScssMap() =>
+      '(' +
+      themes.map((theme) => '${theme.name}: ${theme.asScssMap()}').join(', ') +
+      ')';
 
   @override
-  List<String> getMixins(List<String> parentKeys) =>
-      colors.getMixins(['colors'])
-        ..addAll(fonts.getMixins(['fonts']))
-        ..addAll(elements.getMixins(['elements']));
+  List<String> getMixins(_) {
+    final mixins = List<String>();
+    themes.forEach((theme) => mixins.addAll(theme.getMixins(_)));
+    return mixins;
+  }
 }
