@@ -9,8 +9,50 @@
     <script defer src="main.dart.js"></script>
   </head>
   <body>
-    <my-app>Loading...</my-app>
+    <my-app>
+      <style>
+        #splash, #splash * {
+          background-color: #087f23;
+        }
+        #splash {
+          display: none;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        img {
+          height: 256px;
+          width: 256px;
+        }
+        #loading {
+          color: white;
+          font: 16px 'Ubuntu';
+          position: absolute;
+          bottom: 100px;
+        }
+        #loadingNoSplash {
+          display: none;
+          font: 16px 'Ubuntu';
+        }
+      </style>
+      <div id="splash">
+        <img src="packages/sharedtheme_example/assets/images/splash.gif" alt="Splash"/>
+        <div id="loading">Loading...</div>
+      </div>
+      <div id="loadingNoSplash">Loading...</div>
+    </my-app>
     <script>
+        if (localStorage.getItem('splash') != 'false') {
+            document.getElementById('splash').style.display = 'flex';
+        } else {
+            document.getElementById('loadingNoSplash').style.display = 'block';
+        }
         let theme = localStorage.getItem('theme');
         if (theme != null) {
             document.documentElement.className = `theme-${theme}`;

@@ -22,16 +22,11 @@ import 'package:angular_components/angular_components.dart';
     NgClass
   ],
 )
-class AppComponent implements OnInit {
+class AppComponent {
   final list = '''
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   '''.split(' ');
 
-  @override
-  void ngOnInit() async {
-//    showSplash = (await res.resources.splash.get()) ?? false;
-//    initialized = true;
-  }
 
   void setTheme(String theme) async {
     document.documentElement.className = 'theme-$theme';
@@ -39,7 +34,7 @@ class AppComponent implements OnInit {
   }
 
   void toggleSplash() async {
-//    final value = !(await resources.splash.get());
-//    resources.splash.write(value.toString());
+    final splash = window.localStorage['splash'];
+    window.localStorage['splash'] = splash == 'true' ? 'false' : 'true';
   }
 }

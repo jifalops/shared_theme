@@ -16,8 +16,7 @@
 <p></p>
 <material-button class="primary" (trigger)="setTheme('Light')">Light theme</material-button>
 <material-button class="secondary" (trigger)="setTheme('Dark')">Dark theme</material-button>
-<material-button class="secondary-dark">Color override</material-button>
-<material-button class="tertiary">Tertiary</material-button>
+<material-button class="tertiary" (trigger)="toggleSplash()">Toggle Splash</material-button>
 
 
 <material-list *ngIf="list.isNotEmpty">
