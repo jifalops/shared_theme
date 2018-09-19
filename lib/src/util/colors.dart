@@ -1,11 +1,88 @@
+import 'package:abstract_theme/src/util/css.dart';
+
+/// Platform independent representation of a color in the red-green-blue scheme
+/// with an optional alpha (opacity) component.
+class Color {
+  /// Alpha Red Green Blue.
+  final int argb;
+
+  /// ARGB format.
+  const Color(this.argb);
+
+  /// Construct a [Color] from parts.
+  const Color.from({int red: 0, int green: 0, int blue: 0, double alpha = 1.0})
+      : assert(red >= 0 && red <= 0xFF),
+        assert(green >= 0 && green <= 0xFF),
+        assert(blue >= 0 && blue <= 0xFF),
+        assert(alpha >= 0 && alpha <= 1),
+        argb =
+            (((alpha * 0xFF) ~/ 1) << 24) | (red << 16) | (green << 8) | blue;
+
+  double get alpha => alphaByte / 0xFF;
+  int get alphaByte => (argb >> 24) & 0xFF;
+  int get red => (argb >> 16) & 0xFF;
+  int get green => (argb >> 8) & 0xFF;
+  int get blue => argb & 0xFF;
+
+  int get rgb => argb & 0xFFFFFF;
+  int get rgba => (rgb << 8) & alphaByte;
+
+  /// CSS value
+  @override
+  String toString() => 'rgba($red, $green, $blue, $alpha)';
+
+  /// Calculates the luminence of this color and considers it dark if below a
+  /// certain level. Does *not* take alpha into consideration.
+  ///
+  /// See https://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color
+  bool get isDark {
+    final luminence = (0.2126 * red + 0.7152 * green + 0.0722 * blue);
+    return luminence < 150;
+  }
+
+  /// White or black, depending on [isDark].
+  Color get contrast => isDark ? Colors.white : Colors.black;
+}
+
+/// A color with an optional secondary color for contrast.
+///
+/// If no contrasting color is specified, one will be chosen on first use by
+/// calling [Color.contrast].
+class ColorPair extends CssEntity {
+  ColorPair(this.color, [Color contrast])
+      : _contrast = contrast,
+        assert(color != null);
+
+  /// The main color, usually used as a background color.
+  final Color color;
+  Color _contrast;
+
+  /// The color that contrasts the background. If not defined, [color.contrast]
+  /// is used.
+  Color get contrast => _contrast ?? color.contrast;
+
+  ColorPair copyWith({Color color, Color contrast}) =>
+      ColorPair(color ?? this.color, contrast ?? this._contrast);
+
+  /// Uses [color] for the CSS `background-color`, and [contrast] for the CSS
+  /// `color`.
+  @override
+  Map<String, String> get cssValues => {
+        'background-color': color.toString(),
+        'color': contrast.toString(),
+      };
+}
+
+// The Following static colors (mostly black and white with varying opacities)
+// were taken from the Flutter SDK and added to. In an attempt to respect
+// copyright, the entire file is below, limited modification.
+// ============================================================================
+
 // Copyright 2015 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // Modified by Jacob Phillips in July 2018.
-
-import 'package:abstract_theme/src/util/color.dart';
-export 'package:abstract_theme/src/util/color.dart';
 
 /// [Color] and [ColorSwatch] constants which represent Material design's
 /// [color palette](http://material.google.com/style/color.html).
