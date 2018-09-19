@@ -1,7 +1,0 @@
-builders:
-  theme_builder:
-    import: "package:abstract_theme/builder.dart"
-    builder_factories: ["themeBuilder"]
-    auto_apply: dependents
-    build_extensions: {".themeset.dart": [".scss"]}
-    runs_before: "sass_builder"
