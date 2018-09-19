@@ -8,8 +8,9 @@ export 'package:shared_theme/src/colors.dart';
 export 'package:shared_theme/src/fonts.dart';
 export 'package:shared_theme/src/elements.dart';
 
-class Theme implements MixinAggregator {
-  const Theme({
+/// The colors, fonts, and elements in a theme.
+class SharedTheme implements MixinAggregator {
+  const SharedTheme({
     @required this.name,
     @required this.colors,
     @required this.fonts,
@@ -20,9 +21,9 @@ class Theme implements MixinAggregator {
         assert(elements != null);
 
   final String name;
-  final ThemeColors colors;
-  final ThemeFonts fonts;
-  final ThemeElements elements;
+  final ColorSet colors;
+  final FontSet fonts;
+  final ElementSet elements;
 
   @override
   String asScssMap() => '''(
@@ -37,12 +38,13 @@ class Theme implements MixinAggregator {
     ..addAll(elements.getMixins(['elements']));
 }
 
-class Themes implements MixinAggregator {
-  const Themes({@required this.themes, this.fontFaces: const []})
+/// A collection of themes and font-faces.
+class SharedThemeSet implements MixinAggregator {
+  const SharedThemeSet({@required this.themes, this.fontFaces: const []})
       : assert(themes != null),
         assert(fontFaces != null);
 
-  final List<Theme> themes;
+  final List<SharedTheme> themes;
   final List<FontFace> fontFaces;
 
   @override
@@ -64,7 +66,7 @@ class Themes implements MixinAggregator {
     return list;
   }
 
-  /// SCSS output that fully represents this ThemeSet.
+  /// SCSS output that fully represents this set of themes.
   @override
   String toString() => '''
     // Themes global map
