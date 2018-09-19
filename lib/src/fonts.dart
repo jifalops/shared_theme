@@ -136,6 +136,7 @@ class FontFace {
     @font-face {
       font-family: '$family';
       font-weight: $weight;
+      font-style: $style;
       src: url('$url') format('${FontFormat.parse(url)}');
     }
 ''';
@@ -171,42 +172,19 @@ class FontFormat {
 /// The named fonts in a theme.
 class FontSet implements CssEntityContainer {
   const FontSet({
-    this.display4: Fonts.display4Black,
-    this.display3: Fonts.display3Black,
-    this.display2: Fonts.display2Black,
-    this.display1: Fonts.display1Black,
-    this.headline: Fonts.headlineBlack,
-    this.title: Fonts.titleBlack,
-    this.subhead: Fonts.subheadBlack,
-    this.body2: Fonts.body2Black,
-    this.body1: Fonts.body1Black,
-    this.caption: Fonts.captionBlack,
-    this.button: Fonts.buttonBlack,
+    this.display4: _Fonts.display4Black,
+    this.display3: _Fonts.display3Black,
+    this.display2: _Fonts.display2Black,
+    this.display1: _Fonts.display1Black,
+    this.headline: _Fonts.headlineBlack,
+    this.title: _Fonts.titleBlack,
+    this.subhead: _Fonts.subheadBlack,
+    this.body2: _Fonts.body2Black,
+    this.body1: _Fonts.body1Black,
+    this.caption: _Fonts.captionBlack,
+    this.button: _Fonts.buttonBlack,
   });
-  FontSet.darken(FontSet other)
-      : display4 = other.display4.copyWith(color: FontSet.dark.display4.color),
-        display3 = other.display3.copyWith(color: FontSet.dark.display3.color),
-        display2 = other.display2.copyWith(color: FontSet.dark.display2.color),
-        display1 = other.display1.copyWith(color: FontSet.dark.display1.color),
-        headline = other.headline.copyWith(color: FontSet.dark.headline.color),
-        title = other.title.copyWith(color: FontSet.dark.title.color),
-        subhead = other.subhead.copyWith(color: FontSet.dark.subhead.color),
-        body2 = other.body2.copyWith(color: FontSet.dark.body2.color),
-        body1 = other.body1.copyWith(color: FontSet.dark.body1.color),
-        caption = other.caption.copyWith(color: FontSet.dark.caption.color),
-        button = other.button.copyWith(color: FontSet.dark.button.color);
-  FontSet.lighten(FontSet other)
-      : display4 = other.display4.copyWith(color: FontSet.light.display4.color),
-        display3 = other.display3.copyWith(color: FontSet.light.display3.color),
-        display2 = other.display2.copyWith(color: FontSet.light.display2.color),
-        display1 = other.display1.copyWith(color: FontSet.light.display1.color),
-        headline = other.headline.copyWith(color: FontSet.light.headline.color),
-        title = other.title.copyWith(color: FontSet.light.title.color),
-        subhead = other.subhead.copyWith(color: FontSet.light.subhead.color),
-        body2 = other.body2.copyWith(color: FontSet.light.body2.color),
-        body1 = other.body1.copyWith(color: FontSet.light.body1.color),
-        caption = other.caption.copyWith(color: FontSet.light.caption.color),
-        button = other.button.copyWith(color: FontSet.light.button.color);
+
   final Font display4;
   final Font display3;
   final Font display2;
@@ -218,6 +196,32 @@ class FontSet implements CssEntityContainer {
   final Font body1;
   final Font caption;
   final Font button;
+
+  FontSet darken() => FontSet(
+      display4: display4.copyWith(color: FontSet.dark.display4.color),
+      display3: display3.copyWith(color: FontSet.dark.display3.color),
+      display2: display2.copyWith(color: FontSet.dark.display2.color),
+      display1: display1.copyWith(color: FontSet.dark.display1.color),
+      headline: headline.copyWith(color: FontSet.dark.headline.color),
+      title: title.copyWith(color: FontSet.dark.title.color),
+      subhead: subhead.copyWith(color: FontSet.dark.subhead.color),
+      body2: body2.copyWith(color: FontSet.dark.body2.color),
+      body1: body1.copyWith(color: FontSet.dark.body1.color),
+      caption: caption.copyWith(color: FontSet.dark.caption.color),
+      button: button.copyWith(color: FontSet.dark.button.color));
+
+  FontSet lighten() => FontSet(
+      display4: display4.copyWith(color: FontSet.light.display4.color),
+      display3: display3.copyWith(color: FontSet.light.display3.color),
+      display2: display2.copyWith(color: FontSet.light.display2.color),
+      display1: display1.copyWith(color: FontSet.light.display1.color),
+      headline: headline.copyWith(color: FontSet.light.headline.color),
+      title: title.copyWith(color: FontSet.light.title.color),
+      subhead: subhead.copyWith(color: FontSet.light.subhead.color),
+      body2: body2.copyWith(color: FontSet.light.body2.color),
+      body1: body1.copyWith(color: FontSet.light.body1.color),
+      caption: caption.copyWith(color: FontSet.light.caption.color),
+      button: button.copyWith(color: FontSet.light.button.color));
 
   FontSet copyWith({
     Font display4,
@@ -263,38 +267,38 @@ class FontSet implements CssEntityContainer {
 
   @override
   List<String> getMixins(List<String> parentKeys) => <String>[
-        display4.asThemifiedMixin('font-display4', parentKeys..add('display4')),
-        display3.asThemifiedMixin('font-display3', parentKeys..add('display3')),
-        display2.asThemifiedMixin('font-display2', parentKeys..add('display2')),
-        display1.asThemifiedMixin('font-display1', parentKeys..add('display1')),
-        headline.asThemifiedMixin('font-headline', parentKeys..add('headline')),
-        title.asThemifiedMixin('font-title', parentKeys..add('title')),
-        subhead.asThemifiedMixin('font-subhead', parentKeys..add('subhead')),
-        body2.asThemifiedMixin('font-body2', parentKeys..add('body2')),
-        body1.asThemifiedMixin('font-body1', parentKeys..add('body1')),
-        caption.asThemifiedMixin('font-caption', parentKeys..add('caption')),
-        button.asThemifiedMixin('font-button', parentKeys..add('button')),
+        display4.asThemifiedMixin('font-display4', List.from(parentKeys)..add('display4')),
+        display3.asThemifiedMixin('font-display3', List.from(parentKeys)..add('display3')),
+        display2.asThemifiedMixin('font-display2', List.from(parentKeys)..add('display2')),
+        display1.asThemifiedMixin('font-display1', List.from(parentKeys)..add('display1')),
+        headline.asThemifiedMixin('font-headline', List.from(parentKeys)..add('headline')),
+        title.asThemifiedMixin('font-title', List.from(parentKeys)..add('title')),
+        subhead.asThemifiedMixin('font-subhead', List.from(parentKeys)..add('subhead')),
+        body2.asThemifiedMixin('font-body2', List.from(parentKeys)..add('body2')),
+        body1.asThemifiedMixin('font-body1', List.from(parentKeys)..add('body1')),
+        caption.asThemifiedMixin('font-caption', List.from(parentKeys)..add('caption')),
+        button.asThemifiedMixin('font-button', List.from(parentKeys)..add('button')),
       ];
 
   static const dark = FontSet();
 
   static const light = FontSet(
-    display4: Fonts.display4White,
-    display3: Fonts.display3White,
-    display2: Fonts.display2White,
-    display1: Fonts.display1White,
-    headline: Fonts.headlineWhite,
-    title: Fonts.titleWhite,
-    subhead: Fonts.subheadWhite,
-    body2: Fonts.body2White,
-    body1: Fonts.body1White,
-    caption: Fonts.captionWhite,
-    button: Fonts.buttonWhite,
+    display4: _Fonts.display4White,
+    display3: _Fonts.display3White,
+    display2: _Fonts.display2White,
+    display1: _Fonts.display1White,
+    headline: _Fonts.headlineWhite,
+    title: _Fonts.titleWhite,
+    subhead: _Fonts.subheadWhite,
+    body2: _Fonts.body2White,
+    body1: _Fonts.body1White,
+    caption: _Fonts.captionWhite,
+    button: _Fonts.buttonWhite,
   );
 }
 
 /// Default fonts from material design.
-class Fonts {
+class _Fonts {
   // Black fonts.
 
   /// size: 112.0, weight: 100, color: Colors.black54

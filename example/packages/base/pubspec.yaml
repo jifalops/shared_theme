@@ -6,7 +6,7 @@ homepage: https://github.com/jifalops/shared_theme
 
 dependencies:
   shared_theme:
-    path: ../../../
+    path: ../../..
   meta: ^1.1.6
 
 dev_dependencies:

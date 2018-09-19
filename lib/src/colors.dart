@@ -142,23 +142,23 @@ class ColorSet implements CssEntityContainer {
 
   @override
   List<String> getMixins(List<String> parentKeys) => <String>[
-        primary.asThemifiedMixin('primary-color', parentKeys..add('primary')),
+        primary.asThemifiedMixin('primary-color', List.from(parentKeys)..add('primary')),
         primaryLight.asThemifiedMixin(
-            'primary-color-light', parentKeys..add('primaryLight')),
+            'primary-color-light', List.from(parentKeys)..add('primaryLight')),
         primaryDark.asThemifiedMixin(
-            'primary-color-dark', parentKeys..add('primaryDark')),
+            'primary-color-dark', List.from(parentKeys)..add('primaryDark')),
         secondary.asThemifiedMixin(
-            'secondary-color', parentKeys..add('secondary')),
+            'secondary-color', List.from(parentKeys)..add('secondary')),
         secondaryLight.asThemifiedMixin(
-            'secondary-color-light', parentKeys..add('secondaryLight')),
+            'secondary-color-light', List.from(parentKeys)..add('secondaryLight')),
         secondaryDark.asThemifiedMixin(
-            'secondary-color-dark', parentKeys..add('secondaryDark')),
+            'secondary-color-dark', List.from(parentKeys)..add('secondaryDark')),
         background.asThemifiedMixin(
-            'background-color', parentKeys..add('background')),
-        surface.asThemifiedMixin('surface-color', parentKeys..add('surface')),
-        divider.asThemifiedMixin('divider', parentKeys..add('divider')),
-        error.asThemifiedMixin('error', parentKeys..add('error')),
-        notice.asThemifiedMixin('notice', parentKeys..add('notice')),
+            'background-color', List.from(parentKeys)..add('background')),
+        surface.asThemifiedMixin('surface-color', List.from(parentKeys)..add('surface')),
+        divider.asThemifiedMixin('divider-color', List.from(parentKeys)..add('divider')),
+        error.asThemifiedMixin('error-color', List.from(parentKeys)..add('error')),
+        notice.asThemifiedMixin('notice-color', List.from(parentKeys)..add('notice')),
       ];
 }
 

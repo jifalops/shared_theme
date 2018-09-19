@@ -15,8 +15,12 @@ abstract class CssEntity implements ScssMap {
     parentKeys.forEach((key) => sb.write("'$key', "));
     final prefix = sb.toString();
     sb = StringBuffer();
-    cssValues.keys
-        .forEach((key) => sb.writeln("$key: themed($prefix '$key');"));
+    cssValues.keys.forEach((key) {
+      // if (key == 'box-shadow')
+      //   sb.writeln('@include shadow-elevation(${cssValues[key]});');
+      // else
+        sb.writeln("$key: themed($prefix '$key');");
+    });
     return '''
       @mixin $name {
         @include themify {

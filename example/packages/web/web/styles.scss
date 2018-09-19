@@ -1,12 +1,38 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+@import '../lib/themes.g';
 
 body {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 5vw;
+  padding: 0;
+  margin: 0;
 }
 
-* {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+*:not(material-ripple):not([class*="material-"]) {
+  @include background-color;
 }
+
+material-ripple *,
+[class*="material-"] * {
+  background-color: initial !important;
+  color: inherit !important;
+}
+
+material-button .content {
+  //text-transform: none;
+}
+
+material-button.primary .content {
+  @include primary-button;
+}
+
+material-button.secondary .content {
+  @include secondary-button;
+}
+material-button.secondary-dark .content {
+  @include secondary-button;
+  @include primary-color-dark;
+}
+
+
+material-button.tertiary .content {
+  @include tertiary-button;
+}
+

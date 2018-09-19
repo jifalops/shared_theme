@@ -9,7 +9,9 @@ environment:
 
 dependencies:
   shared_theme:
-    path: ../../../
+    path: ../../..
+  sharedtheme_example:
+    path: ../base
   angular: ^5.0.0
   angular_components: ^0.9.0
   bootstrap_sass: ^4.1.2

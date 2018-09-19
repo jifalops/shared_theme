@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:shared_theme/src/util/css.dart';
+import 'package:shared_theme/src/css.dart';
 import 'package:shared_theme/src/colors.dart';
 import 'package:shared_theme/src/fonts.dart';
 import 'package:shared_theme/src/elements.dart';
@@ -54,11 +54,7 @@ class SharedThemeSet implements MixinAggregator {
       ')';
 
   @override
-  List<String> getMixins() {
-    final list = <String>[];
-    themes.forEach((theme) => list.addAll(theme.getMixins()));
-    return list;
-  }
+  List<String> getMixins() => themes.first.getMixins();
 
   List<String> getFontFaces() {
     final list = <String>[];

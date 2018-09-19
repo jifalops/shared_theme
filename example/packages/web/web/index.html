@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-Light">
   <head>
     <title>sharedtheme_example_web</title>
     <meta charset="utf-8">
@@ -10,5 +10,11 @@
   </head>
   <body>
     <my-app>Loading...</my-app>
+    <script>
+        let theme = localStorage.getItem('theme');
+        if (theme != null) {
+            document.documentElement.className = `theme-${theme}`;
+        }
+    </script>
   </body>
 </html>
