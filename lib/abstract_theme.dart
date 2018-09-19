@@ -8,7 +8,7 @@ export 'package:abstract_theme/src/colors.dart';
 export 'package:abstract_theme/src/fonts.dart';
 export 'package:abstract_theme/src/elements.dart';
 
-class Theme implements CssEntityContainer {
+class Theme implements MixinAggregator {
   const Theme({
     @required this.name,
     @required this.colors,
@@ -32,13 +32,13 @@ class Theme implements CssEntityContainer {
   )''';
 
   @override
-  List<String> getMixins(_) => colors.getMixins(['colors'])
+  List<String> getMixins() => colors.getMixins(['colors'])
     ..addAll(fonts.getMixins(['fonts']))
     ..addAll(elements.getMixins(['elements']));
 }
 
-class ThemeSet implements CssEntityContainer {
-  const ThemeSet({@required this.themes, this.fontFaces: const []})
+class Themes implements MixinAggregator {
+  const Themes({@required this.themes, this.fontFaces: const []})
       : assert(themes != null),
         assert(fontFaces != null);
 
@@ -52,9 +52,31 @@ class ThemeSet implements CssEntityContainer {
       ')';
 
   @override
-  List<String> getMixins(_) {
-    final mixins = List<String>();
-    themes.forEach((theme) => mixins.addAll(theme.getMixins(_)));
-    return mixins;
+  List<String> getMixins() {
+    final list = <String>[];
+    themes.forEach((theme) => list.addAll(theme.getMixins()));
+    return list;
   }
+
+  List<String> getFontFaces() {
+    final list = <String>[];
+    fontFaces.forEach((fontFace) => list.add(fontFace.toString()));
+    return list;
+  }
+
+  /// SCSS output that fully represents this ThemeSet.
+  @override
+  String toString() => '''
+    // Themes global map
+    \$themes: ${asScssMap()} !global;
+
+    // Font faces
+    ${getFontFaces().join('')}
+
+    // Themify utility
+    @import 'package:abstract_theme/themify';
+
+    // Mixins
+    ${getMixins().join('')}
+  ''';
 }

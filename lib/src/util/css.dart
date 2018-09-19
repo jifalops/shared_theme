@@ -26,6 +26,10 @@ abstract class CssEntity implements ScssMap {
   }
 }
 
+abstract class MixinAggregator implements ScssMap {
+  List<String> getMixins();
+}
+
 abstract class CssEntityContainer implements ScssMap {
   List<String> getMixins(List<String> parentKeys);
 }

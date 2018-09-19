@@ -117,6 +117,7 @@ class TextDecorationStyle {
   toString() => _name;
 }
 
+/// A CSS `@font-face` definition.
 class FontFace {
   const FontFace({
     @required this.family,
@@ -129,7 +130,9 @@ class FontFace {
   final int weight;
   final FontStyle style;
 
-  String asCssFontFace() => '''
+  /// CSS `@font-face` value.
+  @override
+  String toString() => '''
     @font-face {
       font-family: '$family';
       font-weight: $weight;
