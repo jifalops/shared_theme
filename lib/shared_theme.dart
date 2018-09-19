@@ -1,12 +1,12 @@
 import 'package:meta/meta.dart';
-import 'package:abstract_theme/src/util/css.dart';
-import 'package:abstract_theme/src/colors.dart';
-import 'package:abstract_theme/src/fonts.dart';
-import 'package:abstract_theme/src/elements.dart';
+import 'package:shared_theme/src/util/css.dart';
+import 'package:shared_theme/src/colors.dart';
+import 'package:shared_theme/src/fonts.dart';
+import 'package:shared_theme/src/elements.dart';
 
-export 'package:abstract_theme/src/colors.dart';
-export 'package:abstract_theme/src/fonts.dart';
-export 'package:abstract_theme/src/elements.dart';
+export 'package:shared_theme/src/colors.dart';
+export 'package:shared_theme/src/fonts.dart';
+export 'package:shared_theme/src/elements.dart';
 
 class Theme implements MixinAggregator {
   const Theme({
@@ -74,7 +74,7 @@ class Themes implements MixinAggregator {
     ${getFontFaces().join('')}
 
     // Themify utility
-    @import 'package:abstract_theme/themify';
+    @import 'package:shared_theme/themify';
 
     // Mixins
     ${getMixins().join('')}

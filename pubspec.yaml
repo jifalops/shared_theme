@@ -1,15 +1,14 @@
-name: abstract_theme
+name: shared_theme
 description: Share a theme between Flutter and Web apps.
 version: 0.0.1
 author: Jacob Phillips <jifalops@gmail.com>
-homepage: https://github.com/jifalops/abstract_theme
+homepage: https://github.com/jifalops/shared_theme
 
 dependencies:
   meta: ^1.1.6
 
 dev_dependencies:
   test: ^1.3.2
-  build_config: ^0.3.1+2
 
 environment:
   sdk: ">=2.0.0 <3.0.0"

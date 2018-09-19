@@ -1,10 +1,10 @@
 import 'package:meta/meta.dart';
-import 'package:abstract_theme/src/util/css.dart';
-import 'package:abstract_theme/src/util/fonts.dart';
-import 'package:abstract_theme/src/util/colors.dart';
-import 'package:abstract_theme/src/util/borders.dart';
+import 'package:shared_theme/src/util/css.dart';
+import 'package:shared_theme/src/util/fonts.dart';
+import 'package:shared_theme/src/util/colors.dart';
+import 'package:shared_theme/src/util/borders.dart';
 
-export 'package:abstract_theme/src/util/borders.dart';
+export 'package:shared_theme/src/util/borders.dart';
 
 /// Combines color, font, margin, padding, border, shadow, and text align.
 class Element extends CssEntity {

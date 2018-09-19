@@ -1,8 +1,8 @@
 import 'package:meta/meta.dart';
-import 'package:abstract_theme/src/util/colors.dart';
-import 'package:abstract_theme/src/util/css.dart';
+import 'package:shared_theme/src/util/colors.dart';
+import 'package:shared_theme/src/util/css.dart';
 
-export 'package:abstract_theme/src/util/colors.dart';
+export 'package:shared_theme/src/util/colors.dart';
 
 /// The named colors in a theme.
 class ThemeColors implements CssEntityContainer {

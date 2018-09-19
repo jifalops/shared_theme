@@ -1,8 +1,8 @@
 import 'package:meta/meta.dart';
-import 'package:abstract_theme/src/util/css.dart';
-import 'package:abstract_theme/src/util/elements.dart';
+import 'package:shared_theme/src/util/css.dart';
+import 'package:shared_theme/src/util/elements.dart';
 
-export 'package:abstract_theme/src/util/elements.dart';
+export 'package:shared_theme/src/util/elements.dart';
 
 class ThemeElements implements CssEntityContainer {
   const ThemeElements({

@@ -1,7 +1,7 @@
-import 'package:abstract_theme/src/util/css.dart';
-import 'package:abstract_theme/src/util/fonts.dart';
+import 'package:shared_theme/src/util/css.dart';
+import 'package:shared_theme/src/util/fonts.dart';
 
-export 'package:abstract_theme/src/util/fonts.dart';
+export 'package:shared_theme/src/util/fonts.dart';
 
 /// The named fonts in a theme.
 class ThemeFonts implements CssEntityContainer {

@@ -1,4 +1,4 @@
-import 'package:abstract_theme/src/util/css.dart';
+import 'package:shared_theme/src/util/css.dart';
 
 /// Platform independent representation of a color in the red-green-blue scheme
 /// with an optional alpha (opacity) component.
