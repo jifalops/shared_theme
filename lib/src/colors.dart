@@ -42,6 +42,11 @@ class Color {
 
   /// White or black, depending on [isDark].
   Color get contrast => isDark ? Colors.white : Colors.black;
+
+  @override
+  bool operator ==(o) => o is Color && o.argb == argb;
+  @override
+  int get hashCode => argb.hashCode;
 }
 
 /// A color with an optional secondary color for contrast.
@@ -142,23 +147,28 @@ class ColorSet implements CssEntityContainer {
 
   @override
   List<String> getMixins(List<String> parentKeys) => <String>[
-        primary.asThemifiedMixin('primary-color', List.from(parentKeys)..add('primary')),
+        primary.asThemifiedMixin(
+            'primary-color', List.from(parentKeys)..add('primary')),
         primaryLight.asThemifiedMixin(
             'primary-color-light', List.from(parentKeys)..add('primaryLight')),
         primaryDark.asThemifiedMixin(
             'primary-color-dark', List.from(parentKeys)..add('primaryDark')),
         secondary.asThemifiedMixin(
             'secondary-color', List.from(parentKeys)..add('secondary')),
-        secondaryLight.asThemifiedMixin(
-            'secondary-color-light', List.from(parentKeys)..add('secondaryLight')),
-        secondaryDark.asThemifiedMixin(
-            'secondary-color-dark', List.from(parentKeys)..add('secondaryDark')),
+        secondaryLight.asThemifiedMixin('secondary-color-light',
+            List.from(parentKeys)..add('secondaryLight')),
+        secondaryDark.asThemifiedMixin('secondary-color-dark',
+            List.from(parentKeys)..add('secondaryDark')),
         background.asThemifiedMixin(
             'background-color', List.from(parentKeys)..add('background')),
-        surface.asThemifiedMixin('surface-color', List.from(parentKeys)..add('surface')),
-        divider.asThemifiedMixin('divider-color', List.from(parentKeys)..add('divider')),
-        error.asThemifiedMixin('error-color', List.from(parentKeys)..add('error')),
-        notice.asThemifiedMixin('notice-color', List.from(parentKeys)..add('notice')),
+        surface.asThemifiedMixin(
+            'surface-color', List.from(parentKeys)..add('surface')),
+        divider.asThemifiedMixin(
+            'divider-color', List.from(parentKeys)..add('divider')),
+        error.asThemifiedMixin(
+            'error-color', List.from(parentKeys)..add('error')),
+        notice.asThemifiedMixin(
+            'notice-color', List.from(parentKeys)..add('notice')),
       ];
 }
 

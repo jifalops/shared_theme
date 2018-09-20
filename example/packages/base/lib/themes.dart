@@ -67,23 +67,30 @@ final _darkFonts = FontSet(
 
 final _lightFonts = _darkFonts.lighten();
 
-final _buttonBase = Element(
-  align: TextAlign.center,
-  font: _darkFonts.button.copyWith(size: 16.0, weight: 400),
-  padding: BoxSpacing.symmetric(vertical: 4.0, horizontal: 8.0),
-  border: Border(radii: BorderRadius(4.0)),
-);
+class _ButtonBase extends Element {
+  _ButtonBase(
+      {Color color: Colors.transparent,
+      Font font,
+      ShadowElevation shadow: ShadowElevation.none})
+      : super(
+            align: TextAlign.center,
+            padding: BoxSpacing.symmetric(vertical: 4.0, horizontal: 8.0),
+            border: Border(radii: BorderRadius(4.0)),
+            font: font ?? _darkFonts.button,
+            shadow: shadow,
+            color: color);
+}
 
 final _lightElements = ElementSet(
-    primaryButton: _buttonBase.copyWith(
+    primaryButton: _ButtonBase(
         color: _lightColors.secondary.color,
-        font: _buttonBase.font.copyWith(color: _lightColors.secondary.contrast),
+        font: _darkFonts.button.copyWith(color: _lightColors.secondary.contrast),
         shadow: ShadowElevation.dp8),
-    secondaryButton: _buttonBase.copyWith(
+    secondaryButton: _ButtonBase(
         color: _lightColors.primary.color,
-        font: _buttonBase.font.copyWith(color: _lightColors.primary.contrast)),
-    tertiaryButton: _buttonBase,
-    textInput: Element(
+        font: _darkFonts.button.copyWith(color: _lightColors.primary.contrast)),
+    tertiaryButton: _ButtonBase(),
+    inputBase: Element(
       border: Border(
           sides: BorderSide(
               width: 1.0,

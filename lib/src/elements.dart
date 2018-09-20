@@ -12,7 +12,7 @@ class Element extends CssEntity {
     this.padding: const BoxSpacing(),
     this.shadow: ShadowElevation.none,
     this.align: TextAlign.start,
-    this.sizeLimits: const SizeLimits(),
+    this.size: const SizeLimits(),
   })  : assert(color != null),
         assert(font != null),
         assert(border != null),
@@ -28,7 +28,7 @@ class Element extends CssEntity {
   final BoxSpacing padding;
   final ShadowElevation shadow;
   final TextAlign align;
-  final SizeLimits sizeLimits;
+  final SizeLimits size;
 
   Element copyWith({
     Color color,
@@ -48,7 +48,7 @@ class Element extends CssEntity {
         padding: padding ?? this.padding,
         shadow: shadow ?? this.shadow,
         align: align ?? this.align,
-        sizeLimits: sizeLimits ?? this.sizeLimits,
+        size: sizeLimits ?? this.size,
       );
 
   @override
@@ -61,7 +61,7 @@ class Element extends CssEntity {
       }
         ..addAll(font.cssValues)
         ..addAll(border.cssValues)
-        ..addAll(sizeLimits.cssValues);
+        ..addAll(size.cssValues);
 }
 
 class SizeLimits extends CssEntity {
@@ -182,8 +182,8 @@ const _shadowTransition = 'box-shadow .28s cubic-bezier(.4, 0, .2, 1)';
 
 class Border extends CssEntity {
   const Border(
-      {BorderSide sides: const BorderSide(),
-      BorderRadius radii: const BorderRadius()})
+      {BorderSide sides: BorderSide.none,
+      BorderRadius radii: BorderRadius.zero})
       : top = sides,
         right = sides,
         bottom = sides,
@@ -212,12 +212,41 @@ class Border extends CssEntity {
         'border-bottom': bottom.toString(),
         'border-left': left.toString(),
         'border-radius':
-            '${topLeft.first}px ${topRight.first}px ${bottomLeft.first}px ${bottomRight.first}px / ${topLeft.second}px ${topRight.second}px ${bottomLeft.second}px ${bottomRight.second}px',
+            '${topLeft.x}px ${topRight.x}px ${bottomLeft.x}px ${bottomRight.x}px / ${topLeft.y}px ${topRight.y}px ${bottomLeft.y}px ${bottomRight.y}px',
       };
+
+  /// True if any corners have a non-zero radius.
+  bool get hasRadius =>
+      topLeft != BorderRadius.zero ||
+      topRight != BorderRadius.zero ||
+      bottomRight != BorderRadius.zero ||
+      bottomLeft != BorderRadius.zero;
+
+  // True if all four sides are equal.
+  bool get hasUniformSides => top == bottom && top == left && top == right;
+
+  @override
+  bool operator ==(o) =>
+      o is Border &&
+      top == o.top &&
+      right == o.right &&
+      bottom == o.bottom &&
+      left == o.left &&
+      topLeft == o.topLeft &&
+      topRight == o.topRight &&
+      bottomRight == o.bottomRight &&
+      bottomLeft == o.bottomLeft;
+  @override
+  int get hashCode => toString().hashCode;
+
+  static const none = Border();
 }
 
 class BorderSide {
-  const BorderSide({this.width: 0.0, this.style: BorderStyle.none, this.color});
+  const BorderSide(
+      {this.width: 0.0,
+      this.style: BorderStyle.none,
+      this.color: Colors.transparent});
   final double width;
   final BorderStyle style;
   final Color color;
@@ -234,15 +263,27 @@ class BorderSide {
       color == o.color;
   @override
   int get hashCode => toString().hashCode;
+
+  static const none = BorderSide();
 }
 
 class BorderRadius {
   const BorderRadius([double radius = 0.0])
-      : first = radius,
-        second = radius;
-  const BorderRadius.asymmetric(this.first, this.second);
-  final double first;
-  final double second;
+      : x = radius,
+        y = radius;
+  const BorderRadius.asymmetric(this.x, this.y);
+  final double x;
+  final double y;
+
+  @override
+  String toString() => '${x}px ${y}px';
+
+  @override
+  bool operator ==(o) => o is BorderRadius && x == o.x && y == o.y;
+  @override
+  int get hashCode => toString().hashCode;
+
+  static const zero = BorderRadius(0.0);
 }
 
 class BorderStyle {
@@ -262,24 +303,24 @@ class ElementSet implements CssEntityContainer {
     this.primaryButton: const Element(),
     this.secondaryButton: const Element(),
     this.tertiaryButton: const Element(),
-    this.textInput: const Element(),
+    this.inputBase: const Element(),
   });
   final Element primaryButton;
   final Element secondaryButton;
   final Element tertiaryButton;
-  final Element textInput;
+  final Element inputBase;
 
   ElementSet copyWith({
     Element primaryButton,
     Element secondaryButton,
     Element tertiaryButton,
-    Element textInput,
+    Element inputBase,
   }) =>
       ElementSet(
         primaryButton: primaryButton ?? this.primaryButton,
         secondaryButton: secondaryButton ?? this.secondaryButton,
         tertiaryButton: tertiaryButton ?? this.tertiaryButton,
-        textInput: textInput ?? this.textInput,
+        inputBase: inputBase ?? this.inputBase,
       );
 
   @override
@@ -287,7 +328,7 @@ class ElementSet implements CssEntityContainer {
     primaryButton: ${primaryButton.asScssMap()},
     secondaryButton: ${secondaryButton.asScssMap()},
     tertiaryButton: ${tertiaryButton.asScssMap()},
-    textInput: ${textInput.asScssMap()},
+    inputBase: ${inputBase.asScssMap()},
   )''';
 
   @override
@@ -298,7 +339,7 @@ class ElementSet implements CssEntityContainer {
             'secondary-button', List.from(parentKeys)..add('secondaryButton')),
         tertiaryButton.asThemifiedMixin(
             'tertiary-button', List.from(parentKeys)..add('tertiaryButton')),
-        textInput.asThemifiedMixin(
-            'text-input', List.from(parentKeys)..add('textInput')),
+        inputBase.asThemifiedMixin(
+            'input-base', List.from(parentKeys)..add('inputBase')),
       ];
 }

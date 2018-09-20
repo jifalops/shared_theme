@@ -24,6 +24,11 @@ abstract class CssEntity implements ScssMap {
         }
       } ''';
   }
+
+  @override
+  String toString() => cssValues.entries
+      .map((entry) => '${entry.key}: ${entry.value};')
+      .join('\n');
 }
 
 abstract class MixinAggregator implements ScssMap {
