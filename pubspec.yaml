@@ -1,5 +1,5 @@
 name: shared_theme
-description: Share a theme between Flutter and Web apps.
+description: Share a theme between Flutter and Web.
 version: 0.0.1
 author: Jacob Phillips <jifalops@gmail.com>
 homepage: https://github.com/jifalops/shared_theme

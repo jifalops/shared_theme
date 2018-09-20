@@ -1,13 +1,15 @@
 import 'package:shared_theme/shared_theme.dart';
 
-final themes = SharedThemeSet(themes: [
-  SharedTheme(
+final themes = ThemeSet(themes: [
+  Theme(
       name: 'Light',
+      brightness: Brightness.light,
       colors: _lightColors,
       fonts: _darkFonts,
       elements: _lightElements),
-  SharedTheme(
+  Theme(
       name: 'Dark',
+      brightness: Brightness.dark,
       colors: _darkColors,
       fonts: _lightFonts,
       elements: _darkElements),

@@ -1,3 +1,5 @@
+library shared_theme;
+
 import 'package:meta/meta.dart';
 import 'package:shared_theme/src/css.dart';
 import 'package:shared_theme/src/colors.dart';
@@ -9,9 +11,10 @@ export 'package:shared_theme/src/fonts.dart';
 export 'package:shared_theme/src/elements.dart';
 
 /// The colors, fonts, and elements in a theme.
-class SharedTheme implements MixinAggregator {
-  const SharedTheme({
+class Theme implements MixinAggregator {
+  const Theme({
     @required this.name,
+    @required this.brightness,
     @required this.colors,
     @required this.fonts,
     @required this.elements,
@@ -21,6 +24,7 @@ class SharedTheme implements MixinAggregator {
         assert(elements != null);
 
   final String name;
+  final Brightness brightness;
   final ColorSet colors;
   final FontSet fonts;
   final ElementSet elements;
@@ -39,12 +43,12 @@ class SharedTheme implements MixinAggregator {
 }
 
 /// A collection of themes and font-faces.
-class SharedThemeSet implements MixinAggregator {
-  const SharedThemeSet({@required this.themes, this.fontFaces: const []})
+class ThemeSet implements MixinAggregator {
+  const ThemeSet({@required this.themes, this.fontFaces: const []})
       : assert(themes != null),
         assert(fontFaces != null);
 
-  final List<SharedTheme> themes;
+  final List<Theme> themes;
   final List<FontFace> fontFaces;
 
   @override
@@ -78,3 +82,5 @@ class SharedThemeSet implements MixinAggregator {
     ${getMixins().join('')}
   ''';
 }
+
+enum Brightness { light, dark }

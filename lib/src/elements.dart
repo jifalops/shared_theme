@@ -12,6 +12,7 @@ class Element extends CssEntity {
     this.padding: const BoxSpacing(),
     this.shadow: ShadowElevation.none,
     this.align: TextAlign.start,
+    this.sizeLimits: const SizeLimits(),
   })  : assert(color != null),
         assert(font != null),
         assert(border != null),
@@ -27,6 +28,7 @@ class Element extends CssEntity {
   final BoxSpacing padding;
   final ShadowElevation shadow;
   final TextAlign align;
+  final SizeLimits sizeLimits;
 
   Element copyWith({
     Color color,
@@ -36,6 +38,7 @@ class Element extends CssEntity {
     BoxSpacing padding,
     ShadowElevation shadow,
     TextAlign align,
+    SizeLimits sizeLimits,
   }) =>
       Element(
         color: color ?? this.color,
@@ -45,6 +48,7 @@ class Element extends CssEntity {
         padding: padding ?? this.padding,
         shadow: shadow ?? this.shadow,
         align: align ?? this.align,
+        sizeLimits: sizeLimits ?? this.sizeLimits,
       );
 
   @override
@@ -56,7 +60,28 @@ class Element extends CssEntity {
         'box-shadow': '(${shadow.toString()})',
       }
         ..addAll(font.cssValues)
-        ..addAll(border.cssValues);
+        ..addAll(border.cssValues)
+        ..addAll(sizeLimits.cssValues);
+}
+
+class SizeLimits extends CssEntity {
+  const SizeLimits(
+      {this.minHeight: 0.0,
+      this.maxHeight: 0.0,
+      this.minWidth: 0.0,
+      this.maxWidth: 0.0});
+  final double minHeight;
+  final double maxHeight;
+  final double minWidth;
+  final double maxWidth;
+
+  @override
+  Map<String, String> get cssValues => {
+        'min-height': '${minHeight}px',
+        'max-height': '${maxHeight}px',
+        'min-width': '${minWidth}px',
+        'max-width': '${maxWidth}px',
+      };
 }
 
 /// Such as margins or padding.
