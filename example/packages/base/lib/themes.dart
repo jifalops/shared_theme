@@ -15,24 +15,26 @@ final themeset = ThemeSet(themes: [
       elements: _darkElements),
 ], fontFaces: _fontFaces);
 
-/// See the theme colors at https://material.io/tools/color/#!/?view.left=0&view.right=0&secondary.color=651FFF&primary.color=4CAF50
+/// See the theme colors at
+/// https://material.io/tools/color/#!/?view.left=0&view.right=0&secondary.color=651FFF&primary.color=4CAF50
+/// https://material.io/tools/color/#!/?view.left=1&view.right=0&secondary.color=FFAB00&primary.color=2E7D32
 class _ThemeColors extends ColorSet {
   const _ThemeColors({
     ContrastingColors background,
     ContrastingColors surface,
     ContrastingColors divider,
   }) : super(
-          primary: const ContrastingColors(Color(0xff4caf50), Colors.black),
+          primary: const ContrastingColors(Color(0xff2e7d32), Colors.white),
           primaryLight:
-              const ContrastingColors(Color(0xff80e27e), Colors.black),
-          primaryDark: const ContrastingColors(Color(0xff087f23), Colors.white),
-          secondary: const ContrastingColors(Color(0xff651fff), Colors.white),
+              const ContrastingColors(Color(0xff60ad5e), Colors.black),
+          primaryDark: const ContrastingColors(Color(0xff005005), Colors.white),
+          secondary: const ContrastingColors(Color(0xffffab00), Colors.black),
           secondaryLight:
-              const ContrastingColors(Color(0xffa255ff), Colors.black),
+              const ContrastingColors(Color(0xffffdd4b), Colors.black),
           secondaryDark:
-              const ContrastingColors(Color(0xff0100ca), Colors.white),
+              const ContrastingColors(Color(0xffc67c00), Colors.black),
           error: const ContrastingColors(Colors.error, Colors.onError),
-          notice: const ContrastingColors(Color(0xffff8f00), Colors.black),
+          notice: const ContrastingColors(Color(0xffb39ddb), Colors.black),
           background: background,
           surface: surface,
           divider: divider,
