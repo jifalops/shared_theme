@@ -4,7 +4,7 @@ import 'package:sass/sass.dart' as sass;
 
 void main() async {
   final file = File('lib/_themes.g.scss');
-  final scss = themes.toString();
+  final scss = themeset.toString();
   // sass.compileString(scss);
   await file.writeAsString(scss, flush: true);
 }

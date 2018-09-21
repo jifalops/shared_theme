@@ -1,3 +1,5 @@
+/// It is recommended you import this library using the `as` directive, e.g.
+/// `import 'package:shared_theme/shared_theme' as themer;`
 library shared_theme;
 
 import 'package:meta/meta.dart';
@@ -50,6 +52,9 @@ class ThemeSet implements MixinAggregator {
 
   final List<Theme> themes;
   final List<FontFace> fontFaces;
+
+  Theme getTheme(String name) =>
+      themes.firstWhere((theme) => theme.name == name, orElse: () => null);
 
   @override
   String asScssMap() =>

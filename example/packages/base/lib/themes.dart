@@ -1,6 +1,6 @@
 import 'package:shared_theme/shared_theme.dart';
 
-final themes = ThemeSet(themes: [
+final themeset = ThemeSet(themes: [
   Theme(
       name: 'Light',
       brightness: Brightness.light,
@@ -84,19 +84,14 @@ class _ButtonBase extends Element {
 final _lightElements = ElementSet(
     primaryButton: _ButtonBase(
         color: _lightColors.secondary.color,
-        font: _darkFonts.button.copyWith(color: _lightColors.secondary.contrast),
+        font: _darkFonts.button
+            .copyWith(color: _lightColors.secondary.contrast, size: 16.0),
         shadow: ShadowElevation.dp8),
     secondaryButton: _ButtonBase(
         color: _lightColors.primary.color,
         font: _darkFonts.button.copyWith(color: _lightColors.primary.contrast)),
     tertiaryButton: _ButtonBase(),
-    inputBase: Element(
-      border: Border(
-          sides: BorderSide(
-              width: 1.0,
-              style: BorderStyle.solid,
-              color: _lightColors.background.contrast)),
-    ));
+    inputBase: Element(border: Border.flutterOutlineInput));
 
 final _darkElements = _lightElements.copyWith(
     tertiaryButton: _lightElements.tertiaryButton.copyWith(

@@ -106,6 +106,18 @@ class BoxSpacing {
   /// CSS value
   @override
   String toString() => '${top}px ${right}px ${bottom}px ${left}px';
+
+  @override
+  bool operator ==(o) =>
+      o is BoxSpacing &&
+      top == o.top &&
+      right == o.right &&
+      bottom == o.bottom &&
+      left == o.left;
+  @override
+  int get hashCode => toString().hashCode;
+
+  static const zero = BoxSpacing(0.0);
 }
 
 class TextAlign {
@@ -125,50 +137,59 @@ class TextAlign {
 
 /// Valid material elevations in dp.
 class ShadowElevation {
-  const ShadowElevation._(this._boxShadow);
+  const ShadowElevation._(this._boxShadow, this.elevation);
   final String _boxShadow;
+  final double elevation;
 
-  static const none = ShadowElevation._('none');
+  static const none = ShadowElevation._('none', 0.0);
 
-  static const dp2 =
-      ShadowElevation._('0 2px 2px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0 3px 1px -2px rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0 1px 5px 0 rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp2 = ShadowElevation._(
+      '0 2px 2px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0 3px 1px -2px rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0 1px 5px 0 rgba(0, 0, 0, $_keyUmbraOpacity)',
+      2.0);
 
-  static const dp3 =
-      ShadowElevation._('0 3px 4px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0 3px 3px -2px rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0 1px 8px 0 rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp3 = ShadowElevation._(
+      '0 3px 4px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0 3px 3px -2px rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0 1px 8px 0 rgba(0, 0, 0, $_keyUmbraOpacity)',
+      3.0);
 
-  static const dp4 =
-      ShadowElevation._('0 4px 5px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0 1px 10px 0 rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0 2px 4px -1px rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp4 = ShadowElevation._(
+      '0 4px 5px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0 1px 10px 0 rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0 2px 4px -1px rgba(0, 0, 0, $_keyUmbraOpacity)',
+      4.0);
 
-  static const dp6 =
-      ShadowElevation._('0 6px 10px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0 1px 18px 0 rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0 3px 5px -1px rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp6 = ShadowElevation._(
+      '0 6px 10px 0 rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0 1px 18px 0 rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0 3px 5px -1px rgba(0, 0, 0, $_keyUmbraOpacity)',
+      6.0);
 
-  static const dp8 =
-      ShadowElevation._('0 8px 10px 1px rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0 3px 14px 2px rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0 5px 5px -3px rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp8 = ShadowElevation._(
+      '0 8px 10px 1px rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0 3px 14px 2px rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0 5px 5px -3px rgba(0, 0, 0, $_keyUmbraOpacity)',
+      8.0);
 
-  static const dp12 =
-      ShadowElevation._('0 12px 17px 2px rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0 5px 22px 4px rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0 7px 8px -4px rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp12 = ShadowElevation._(
+      '0 12px 17px 2px rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0 5px 22px 4px rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0 7px 8px -4px rgba(0, 0, 0, $_keyUmbraOpacity)',
+      12.0);
 
-  static const dp16 =
-      ShadowElevation._('0 16px 24px 2px rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0  6px 30px 5px rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0  8px 10px -5px rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp16 = ShadowElevation._(
+      '0 16px 24px 2px rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0  6px 30px 5px rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0  8px 10px -5px rgba(0, 0, 0, $_keyUmbraOpacity)',
+      16.0);
 
-  static const dp24 =
-      ShadowElevation._('0 24px 38px 3px rgba(0, 0, 0, $_keyPenumbraOpacity), '
-          '0  9px 46px 8px rgba(0, 0, 0, $_ambientShadowOpacity), '
-          '0  11px 15px -7px rgba(0, 0, 0, $_keyUmbraOpacity)');
+  static const dp24 = ShadowElevation._(
+      '0 24px 38px 3px rgba(0, 0, 0, $_keyPenumbraOpacity), '
+      '0  9px 46px 8px rgba(0, 0, 0, $_ambientShadowOpacity), '
+      '0  11px 15px -7px rgba(0, 0, 0, $_keyUmbraOpacity)',
+      24.0);
 
   /// CSS value
   @override
@@ -240,6 +261,19 @@ class Border extends CssEntity {
   int get hashCode => toString().hashCode;
 
   static const none = Border();
+  static const flutterUnderlineInput = Border.complex(
+    top: BorderSide.none,
+    right: BorderSide.none,
+    bottom: BorderSide.none,
+    left: BorderSide.none,
+    topLeft: BorderRadius(4.0),
+    topRight: BorderRadius(4.0),
+    bottomRight: BorderRadius.zero,
+    bottomLeft: BorderRadius.zero,
+  );
+  static const flutterOutlineInput =
+      Border(sides: BorderSide.none, radii: BorderRadius(4.0));
+  static const flutterDefaultInput = flutterUnderlineInput;
 }
 
 class BorderSide {
