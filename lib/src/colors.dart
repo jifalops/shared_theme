@@ -1,3 +1,4 @@
+import 'package:meta/meta.dart';
 import 'package:shared_theme/src/css.dart';
 
 /// Platform independent representation of a color in the red-green-blue scheme
@@ -49,44 +50,49 @@ class Color {
   int get hashCode => argb.hashCode;
 }
 
-/// A color with an optional secondary color for contrast.
-///
-/// If no contrasting color is specified, one will be chosen on first use by
-/// calling [Color.contrast].
+/// A color and its contrast.
 class ContrastingColors extends CssEntity {
   const ContrastingColors(this.color, this.contrast);
 
-  /// The main color, usually used as a background color.
+  /// The main color, usually used as a background.
   final Color color;
 
-  /// The color that contrasts the background.
+  /// The color that contrasts [color].
   final Color contrast;
+
+  ContrastingColors invert() => ContrastingColors(contrast, color);
 
   /// Uses [color] for the CSS `background-color`, and [contrast] for the CSS
   /// `color`.
   @override
   Map<String, String> get cssValues => {
-        'background-color': color.toString(),
-        'color': contrast.toString(),
+        'background-color': color?.toString() ?? 'inherit',
+        'color': contrast?.toString() ?? 'inherit',
       };
 
-  static const initial = ContrastingColors(Colors.transparent, Colors.black87);
+  static const none = ContrastingColors(null, null);
+  static const initial = ContrastingColors(Colors.white, Colors.black87);
 }
 
 /// The named colors in a theme.
 class ColorSet implements CssEntityContainer {
   const ColorSet({
-    this.primary: ContrastingColors.initial,
-    this.primaryLight: ContrastingColors.initial,
-    this.primaryDark: ContrastingColors.initial,
-    this.secondary: ContrastingColors.initial,
-    this.secondaryLight: ContrastingColors.initial,
-    this.secondaryDark: ContrastingColors.initial,
-    this.background: ContrastingColors.initial,
-    this.surface: ContrastingColors.initial,
-    this.divider: ContrastingColors.initial,
-    this.error: ContrastingColors.initial,
-    this.notice: ContrastingColors.initial,
+    @required this.primary,
+    @required this.primaryLight,
+    @required this.primaryDark,
+    @required this.secondary,
+    this.secondaryLight: ContrastingColors.none,
+    this.secondaryDark: ContrastingColors.none,
+    this.background: ContrastingColors.none,
+    this.surface: ContrastingColors.none,
+    this.divider: ContrastingColors.none,
+    this.error: const ContrastingColors(Colors.error, Colors.onError),
+    this.notice: ContrastingColors.none,
+    this.indicator: ContrastingColors.none,
+    this.hint: ContrastingColors.none,
+    this.splash: ContrastingColors.none,
+    this.selectedRow: ContrastingColors.none,
+    this.highlight: ContrastingColors.none,
   });
 
   final ContrastingColors primary;
@@ -99,9 +105,14 @@ class ColorSet implements CssEntityContainer {
   final ContrastingColors background;
   final ContrastingColors surface;
   final ContrastingColors divider;
-
   final ContrastingColors error;
   final ContrastingColors notice;
+
+  final ContrastingColors indicator;
+  final ContrastingColors hint;
+  final ContrastingColors splash;
+  final ContrastingColors selectedRow;
+  final ContrastingColors highlight;
 
   ColorSet copyWith({
     ContrastingColors primary,
@@ -115,6 +126,11 @@ class ColorSet implements CssEntityContainer {
     ContrastingColors divider,
     ContrastingColors error,
     ContrastingColors notice,
+    ContrastingColors indicator,
+    ContrastingColors hint,
+    ContrastingColors splash,
+    ContrastingColors selectedRow,
+    ContrastingColors highlight,
   }) =>
       ColorSet(
         primary: primary ?? this.primary,
@@ -128,6 +144,11 @@ class ColorSet implements CssEntityContainer {
         divider: divider ?? this.divider,
         error: error ?? this.error,
         notice: notice ?? this.notice,
+        indicator: indicator ?? this.indicator,
+        hint: hint ?? this.hint,
+        splash: splash ?? this.splash,
+        selectedRow: selectedRow ?? this.selectedRow,
+        highlight: highlight ?? this.highlight,
       );
 
   @override
@@ -143,6 +164,11 @@ class ColorSet implements CssEntityContainer {
     divider: ${divider.asScssMap()},
     error: ${error.asScssMap()},
     notice: ${notice.asScssMap()},
+    indicator: ${indicator.asScssMap()},
+    hint: ${hint.asScssMap()},
+    splash: ${splash.asScssMap()},
+    selectedRow: ${selectedRow.asScssMap()},
+    highlight: ${highlight.asScssMap()},
   )''';
 
   @override
@@ -169,6 +195,15 @@ class ColorSet implements CssEntityContainer {
             'error-color', List.from(parentKeys)..add('error')),
         notice.asThemifiedMixin(
             'notice-color', List.from(parentKeys)..add('notice')),
+        indicator.asThemifiedMixin(
+            'indicator-color', List.from(parentKeys)..add('indicator')),
+        hint.asThemifiedMixin('hint-color', List.from(parentKeys)..add('hint')),
+        splash.asThemifiedMixin(
+            'splash-color', List.from(parentKeys)..add('splash')),
+        selectedRow.asThemifiedMixin(
+            'selected-row-color', List.from(parentKeys)..add('selectedRow')),
+        highlight.asThemifiedMixin(
+            'highlight-color', List.from(parentKeys)..add('highlight')),
       ];
 }
 

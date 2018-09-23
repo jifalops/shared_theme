@@ -29,19 +29,20 @@ class _AppState extends State<App> {
                       color: Color(theme.colors.primary.contrast.argb))),
               actions: <Widget>[
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                  Text(
-                    'Dark',
-                    style: themer.textStyle(theme.fonts.title).copyWith(
-                        color: Color(theme.colors.primary.contrast.argb)),
-                  ),
-                  Switch(
-                      value: theme == themeset.themes.last,
-                      onChanged: (enabled) => setState(() => _setTheme(enabled
-                          ? themeset.themes.last
-                          : themeset.themes.first)))
-                ])
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Dark',
+                        style: themer.textStyle(theme.fonts.title).copyWith(
+                            color: Color(theme.colors.primary.contrast.argb)),
+                      ),
+                      Switch(
+                          value: theme == themeset.themes.last,
+                          onChanged: (enabled) => setState(() => _setTheme(
+                              enabled
+                                  ? themeset.themes.last
+                                  : themeset.themes.first)))
+                    ])
               ]),
           body: Padding(
               padding: EdgeInsets.all(8.0),
@@ -63,24 +64,16 @@ class DemoItems extends StatelessWidget {
     final theme = themer.currentTheme;
     void _showSnackBar() => Scaffold.of(context)
         .showSnackBar(SnackBar(content: Text("I'm a SnackBar.")));
-    Widget _colorWidget(themer.ContrastingColors colors, String text,
-            [bool invert = false]) =>
+    Widget _colorWidget(themer.ContrastingColors colors, String text) =>
         Container(
             alignment: Alignment.center,
             height: 56.0,
             width: 256.0,
-            color:
-                invert ? themer.getContrast(colors) : themer.getColor(colors),
+            color: themer.getColor(colors, Theme.of(context).backgroundColor),
             child: Text(text,
-                style: invert
-                    ? Theme.of(context)
-                        .textTheme
-                        .body1
-                        .copyWith(color: themer.getColor(colors))
-                    : Theme.of(context)
-                        .textTheme
-                        .body1
-                        .copyWith(color: themer.getContrast(colors))));
+                style: Theme.of(context).textTheme.body2.copyWith(
+                    color: themer.getContrast(
+                        colors, Theme.of(context).textTheme.body2.color))));
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -102,22 +95,22 @@ class DemoItems extends StatelessWidget {
         _colorWidget(theme.colors.secondaryLight, 'Secondary Light'),
         _colorWidget(theme.colors.secondaryDark, 'Secondary Dark'),
         _colorWidget(theme.colors.background, 'Background'),
-        _colorWidget(theme.colors.background, 'Background (inverted)', true),
+        _colorWidget(theme.colors.background.invert(), 'Background (inverted)'),
         _colorWidget(theme.colors.surface, 'Surface'),
-        _colorWidget(theme.colors.surface, 'Surface (inverted)', true),
+        _colorWidget(theme.colors.surface.invert(), 'Surface (inverted)'),
         _colorWidget(theme.colors.divider, 'Divider'),
         _colorWidget(theme.colors.error, 'Error'),
         _colorWidget(theme.colors.notice, 'Notice'),
+        _colorWidget(theme.colors.indicator, 'Indicator'),
+        _colorWidget(theme.colors.hint, 'Hint'),
+        _colorWidget(theme.colors.selectedRow, 'SelectedRow'),
+        _colorWidget(theme.colors.highlight, 'Highlight'),
+        _colorWidget(theme.colors.splash, 'Splash'),
         themer.primaryButton(_showSnackBar, text: 'Primary Button'),
         themer.secondaryButton(_showSnackBar, text: 'Secondary Button'),
         themer.tertiaryButton(_showSnackBar, text: 'Tertiary Button'),
-        themer.inputWidget(
+        themer.wrapInput(
             TextField(decoration: InputDecoration(labelText: 'Input'))),
-        SizedBox(height: 24.0),
-        Text('Default Widgets:'),
-        RaisedButton(onPressed: _showSnackBar, child: Text('Raised')),
-        FlatButton(onPressed: _showSnackBar, child: Text('Flat')),
-        TextField(decoration: InputDecoration(labelText: 'Input')),
       ],
     );
   }

@@ -2,24 +2,21 @@ import 'package:shared_theme/src/css.dart';
 import 'package:shared_theme/src/fonts.dart';
 import 'package:shared_theme/src/colors.dart';
 
-/// Combines color, font, margin, padding, border, shadow, and text align.
+/// Combines color, font, margin, padding, border, shadow, text align, and size
+/// constraints.
+///
+/// Leave a property `null` to inherit from the underlying platform.
 class Element extends CssEntity {
   const Element({
-    this.color: Colors.transparent,
-    this.font: const Font(),
-    this.border: const Border(),
-    this.margin: const BoxSpacing(),
-    this.padding: const BoxSpacing(),
-    this.shadow: ShadowElevation.none,
-    this.align: TextAlign.start,
-    this.size: const SizeLimits(),
-  })  : assert(color != null),
-        assert(font != null),
-        assert(border != null),
-        assert(margin != null),
-        assert(padding != null),
-        assert(shadow != null),
-        assert(align != null);
+    this.color,
+    this.font,
+    this.border,
+    this.margin,
+    this.padding,
+    this.shadow,
+    this.align,
+    this.size,
+  });
 
   final Color color;
   final Font font;
@@ -52,24 +49,26 @@ class Element extends CssEntity {
       );
 
   @override
-  Map<String, String> get cssValues => {
-        'background-color': color.toString(),
-        'margin': margin.toString(),
-        'padding': padding.toString(),
-        'text-align': align.toString(),
-        'box-shadow': '(${shadow.toString()})',
-      }
-        ..addAll(font.cssValues)
-        ..addAll(border.cssValues)
-        ..addAll(size.cssValues);
+  Map<String, String> get cssValues {
+    final map = <String, String>{};
+    if (color != null) map['background-color'] = color.toString();
+    if (margin != null) map['margin'] = margin.toString();
+    if (padding != null) map['padding'] = padding.toString();
+    if (align != null) map['text-align'] = align.toString();
+    if (shadow != null) map['box-shadow'] = '($shadow)';
+    if (font != null) map.addAll(font.cssValues);
+    if (border != null) map.addAll(border.cssValues);
+    if (size != null) map.addAll(size.cssValues);
+    return map;
+  }
 }
 
 class SizeLimits extends CssEntity {
   const SizeLimits(
       {this.minHeight: 0.0,
-      this.maxHeight: 0.0,
+      this.maxHeight: double.maxFinite,
       this.minWidth: 0.0,
-      this.maxWidth: 0.0});
+      this.maxWidth: double.maxFinite});
   final double minHeight;
   final double maxHeight;
   final double minWidth;

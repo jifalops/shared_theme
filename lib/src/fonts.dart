@@ -197,6 +197,8 @@ class FontSet implements CssEntityContainer {
   final Font caption;
   final Font button;
 
+  /// Copy this FontSet and replace each font's color with a corresponding
+  /// color from [FontSet.dark].
   FontSet darken() => FontSet(
       display4: display4.copyWith(color: FontSet.dark.display4.color),
       display3: display3.copyWith(color: FontSet.dark.display3.color),
@@ -210,6 +212,8 @@ class FontSet implements CssEntityContainer {
       caption: caption.copyWith(color: FontSet.dark.caption.color),
       button: button.copyWith(color: FontSet.dark.button.color));
 
+  /// Copy this FontSet and replace each font's color with a corresponding
+  /// color from [FontSet.light].
   FontSet lighten() => FontSet(
       display4: display4.copyWith(color: FontSet.light.display4.color),
       display3: display3.copyWith(color: FontSet.light.display3.color),
@@ -267,17 +271,28 @@ class FontSet implements CssEntityContainer {
 
   @override
   List<String> getMixins(List<String> parentKeys) => <String>[
-        display4.asThemifiedMixin('font-display4', List.from(parentKeys)..add('display4')),
-        display3.asThemifiedMixin('font-display3', List.from(parentKeys)..add('display3')),
-        display2.asThemifiedMixin('font-display2', List.from(parentKeys)..add('display2')),
-        display1.asThemifiedMixin('font-display1', List.from(parentKeys)..add('display1')),
-        headline.asThemifiedMixin('font-headline', List.from(parentKeys)..add('headline')),
-        title.asThemifiedMixin('font-title', List.from(parentKeys)..add('title')),
-        subhead.asThemifiedMixin('font-subhead', List.from(parentKeys)..add('subhead')),
-        body2.asThemifiedMixin('font-body2', List.from(parentKeys)..add('body2')),
-        body1.asThemifiedMixin('font-body1', List.from(parentKeys)..add('body1')),
-        caption.asThemifiedMixin('font-caption', List.from(parentKeys)..add('caption')),
-        button.asThemifiedMixin('font-button', List.from(parentKeys)..add('button')),
+        display4.asThemifiedMixin(
+            'font-display4', List.from(parentKeys)..add('display4')),
+        display3.asThemifiedMixin(
+            'font-display3', List.from(parentKeys)..add('display3')),
+        display2.asThemifiedMixin(
+            'font-display2', List.from(parentKeys)..add('display2')),
+        display1.asThemifiedMixin(
+            'font-display1', List.from(parentKeys)..add('display1')),
+        headline.asThemifiedMixin(
+            'font-headline', List.from(parentKeys)..add('headline')),
+        title.asThemifiedMixin(
+            'font-title', List.from(parentKeys)..add('title')),
+        subhead.asThemifiedMixin(
+            'font-subhead', List.from(parentKeys)..add('subhead')),
+        body2.asThemifiedMixin(
+            'font-body2', List.from(parentKeys)..add('body2')),
+        body1.asThemifiedMixin(
+            'font-body1', List.from(parentKeys)..add('body1')),
+        caption.asThemifiedMixin(
+            'font-caption', List.from(parentKeys)..add('caption')),
+        button.asThemifiedMixin(
+            'font-button', List.from(parentKeys)..add('button')),
       ];
 
   static const dark = FontSet();
