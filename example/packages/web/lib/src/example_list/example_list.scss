@@ -1,0 +1,20 @@
+@import 'package:sharedtheme_example_web/src/themes.g';
+
+:host {
+  material-list-item {
+    padding: 8px 0;
+
+    material-button.primary {
+      margin-bottom: 8px;
+    }
+
+    [class*="-color"] {
+      height: 56px;
+      width: 256px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+

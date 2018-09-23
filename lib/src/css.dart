@@ -22,7 +22,11 @@ abstract class CssEntity implements ScssMap {
         @include themify {
           ${sb.toString()}
         }
-      } ''';
+      }
+      .$name {
+        @include $name;
+      }
+      ''';
   }
 
   @override

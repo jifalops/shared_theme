@@ -1,6 +1,7 @@
 import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
+import 'src/example_list/example_list.dart';
 
 // AngularDart info: https://webdev.dartlang.org/angular
 // Components info: https://webdev.dartlang.org/components
@@ -13,28 +14,13 @@ import 'package:angular_components/angular_components.dart';
   ],
   templateUrl: 'app_component.html',
   directives: [
-    MaterialButtonComponent,
-    MaterialIconComponent,
-    MaterialListComponent,
-    MaterialListItemComponent,
-    NgFor,
-    NgIf,
-    NgClass
+    MaterialToggleComponent,
+    ExampleList,
   ],
 )
 class AppComponent {
-  final list = '''
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  '''.split(' ');
-
-
-  void setTheme(String theme) async {
+  void setTheme(bool dark) async {
+    final theme = dark ? 'Dark' : 'Light';
     document.documentElement.className = 'theme-$theme';
-    window.localStorage['theme'] = theme;
-  }
-
-  void toggleSplash() async {
-    final splash = window.localStorage['splash'];
-    window.localStorage['splash'] = splash == 'true' ? 'false' : 'true';
   }
 }

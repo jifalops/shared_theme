@@ -1,23 +1,7 @@
-@import 'themes.g';
+@import 'package:sharedtheme_example_web/src/themes.g';
 
 :host {
   .material-header {
-    @include primary-color-dark;
+    @include primary-color;
   }
-
-  material-list-item {
-    // Taken from `package:angular_components/material_list/mixins`.
-    &:not([separator="present"]) {
-      &:hover, &:focus, &.active {
-        @include divider-color;
-        * {
-          @include divider-color;
-        }
-      }
-    }
-  }
-}
-
-material-list {
-  background-color: inherit;
 }

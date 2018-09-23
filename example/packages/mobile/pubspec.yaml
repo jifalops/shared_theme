@@ -30,8 +30,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - packages/sharedtheme_example/assets/images/
   # Even though these are defined in `package:sharedtheme_example/themes.dart`,
   # They currently have to be duplicated here manually.
   fonts:

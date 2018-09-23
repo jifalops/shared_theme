@@ -1,0 +1,786 @@
+    // Themes global map
+    $themes: (Light: (
+    colors: (
+    primary: (background-color: rgba(46, 125, 50, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    primaryLight: (background-color: rgba(96, 173, 94, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    primaryDark: (background-color: rgba(0, 80, 5, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    secondary: (background-color: rgba(255, 171, 0, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    secondaryLight: (background-color: rgba(255, 221, 75, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    secondaryDark: (background-color: rgba(198, 124, 0, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    background: (background-color: rgba(254, 254, 254, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    surface: (background-color: rgba(254, 254, 254, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    divider: (background-color: rgba(238, 238, 238, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    error: (background-color: rgba(176, 0, 32, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    notice: (background-color: rgba(179, 157, 219, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    indicator: (background-color: inherit,
+color: inherit,
+),
+    hint: (background-color: inherit,
+color: inherit,
+),
+    splash: (background-color: inherit,
+color: inherit,
+),
+    selectedRow: (background-color: rgba(238, 238, 238, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    highlight: (background-color: inherit,
+color: inherit,
+),
+  ),
+    fonts: (
+    display4: (font: normal 100 112.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    display3: (font: normal 400 56.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    display2: (font: normal 400 45.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    display1: (font: normal 400 34.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    headline: (font: normal 700 24.0px/2.5 Ubuntu,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    title: (font: normal 700 20.0px/1.0 Ubuntu,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    subhead: (font: normal 300 18.0px/1.75 Ubuntu,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    body2: (font: normal 600 18.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    body1: (font: normal 400 16.0px/1.15 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    caption: (font: normal 400 16.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    button: (font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+  ),
+    elements: (
+    primaryButton: (background-color: rgba(255, 171, 0, 1.0),
+padding: 4.0px 8.0px 4.0px 8.0px,
+text-align: center,
+box-shadow: (0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)),
+font: normal 500 16.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+    secondaryButton: (background-color: rgba(46, 125, 50, 1.0),
+padding: 4.0px 8.0px 4.0px 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+    tertiaryButton: (background-color: rgba(0, 0, 0, 0.0),
+padding: 4.0px 8.0px 4.0px 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+    inputBase: (border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+  ),
+  ), Dark: (
+    colors: (
+    primary: (background-color: rgba(46, 125, 50, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    primaryLight: (background-color: rgba(96, 173, 94, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    primaryDark: (background-color: rgba(0, 80, 5, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    secondary: (background-color: rgba(255, 171, 0, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    secondaryLight: (background-color: rgba(255, 221, 75, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    secondaryDark: (background-color: rgba(198, 124, 0, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    background: (background-color: rgba(51, 51, 51, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    surface: (background-color: rgba(51, 51, 51, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    divider: (background-color: rgba(72, 72, 72, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    error: (background-color: rgba(176, 0, 32, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    notice: (background-color: rgba(179, 157, 219, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    indicator: (background-color: inherit,
+color: inherit,
+),
+    hint: (background-color: inherit,
+color: inherit,
+),
+    splash: (background-color: inherit,
+color: inherit,
+),
+    selectedRow: (background-color: rgba(72, 72, 72, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    highlight: (background-color: inherit,
+color: inherit,
+),
+  ),
+    fonts: (
+    display4: (font: normal 100 112.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    display3: (font: normal 400 56.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    display2: (font: normal 400 45.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    display1: (font: normal 400 34.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    headline: (font: normal 700 24.0px/2.5 Ubuntu,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    title: (font: normal 700 20.0px/1.0 Ubuntu,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    subhead: (font: normal 300 18.0px/1.75 Ubuntu,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    body2: (font: normal 600 18.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    body1: (font: normal 400 16.0px/1.15 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    caption: (font: normal 400 16.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+    button: (font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+  ),
+    elements: (
+    primaryButton: (background-color: rgba(255, 171, 0, 1.0),
+padding: 4.0px 8.0px 4.0px 8.0px,
+text-align: center,
+box-shadow: (0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)),
+font: normal 500 16.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+    secondaryButton: (background-color: rgba(46, 125, 50, 1.0),
+padding: 4.0px 8.0px 4.0px 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+    tertiaryButton: (background-color: rgba(0, 0, 0, 0.0),
+padding: 4.0px 8.0px 4.0px 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+    inputBase: (border-top: 0.0px none rgba(0, 0, 0, 0.0),
+border-right: 0.0px none rgba(0, 0, 0, 0.0),
+border-bottom: 0.0px none rgba(0, 0, 0, 0.0),
+border-left: 0.0px none rgba(0, 0, 0, 0.0),
+border-radius: 4.0px 4.0px 4.0px 4.0px / 4.0px 4.0px 4.0px 4.0px,
+),
+  ),
+  )) !global;
+
+    // Font faces
+        @font-face {
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-style: normal;
+      src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: 500;
+      font-style: normal;
+      src: url('packages/sharedtheme_example/assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: 300;
+      font-style: normal;
+      src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Light.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: 700;
+      font-style: normal;
+      src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-style: italic;
+      src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Italic.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-weight: 400;
+      font-style: normal;
+      src: url('packages/sharedtheme_example/assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-weight: 300;
+      font-style: normal;
+      src: url('packages/sharedtheme_example/assets/fonts/Ubuntu-Light.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-weight: 700;
+      font-style: normal;
+      src: url('packages/sharedtheme_example/assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+    }
+
+
+    // Themify utility
+    @import 'package:shared_theme/themify';
+
+    // Mixins
+          @mixin primary-color {
+        @include themify {
+          background-color: themed('colors', 'primary',  'background-color');
+color: themed('colors', 'primary',  'color');
+
+        }
+      }
+      .primary-color {
+        @include primary-color;
+      }
+            @mixin primary-color-light {
+        @include themify {
+          background-color: themed('colors', 'primaryLight',  'background-color');
+color: themed('colors', 'primaryLight',  'color');
+
+        }
+      }
+      .primary-color-light {
+        @include primary-color-light;
+      }
+            @mixin primary-color-dark {
+        @include themify {
+          background-color: themed('colors', 'primaryDark',  'background-color');
+color: themed('colors', 'primaryDark',  'color');
+
+        }
+      }
+      .primary-color-dark {
+        @include primary-color-dark;
+      }
+            @mixin secondary-color {
+        @include themify {
+          background-color: themed('colors', 'secondary',  'background-color');
+color: themed('colors', 'secondary',  'color');
+
+        }
+      }
+      .secondary-color {
+        @include secondary-color;
+      }
+            @mixin secondary-color-light {
+        @include themify {
+          background-color: themed('colors', 'secondaryLight',  'background-color');
+color: themed('colors', 'secondaryLight',  'color');
+
+        }
+      }
+      .secondary-color-light {
+        @include secondary-color-light;
+      }
+            @mixin secondary-color-dark {
+        @include themify {
+          background-color: themed('colors', 'secondaryDark',  'background-color');
+color: themed('colors', 'secondaryDark',  'color');
+
+        }
+      }
+      .secondary-color-dark {
+        @include secondary-color-dark;
+      }
+            @mixin background-color {
+        @include themify {
+          background-color: themed('colors', 'background',  'background-color');
+color: themed('colors', 'background',  'color');
+
+        }
+      }
+      .background-color {
+        @include background-color;
+      }
+            @mixin surface-color {
+        @include themify {
+          background-color: themed('colors', 'surface',  'background-color');
+color: themed('colors', 'surface',  'color');
+
+        }
+      }
+      .surface-color {
+        @include surface-color;
+      }
+            @mixin divider-color {
+        @include themify {
+          background-color: themed('colors', 'divider',  'background-color');
+color: themed('colors', 'divider',  'color');
+
+        }
+      }
+      .divider-color {
+        @include divider-color;
+      }
+            @mixin error-color {
+        @include themify {
+          background-color: themed('colors', 'error',  'background-color');
+color: themed('colors', 'error',  'color');
+
+        }
+      }
+      .error-color {
+        @include error-color;
+      }
+            @mixin notice-color {
+        @include themify {
+          background-color: themed('colors', 'notice',  'background-color');
+color: themed('colors', 'notice',  'color');
+
+        }
+      }
+      .notice-color {
+        @include notice-color;
+      }
+            @mixin indicator-color {
+        @include themify {
+          background-color: themed('colors', 'indicator',  'background-color');
+color: themed('colors', 'indicator',  'color');
+
+        }
+      }
+      .indicator-color {
+        @include indicator-color;
+      }
+            @mixin hint-color {
+        @include themify {
+          background-color: themed('colors', 'hint',  'background-color');
+color: themed('colors', 'hint',  'color');
+
+        }
+      }
+      .hint-color {
+        @include hint-color;
+      }
+            @mixin splash-color {
+        @include themify {
+          background-color: themed('colors', 'splash',  'background-color');
+color: themed('colors', 'splash',  'color');
+
+        }
+      }
+      .splash-color {
+        @include splash-color;
+      }
+            @mixin selected-row-color {
+        @include themify {
+          background-color: themed('colors', 'selectedRow',  'background-color');
+color: themed('colors', 'selectedRow',  'color');
+
+        }
+      }
+      .selected-row-color {
+        @include selected-row-color;
+      }
+            @mixin highlight-color {
+        @include themify {
+          background-color: themed('colors', 'highlight',  'background-color');
+color: themed('colors', 'highlight',  'color');
+
+        }
+      }
+      .highlight-color {
+        @include highlight-color;
+      }
+            @mixin font-display4 {
+        @include themify {
+          font: themed('fonts', 'display4',  'font');
+text-decoration: themed('fonts', 'display4',  'text-decoration');
+color: themed('fonts', 'display4',  'color');
+letter-spacing: themed('fonts', 'display4',  'letter-spacing');
+word-spacing: themed('fonts', 'display4',  'word-spacing');
+
+        }
+      }
+      .font-display4 {
+        @include font-display4;
+      }
+            @mixin font-display3 {
+        @include themify {
+          font: themed('fonts', 'display3',  'font');
+text-decoration: themed('fonts', 'display3',  'text-decoration');
+color: themed('fonts', 'display3',  'color');
+letter-spacing: themed('fonts', 'display3',  'letter-spacing');
+word-spacing: themed('fonts', 'display3',  'word-spacing');
+
+        }
+      }
+      .font-display3 {
+        @include font-display3;
+      }
+            @mixin font-display2 {
+        @include themify {
+          font: themed('fonts', 'display2',  'font');
+text-decoration: themed('fonts', 'display2',  'text-decoration');
+color: themed('fonts', 'display2',  'color');
+letter-spacing: themed('fonts', 'display2',  'letter-spacing');
+word-spacing: themed('fonts', 'display2',  'word-spacing');
+
+        }
+      }
+      .font-display2 {
+        @include font-display2;
+      }
+            @mixin font-display1 {
+        @include themify {
+          font: themed('fonts', 'display1',  'font');
+text-decoration: themed('fonts', 'display1',  'text-decoration');
+color: themed('fonts', 'display1',  'color');
+letter-spacing: themed('fonts', 'display1',  'letter-spacing');
+word-spacing: themed('fonts', 'display1',  'word-spacing');
+
+        }
+      }
+      .font-display1 {
+        @include font-display1;
+      }
+            @mixin font-headline {
+        @include themify {
+          font: themed('fonts', 'headline',  'font');
+text-decoration: themed('fonts', 'headline',  'text-decoration');
+color: themed('fonts', 'headline',  'color');
+letter-spacing: themed('fonts', 'headline',  'letter-spacing');
+word-spacing: themed('fonts', 'headline',  'word-spacing');
+
+        }
+      }
+      .font-headline {
+        @include font-headline;
+      }
+            @mixin font-title {
+        @include themify {
+          font: themed('fonts', 'title',  'font');
+text-decoration: themed('fonts', 'title',  'text-decoration');
+color: themed('fonts', 'title',  'color');
+letter-spacing: themed('fonts', 'title',  'letter-spacing');
+word-spacing: themed('fonts', 'title',  'word-spacing');
+
+        }
+      }
+      .font-title {
+        @include font-title;
+      }
+            @mixin font-subhead {
+        @include themify {
+          font: themed('fonts', 'subhead',  'font');
+text-decoration: themed('fonts', 'subhead',  'text-decoration');
+color: themed('fonts', 'subhead',  'color');
+letter-spacing: themed('fonts', 'subhead',  'letter-spacing');
+word-spacing: themed('fonts', 'subhead',  'word-spacing');
+
+        }
+      }
+      .font-subhead {
+        @include font-subhead;
+      }
+            @mixin font-body2 {
+        @include themify {
+          font: themed('fonts', 'body2',  'font');
+text-decoration: themed('fonts', 'body2',  'text-decoration');
+color: themed('fonts', 'body2',  'color');
+letter-spacing: themed('fonts', 'body2',  'letter-spacing');
+word-spacing: themed('fonts', 'body2',  'word-spacing');
+
+        }
+      }
+      .font-body2 {
+        @include font-body2;
+      }
+            @mixin font-body1 {
+        @include themify {
+          font: themed('fonts', 'body1',  'font');
+text-decoration: themed('fonts', 'body1',  'text-decoration');
+color: themed('fonts', 'body1',  'color');
+letter-spacing: themed('fonts', 'body1',  'letter-spacing');
+word-spacing: themed('fonts', 'body1',  'word-spacing');
+
+        }
+      }
+      .font-body1 {
+        @include font-body1;
+      }
+            @mixin font-caption {
+        @include themify {
+          font: themed('fonts', 'caption',  'font');
+text-decoration: themed('fonts', 'caption',  'text-decoration');
+color: themed('fonts', 'caption',  'color');
+letter-spacing: themed('fonts', 'caption',  'letter-spacing');
+word-spacing: themed('fonts', 'caption',  'word-spacing');
+
+        }
+      }
+      .font-caption {
+        @include font-caption;
+      }
+            @mixin font-button {
+        @include themify {
+          font: themed('fonts', 'button',  'font');
+text-decoration: themed('fonts', 'button',  'text-decoration');
+color: themed('fonts', 'button',  'color');
+letter-spacing: themed('fonts', 'button',  'letter-spacing');
+word-spacing: themed('fonts', 'button',  'word-spacing');
+
+        }
+      }
+      .font-button {
+        @include font-button;
+      }
+            @mixin primary-button {
+        @include themify {
+          background-color: themed('elements', 'primaryButton',  'background-color');
+padding: themed('elements', 'primaryButton',  'padding');
+text-align: themed('elements', 'primaryButton',  'text-align');
+box-shadow: themed('elements', 'primaryButton',  'box-shadow');
+font: themed('elements', 'primaryButton',  'font');
+text-decoration: themed('elements', 'primaryButton',  'text-decoration');
+color: themed('elements', 'primaryButton',  'color');
+letter-spacing: themed('elements', 'primaryButton',  'letter-spacing');
+word-spacing: themed('elements', 'primaryButton',  'word-spacing');
+border-top: themed('elements', 'primaryButton',  'border-top');
+border-right: themed('elements', 'primaryButton',  'border-right');
+border-bottom: themed('elements', 'primaryButton',  'border-bottom');
+border-left: themed('elements', 'primaryButton',  'border-left');
+border-radius: themed('elements', 'primaryButton',  'border-radius');
+
+        }
+      }
+      .primary-button {
+        @include primary-button;
+      }
+            @mixin secondary-button {
+        @include themify {
+          background-color: themed('elements', 'secondaryButton',  'background-color');
+padding: themed('elements', 'secondaryButton',  'padding');
+text-align: themed('elements', 'secondaryButton',  'text-align');
+box-shadow: themed('elements', 'secondaryButton',  'box-shadow');
+font: themed('elements', 'secondaryButton',  'font');
+text-decoration: themed('elements', 'secondaryButton',  'text-decoration');
+color: themed('elements', 'secondaryButton',  'color');
+letter-spacing: themed('elements', 'secondaryButton',  'letter-spacing');
+word-spacing: themed('elements', 'secondaryButton',  'word-spacing');
+border-top: themed('elements', 'secondaryButton',  'border-top');
+border-right: themed('elements', 'secondaryButton',  'border-right');
+border-bottom: themed('elements', 'secondaryButton',  'border-bottom');
+border-left: themed('elements', 'secondaryButton',  'border-left');
+border-radius: themed('elements', 'secondaryButton',  'border-radius');
+
+        }
+      }
+      .secondary-button {
+        @include secondary-button;
+      }
+            @mixin tertiary-button {
+        @include themify {
+          background-color: themed('elements', 'tertiaryButton',  'background-color');
+padding: themed('elements', 'tertiaryButton',  'padding');
+text-align: themed('elements', 'tertiaryButton',  'text-align');
+box-shadow: themed('elements', 'tertiaryButton',  'box-shadow');
+font: themed('elements', 'tertiaryButton',  'font');
+text-decoration: themed('elements', 'tertiaryButton',  'text-decoration');
+color: themed('elements', 'tertiaryButton',  'color');
+letter-spacing: themed('elements', 'tertiaryButton',  'letter-spacing');
+word-spacing: themed('elements', 'tertiaryButton',  'word-spacing');
+border-top: themed('elements', 'tertiaryButton',  'border-top');
+border-right: themed('elements', 'tertiaryButton',  'border-right');
+border-bottom: themed('elements', 'tertiaryButton',  'border-bottom');
+border-left: themed('elements', 'tertiaryButton',  'border-left');
+border-radius: themed('elements', 'tertiaryButton',  'border-radius');
+
+        }
+      }
+      .tertiary-button {
+        @include tertiary-button;
+      }
+            @mixin input-base {
+        @include themify {
+          border-top: themed('elements', 'inputBase',  'border-top');
+border-right: themed('elements', 'inputBase',  'border-right');
+border-bottom: themed('elements', 'inputBase',  'border-bottom');
+border-left: themed('elements', 'inputBase',  'border-left');
+border-radius: themed('elements', 'inputBase',  'border-radius');
+
+        }
+      }
+      .input-base {
+        @include input-base;
+      }
+      
+  

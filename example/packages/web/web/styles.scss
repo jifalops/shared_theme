@@ -1,38 +1,53 @@
-@import '../lib/themes.g';
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+@import 'package:sharedtheme_example_web/src/themes.g';
 
 body {
+  font-family: 'Roboto';
   padding: 0;
   margin: 0;
 }
 
-*:not(material-ripple):not([class*="material-"]) {
+// Set the background color for non-material elements.
+*:not(material-ripple):not(material-list-item):not([class*="material-"]):not([class*="font-"]):not([class*="-color"]):not([animated]) {
   @include background-color;
 }
-
-material-ripple *,
-[class*="material-"] * {
-  background-color: initial !important;
+material-ripple *, [class*="material-"] *:not([animated]) {
+  background-color: transparent !important;
   color: inherit !important;
 }
 
+// Setup global mixins.
+
 material-button .content {
-  //text-transform: none;
+  text-transform: none;
+  color: inherit !important;
+  background-color: inherit !important;
 }
 
-material-button.primary .content {
+material-button.primary {
   @include primary-button;
 }
-
-material-button.secondary .content {
+material-button.secondary {
   @include secondary-button;
 }
-material-button.secondary-dark .content {
-  @include secondary-button;
-  @include primary-color-dark;
-}
-
-
-material-button.tertiary .content {
+material-button.tertiary {
   @include tertiary-button;
 }
+
+
+material-list {
+  background-color: inherit;
+}
+material-list-item {
+  // Taken from `package:angular_components/material_list/mixins`.
+  &:not([separator="present"]) {
+    &:hover, &:focus, &.active {
+      @include selected-row-color;
+    }
+  }
+}
+
+
 

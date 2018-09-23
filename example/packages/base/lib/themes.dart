@@ -38,6 +38,7 @@ class _ThemeColors extends ColorSet {
           background: background,
           surface: surface,
           divider: divider,
+          selectedRow: divider
         );
 }
 
