@@ -104,7 +104,7 @@ class ThemeSet implements MixinAggregator {
     ${getMixins().join('')}
 
     // Material input hack
-    material-input[type="text"] {
+    material-input[type="text"]:not(.no-theme) {
       padding: 12px 0 0 !important;
       .top-section {
         @include input-base;
