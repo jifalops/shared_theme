@@ -2,9 +2,6 @@
 
 :host {
   material-list-item {
-    // Fix for undefined color values, which default to 'inherit'.
-    @include background-color;
-
     padding: 0;
 
     /// Give large text some extra room.
@@ -18,6 +15,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &.undefined {
+        @include background-color;
+      }
     }
 
     .background-color-inverted {

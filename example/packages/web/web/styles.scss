@@ -40,9 +40,7 @@ material-list-item {
   // Taken from `package:angular_components/material_list/mixins`.
   &:not([separator="present"]) {
     &:hover, &:focus, &.active {
-      @include themify {
-        background-color: theme-color('selectedRow') !important;
-      }
+      @include selected-row-color(background-color);
     }
   }
 }

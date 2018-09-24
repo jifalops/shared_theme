@@ -28,6 +28,7 @@ const _secondaryDark = ContrastingColors(Color(0xffc67c00), Colors.black);
 const _error = ContrastingColors(Colors.error, Colors.onError);
 const _notice = ContrastingColors(Color(0xffb39ddb), Colors.black);
 
+/// This helps define [ColorSet]s that share the same colors (e.g. brand colors).
 class _ThemeColors extends ColorSet {
   const _ThemeColors({
     ContrastingColors background,
@@ -93,6 +94,7 @@ class _ButtonBase extends Element {
             color: color);
 }
 
+/// Default elements.
 final _lightElements = ElementSet(
   primaryButton: _ButtonBase(
       color: _lightColors.secondary.color,
@@ -106,11 +108,13 @@ final _lightElements = ElementSet(
   inputBase: Element.outlineInput,
 );
 
+/// Same as [_lightElements] but with a different text color on the tertiary button.
 final _darkElements = _lightElements.copyWith(
     tertiaryButton: _lightElements.tertiaryButton.copyWith(
         font: _lightElements.tertiaryButton.font
             .copyWith(color: _lightFonts.button.color)));
 
+/// These will be included in the CSS, and someday into Flutter app's pubspec.yaml.
 final _fontFaces = [
   FontFace(
       family: 'Open Sans',

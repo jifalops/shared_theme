@@ -1,3 +1,6 @@
+///
+///
+///
 /// It is recommended you import this library using the `as` directive, e.g.
 /// `import 'package:shared_theme/shared_theme' as themer;`
 library shared_theme;
@@ -95,11 +98,14 @@ class ThemeSet implements MixinAggregator {
     // Functions
     //
 
-    // Can only be used within a `@themify` block.
+    /// Get a main color of the current theme.
+    /// Can only be used within a `@themify` block.
     @function theme-color(\$themeColorName) {
       @return themed('colors', \$themeColorName, 'background-color');
     }
-    // Can only be used within a `@themify` block.
+
+    /// Get a main color of the current theme.
+    /// Can only be used within a `@themify` block.
     @function theme-contrast(\$themeColorName) {
       @return themed('colors', \$themeColorName, 'color');
     }
@@ -107,6 +113,7 @@ class ThemeSet implements MixinAggregator {
     //
     // Mixins
     //
+
     @mixin invert-colors(\$themeColorName) {
       @include themify {
         color: theme-color(\$themeColorName);
