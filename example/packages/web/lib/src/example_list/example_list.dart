@@ -16,6 +16,6 @@ import 'package:angular_components/angular_components.dart';
 )
 class ExampleList {
   void showSnackbar() {
-
+    print('Snackbar is not an AngularDart component.');
   }
 }

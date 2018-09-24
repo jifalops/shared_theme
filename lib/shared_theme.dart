@@ -76,75 +76,45 @@ class ThemeSet implements MixinAggregator {
   /// SCSS output that fully represents this set of themes.
   @override
   String toString() => '''
-    // Themes global map
+    //
+    // Global map of themes.
+    //
     \$themes: ${asScssMap()} !global;
 
+    //
     // Font faces
+    //
     ${getFontFaces().join('')}
 
+    //
     // Themify utility
+    //
     @import 'package:shared_theme/themify';
 
-    // Helper functions
+    //
+    // Functions
+    //
+
+    // Can only be used within a `@themify` block.
     @function theme-color(\$themeColorName) {
       @return themed('colors', \$themeColorName, 'background-color');
     }
+    // Can only be used within a `@themify` block.
     @function theme-contrast(\$themeColorName) {
       @return themed('colors', \$themeColorName, 'color');
     }
 
+    //
     // Mixins
+    //
     @mixin invert-colors(\$themeColorName) {
       @include themify {
-        color: themed('colors', \$themeColorName, 'background-color');
-        background-color: themed('colors', \$themeColorName, 'color');
+        color: theme-color(\$themeColorName);
+        background-color: theme-contrast(\$themeColorName);
       }
     }
 
     ${getMixins().join('')}
-
-    // Material input hack
-    material-input[type="text"]:not(.no-theme) {
-      padding: 12px 0 0 !important;
-      .top-section {
-        @include input-base;
-        .input-container {
-          margin: 0 !important;
-        }
-        .label-text.animated {
-          transform: translateY(-50%) translateY(-8px) !important;
-          padding: 0 2px;
-        }
-        // Copy Flutter input behavior.
-        // hint color: the border and text color.
-        // if no hint color:  use primary color for light themes and secondary color for dark themes.
-        &:focus-within {
-          @include themify {
-            \$hint: theme-color('hint');
-            @if \$hint and \$hint != 'inherit' {
-              border-color: \$hint;
-              .label-text {
-                color: \$hint !important;
-              }
-            } @else {
-              @if themed('brightness') == 'light' {
-                \$color: theme-color('primary');
-                border-color: \$color;
-                .label-text {
-                  color: \$color !important;
-                }
-              } @else {
-                \$color: theme-color('secondary');
-                border-color: \$color;
-                .label-text {
-                  color: \$color !important;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   ''';
 }
 

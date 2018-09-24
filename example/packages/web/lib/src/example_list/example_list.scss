@@ -1,10 +1,10 @@
 @import 'package:sharedtheme_example_web/src/themes.g';
 
 :host {
-  // Fix for undefined color values, which are set to 'inherit'.
-  @include background-color;
-
   material-list-item {
+    // Fix for undefined color values, which default to 'inherit'.
+    @include background-color;
+
     padding: 0;
 
     /// Give large text some extra room.
@@ -32,4 +32,3 @@
     }
   }
 }
-
