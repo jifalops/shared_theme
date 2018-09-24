@@ -61,6 +61,11 @@ class Element extends CssEntity {
     if (size != null) map.addAll(size.cssValues);
     return map;
   }
+
+  static const underlineInput =
+      Element(border: Border.underlineInput, padding: BoxSpacing.inputPadding);
+  static const outlineInput =
+      Element(border: Border.outlineInput, padding: BoxSpacing.inputPadding);
 }
 
 class SizeLimits extends CssEntity {
@@ -104,7 +109,7 @@ class BoxSpacing {
 
   /// CSS value
   @override
-  String toString() => '${top}px ${right}px ${bottom}px ${left}px';
+  String toString() => '${top/2}px ${right/2}px ${bottom/2}px ${left/2}px';
 
   @override
   bool operator ==(o) =>
@@ -117,6 +122,9 @@ class BoxSpacing {
   int get hashCode => toString().hashCode;
 
   static const zero = BoxSpacing(0.0);
+
+  static const inputPadding =
+      BoxSpacing.symmetric(horizontal: 8.0, vertical: 16.0);
 }
 
 class TextAlign {
@@ -201,9 +209,7 @@ const _ambientShadowOpacity = 0.12;
 const _shadowTransition = 'box-shadow .28s cubic-bezier(.4, 0, .2, 1)';
 
 class Border extends CssEntity {
-  const Border(
-      {BorderSide sides: BorderSide.none,
-      BorderRadius radii: BorderRadius.zero})
+  const Border({BorderSide sides, BorderRadius radii})
       : top = sides,
         right = sides,
         bottom = sides,
@@ -213,34 +219,47 @@ class Border extends CssEntity {
         bottomRight = radii,
         bottomLeft = radii;
   const Border.complex({
-    this.top: const BorderSide(),
-    this.right: const BorderSide(),
-    this.bottom: const BorderSide(),
-    this.left: const BorderSide(),
-    this.topLeft: const BorderRadius(),
-    this.topRight: const BorderRadius(),
-    this.bottomRight: const BorderRadius(),
-    this.bottomLeft: const BorderRadius(),
+    this.top,
+    this.right,
+    this.bottom,
+    this.left,
+    this.topLeft,
+    this.topRight,
+    this.bottomRight,
+    this.bottomLeft,
   });
   final BorderSide top, right, bottom, left;
   final BorderRadius topLeft, topRight, bottomRight, bottomLeft;
 
   @override
-  Map<String, String> get cssValues => {
-        'border-top': top.toString(),
-        'border-right': right.toString(),
-        'border-bottom': bottom.toString(),
-        'border-left': left.toString(),
-        'border-radius':
-            '${topLeft.x}px ${topRight.x}px ${bottomLeft.x}px ${bottomRight.x}px / ${topLeft.y}px ${topRight.y}px ${bottomLeft.y}px ${bottomRight.y}px',
-      };
+  Map<String, String> get cssValues {
+    final map = <String, String>{};
+    if (top != null) map['border-top'] = top.toString();
+    if (bottom != null) map['border-bottom'] = bottom.toString();
+    if (left != null) map['border-left'] = left.toString();
+    if (right != null) map['border-right'] = right.toString();
+    if (topLeft != null) map['border-top-left-radius'] = topLeft.toString();
+    if (topRight != null) map['border-top-right-radius'] = topRight.toString();
+    if (bottomRight != null)
+      map['border-bottom-right-radius'] = bottomRight.toString();
+    if (bottomLeft != null)
+      map['border-bottom-left-radius'] = bottomLeft.toString();
+    return map;
+  }
 
   /// True if any corners have a non-zero radius.
   bool get hasRadius =>
-      topLeft != BorderRadius.zero ||
-      topRight != BorderRadius.zero ||
-      bottomRight != BorderRadius.zero ||
-      bottomLeft != BorderRadius.zero;
+      (topLeft != null && topLeft != BorderRadius.zero) ||
+      (topRight != null && topRight != BorderRadius.zero) ||
+      (bottomRight != null && bottomRight != BorderRadius.zero) ||
+      (bottomLeft != null && bottomLeft != BorderRadius.zero);
+
+  /// True if any size is non-zero.
+  bool get hasSides =>
+      (top != null && top != BorderSide.none) ||
+      (right != null && right != BorderSide.none) ||
+      (bottom != null && bottom != BorderSide.none) ||
+      (left != null && left != BorderSide.none);
 
   // True if all four sides are equal.
   bool get hasUniformSides => top == bottom && top == left && top == right;
@@ -260,26 +279,17 @@ class Border extends CssEntity {
   int get hashCode => toString().hashCode;
 
   static const none = Border();
-  static const flutterUnderlineInput = Border.complex(
-    top: BorderSide.none,
-    right: BorderSide.none,
-    bottom: BorderSide.none,
-    left: BorderSide.none,
-    topLeft: BorderRadius(4.0),
-    topRight: BorderRadius(4.0),
-    bottomRight: BorderRadius.zero,
-    bottomLeft: BorderRadius.zero,
-  );
-  static const flutterOutlineInput =
-      Border(sides: BorderSide.none, radii: BorderRadius(4.0));
-  static const flutterDefaultInput = flutterUnderlineInput;
+  static const underlineInput = Border.complex(
+      bottom: BorderSide(style: BorderStyle.solid, width: 1.0),
+      topLeft: BorderRadius(4.0),
+      topRight: BorderRadius(4.0));
+  static const outlineInput = Border(
+      sides: BorderSide(style: BorderStyle.solid, width: 1.0),
+      radii: BorderRadius(4.0));
 }
 
 class BorderSide {
-  const BorderSide(
-      {this.width: 0.0,
-      this.style: BorderStyle.none,
-      this.color: Colors.transparent});
+  const BorderSide({this.width: 1.0, this.style: BorderStyle.none, this.color});
   final double width;
   final BorderStyle style;
   final Color color;

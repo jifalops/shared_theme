@@ -10,10 +10,8 @@ import 'package:angular_components/angular_components.dart';
     MaterialButtonComponent,
     MaterialListComponent,
     MaterialListItemComponent,
-
-    NgFor,
-    NgIf,
-    NgClass
+    materialInputDirectives,
+    MaterialInputComponent,
   ],
 )
 class ExampleList {

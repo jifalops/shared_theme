@@ -15,10 +15,10 @@ abstract class CssEntity implements ScssMap {
     parentKeys.forEach((key) => sb.write("'$key', "));
     final prefix = sb.toString();
     sb = StringBuffer();
-    cssValues.keys
-        .forEach((key) => sb.writeln("$key: themed($prefix '$key');"));
+    cssValues.keys.forEach((key) => sb.writeln(
+        "@if index(\$include, '$key') and not index(\$exclude, '$key') { $key: themed($prefix '$key'); }"));
     return '''
-      @mixin $name {
+      @mixin $name(\$include: ('${cssValues.keys.join("','")}'), \$exclude: ()) {
         @include themify {
           ${sb.toString()}
         }

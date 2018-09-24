@@ -71,7 +71,6 @@ class ContrastingColors extends CssEntity {
       };
 
   static const none = ContrastingColors(null, null);
-  static const initial = ContrastingColors(Colors.white, Colors.black87);
 }
 
 /// The named colors in a theme.
@@ -93,6 +92,8 @@ class ColorSet implements CssEntityContainer {
     this.splash: ContrastingColors.none,
     this.selectedRow: ContrastingColors.none,
     this.highlight: ContrastingColors.none,
+    this.textSelectionHandle: ContrastingColors.none,
+    this.textSelection: ContrastingColors.none,
   });
 
   final ContrastingColors primary;
@@ -113,6 +114,8 @@ class ColorSet implements CssEntityContainer {
   final ContrastingColors splash;
   final ContrastingColors selectedRow;
   final ContrastingColors highlight;
+  final ContrastingColors textSelection;
+  final ContrastingColors textSelectionHandle;
 
   ColorSet copyWith({
     ContrastingColors primary,
@@ -126,11 +129,13 @@ class ColorSet implements CssEntityContainer {
     ContrastingColors divider,
     ContrastingColors error,
     ContrastingColors notice,
+    ContrastingColors textSelection,
+    ContrastingColors textSelectionHandle,
+    ContrastingColors highlight,
     ContrastingColors indicator,
     ContrastingColors hint,
     ContrastingColors splash,
     ContrastingColors selectedRow,
-    ContrastingColors highlight,
   }) =>
       ColorSet(
         primary: primary ?? this.primary,
@@ -149,6 +154,8 @@ class ColorSet implements CssEntityContainer {
         splash: splash ?? this.splash,
         selectedRow: selectedRow ?? this.selectedRow,
         highlight: highlight ?? this.highlight,
+        textSelectionHandle: textSelectionHandle ?? this.textSelectionHandle,
+        textSelection: textSelection ?? this.textSelection,
       );
 
   @override
@@ -169,6 +176,8 @@ class ColorSet implements CssEntityContainer {
     splash: ${splash.asScssMap()},
     selectedRow: ${selectedRow.asScssMap()},
     highlight: ${highlight.asScssMap()},
+    textSelection: ${textSelection.asScssMap()},
+    textSelectionHandle: ${textSelectionHandle.asScssMap()},
   )''';
 
   @override
@@ -204,6 +213,10 @@ class ColorSet implements CssEntityContainer {
             'selected-row-color', List.from(parentKeys)..add('selectedRow')),
         highlight.asThemifiedMixin(
             'highlight-color', List.from(parentKeys)..add('highlight')),
+        textSelection.asThemifiedMixin('text-selection-color',
+            List.from(parentKeys)..add('textSelection')),
+        textSelectionHandle.asThemifiedMixin('text-selection-handle-color',
+            List.from(parentKeys)..add('textSelectionHandle')),
       ];
 }
 

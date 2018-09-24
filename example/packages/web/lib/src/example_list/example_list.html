@@ -1,9 +1,3 @@
-
-<!---->
-<!--<material-button class="secondary" (trigger)="setTheme('Dark')">Dark theme</material-button>-->
-<!--<material-button class="tertiary" (trigger)="toggleSplash()">Toggle Splash</material-button>-->
-
-
 <material-list>
     <material-list-item class="font-display4">Display4</material-list-item>
     <material-list-item class="font-display3">Display3</material-list-item>
@@ -16,6 +10,26 @@
     <material-list-item class="font-body1">Body1</material-list-item>
     <material-list-item class="font-button">Button</material-list-item>
     <material-list-item class="font-caption">Caption</material-list-item>
+
+    <material-list-item><div class="primary-color">Primary</div></material-list-item>
+    <material-list-item><div class="primary-color-light">Primary Light</div></material-list-item>
+    <material-list-item><div class="primary-color-dark">Primary Dark</div></material-list-item>
+    <material-list-item><div class="secondary-color">Secondary</div></material-list-item>
+    <material-list-item><div class="secondary-color-light">Secondary Light</div></material-list-item>
+    <material-list-item><div class="secondary-color-dark">Secondary Dark</div></material-list-item>
+    <material-list-item><div class="background-color">Background</div></material-list-item>
+    <material-list-item><div class="background-color-inverted">Background (inverted)</div></material-list-item>
+    <material-list-item><div class="surface-color">Surface</div></material-list-item>
+    <material-list-item><div class="surface-color-inverted">Surface (inverted)</div></material-list-item>
+    <material-list-item><div class="divider-color">Divider</div></material-list-item>
+    <material-list-item><div class="error-color">Divider</div></material-list-item>
+    <material-list-item><div class="notice-color">Notice</div></material-list-item>
+    <material-list-item><div class="indicator-color">Indicator</div></material-list-item>
+    <material-list-item><div class="hint-color">Hint</div></material-list-item>
+    <material-list-item><div class="selected-row-color">Selected Row</div></material-list-item>
+    <material-list-item><div class="highlight-color">Highlight</div></material-list-item>
+    <material-list-item><div class="splash-color">Splash</div></material-list-item>
+
     <material-list-item>
         <material-button class="primary" (trigger)="showSnackbar()">Primary Button</material-button>
     </material-list-item>
@@ -25,10 +39,12 @@
     <material-list-item>
         <material-button class="tertiary" (trigger)="showSnackbar()">Tertiary Button</material-button>
     </material-list-item>
-    <material-list-item><div class="primary-color">Primary</div></material-list-item>
-    <material-list-item><div class="primary-color-light">Primary Light</div></material-list-item>
-    <material-list-item><div class="primary-color-dark">Primary Dark</div></material-list-item>
-    <material-list-item><div class="secondary-color">Secondary</div></material-list-item>
-    <material-list-item><div class="secondary-color-light">Secondary Light</div></material-list-item>
-    <material-list-item><div class="secondary-color-dark">Secondary Dark</div></material-list-item>
+
+    <material-list-item>
+        <!--type="text" is important here, it applies the inputBase theme. -->
+        <material-input type="text" label="Label" [displayBottomPanel]="false"></material-input>
+    </material-list-item>
+    <material-list-item>
+        <material-input type="text"  label="Floating label" floatingLabel [displayBottomPanel]="false" ></material-input>
+    </material-list-item>
 </material-list>

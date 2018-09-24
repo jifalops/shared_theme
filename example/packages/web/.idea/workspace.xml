@@ -2,27 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="166a6346-4d2e-4de8-89a2-cae4c234e337" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/_themes.g.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/example_list/example_list.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/example_list/example_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/example_list/example_list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../base/lib/assets/images/splash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../base/lib/assets/images/splash.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../base/lib/themes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../base/lib/themes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/build_themes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/build_themes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/_themes.g.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app_component.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_component.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app_component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/_themes.g.scss" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/_themes.g.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/example_list/example_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/example_list/example_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/example_list/example_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/example_list/example_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/example_list/example_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/example_list/example_list.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lib/shared_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lib/shared_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lib/src/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lib/src/colors.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../lib/src/css.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lib/src/css.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lib/src/elements.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lib/src/elements.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -83,16 +75,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="208" />
-          <entry key="html" value="478" />
-          <entry key="scss" value="1618" />
+          <entry key="dart" value="251" />
+          <entry key="html" value="1098" />
+          <entry key="scss" value="3595" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="208" />
-          <entry key="HTML" value="478" />
-          <entry key="SCSS" value="1618" />
+          <entry key="Dart" value="251" />
+          <entry key="HTML" value="1098" />
+          <entry key="SCSS" value="3595" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -101,7 +93,7 @@
           <entry key="html" value="4" />
           <entry key="json" value="2" />
           <entry key="png" value="1" />
-          <entry key="scss" value="5" />
+          <entry key="scss" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -110,18 +102,18 @@
           <entry key="HTML" value="4" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="2" />
-          <entry key="SCSS" value="5" />
+          <entry key="SCSS" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/styles.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="412">
+              <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -138,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/app_component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="40" selection-start-column="40" selection-end-column="40" />
+            <state relative-caret-position="90">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -147,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="127">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -156,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="210">
+              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -168,17 +160,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/app_component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+            <state relative-caret-position="135">
+              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="367">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -191,6 +183,15 @@
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/src/_themes.g.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-327">
+              <caret line="436" column="24" lean-forward="true" selection-start-line="436" selection-start-column="24" selection-end-line="436" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -214,11 +215,16 @@
       <find>primary-color</find>
       <find>div</find>
       <find>Primary</find>
+      <find>Background</find>
+      <find>input-b</find>
+      <find>inputB</find>
     </findStrings>
     <replaceStrings>
       <replace>material-list-item</replace>
       <replace>secondary</replace>
       <replace>Secondary</replace>
+      <replace>surface</replace>
+      <replace>Surface</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -236,9 +242,10 @@
         <option value="$PROJECT_DIR$/lib/src/example_list/example_list.dart" />
         <option value="$PROJECT_DIR$/lib/app_component.html" />
         <option value="$PROJECT_DIR$/lib/app_component.scss" />
-        <option value="$PROJECT_DIR$/lib/src/example_list/example_list.html" />
         <option value="$PROJECT_DIR$/lib/src/example_list/example_list.scss" />
+        <option value="$PROJECT_DIR$/lib/src/_themes.g.scss" />
         <option value="$PROJECT_DIR$/web/styles.scss" />
+        <option value="$PROJECT_DIR$/lib/src/example_list/example_list.html" />
       </list>
     </option>
   </component>
@@ -338,18 +345,18 @@
       <option name="presentableId" value="Default" />
       <updated>1537383130804</updated>
       <workItem from="1537383131919" duration="10155000" />
-      <workItem from="1537722052278" duration="14741000" />
+      <workItem from="1537722052278" duration="36020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24896000" />
+    <option name="totallyTimeSpent" value="46175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1593" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30191082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30191082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -362,7 +369,7 @@
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33082706" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33082706" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -460,23 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/_themes.g.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2010">
-          <caret line="361" column="31" selection-start-line="361" selection-start-column="31" selection-end-line="361" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/app_component.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -487,38 +477,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/app_component.html">
+    <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        <state relative-caret-position="210">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.html">
+    <entry file="file://$PROJECT_DIR$/lib/app_component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/app_component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="40" selection-start-column="40" selection-end-column="40" />
+        <state relative-caret-position="90">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.scss">
+    <entry file="file://$PROJECT_DIR$/lib/src/_themes.g.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="-327">
+          <caret line="436" column="24" lean-forward="true" selection-start-line="436" selection-start-column="24" selection-end-line="436" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="412">
+          <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/example_list/example_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>

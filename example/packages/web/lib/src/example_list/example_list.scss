@@ -1,11 +1,15 @@
 @import 'package:sharedtheme_example_web/src/themes.g';
 
 :host {
-  material-list-item {
-    padding: 8px 0;
+  // Fix for undefined color values, which are set to 'inherit'.
+  @include background-color;
 
-    material-button.primary {
-      margin-bottom: 8px;
+  material-list-item {
+    padding: 0;
+
+    /// Give large text some extra room.
+    &[class*="-display"] {
+      padding: 8px 0;
     }
 
     [class*="-color"] {
@@ -14,6 +18,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .background-color-inverted {
+      @include invert-colors('background');
+    }
+    .surface-color-inverted {
+      @include invert-colors('surface');
+    }
+
+    material-button.primary {
+      margin-bottom: 16px;
     }
   }
 }

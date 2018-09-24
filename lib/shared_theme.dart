@@ -33,6 +33,8 @@ class Theme implements MixinAggregator {
 
   @override
   String asScssMap() => '''(
+    name: $name,
+    brightness: $brightness,
     colors: ${colors.asScssMap()},
     fonts: ${fonts.asScssMap()},
     elements: ${elements.asScssMap()},
@@ -83,9 +85,74 @@ class ThemeSet implements MixinAggregator {
     // Themify utility
     @import 'package:shared_theme/themify';
 
+    // Helper functions
+    @function theme-color(\$themeColorName) {
+      @return themed('colors', \$themeColorName, 'background-color');
+    }
+    @function theme-contrast(\$themeColorName) {
+      @return themed('colors', \$themeColorName, 'color');
+    }
+
     // Mixins
+    @mixin invert-colors(\$themeColorName) {
+      @include themify {
+        color: themed('colors', \$themeColorName, 'background-color');
+        background-color: themed('colors', \$themeColorName, 'color');
+      }
+    }
+
     ${getMixins().join('')}
+
+    // Material input hack
+    material-input[type="text"] {
+      padding: 12px 0 0 !important;
+      .top-section {
+        @include input-base;
+        .input-container {
+          margin: 0 !important;
+        }
+        .label-text.animated {
+          transform: translateY(-50%) translateY(-8px) !important;
+          padding: 0 2px;
+        }
+        // Copy Flutter input behavior.
+        // hint color: the border and text color.
+        // if no hint color:  use primary color for light themes and secondary color for dark themes.
+        &:focus-within {
+          @include themify {
+            \$hint: theme-color('hint');
+            @if \$hint and \$hint != 'inherit' {
+              border-color: \$hint;
+              .label-text {
+                color: \$hint !important;
+              }
+            } @else {
+              @if themed('brightness') == 'light' {
+                \$color: theme-color('primary');
+                border-color: \$color;
+                .label-text {
+                  color: \$color !important;
+                }
+              } @else {
+                \$color: theme-color('secondary');
+                border-color: \$color;
+                .label-text {
+                  color: \$color !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   ''';
 }
 
-enum Brightness { light, dark }
+class Brightness {
+  const Brightness._(this._name);
+  final String _name;
+  @override
+  toString() => _name;
+  static const light = Brightness._('light');
+  static const dark = Brightness._('dark');
+}

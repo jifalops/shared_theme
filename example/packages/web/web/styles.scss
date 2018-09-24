@@ -4,7 +4,7 @@
 @import 'package:sharedtheme_example_web/src/themes.g';
 
 body {
-  font-family: 'Roboto';
+  @include font-body1;
   padding: 0;
   margin: 0;
 }
@@ -13,17 +13,9 @@ body {
 *:not(material-ripple):not(material-list-item):not([class*="material-"]):not([class*="font-"]):not([class*="-color"]):not([animated]) {
   @include background-color;
 }
-material-ripple *, [class*="material-"] *:not([animated]) {
+material-ripple *, [class*="material-"] *:not([animated]), material-input *:not(.animated) {
   background-color: transparent !important;
   color: inherit !important;
-}
-
-// Setup global mixins.
-
-material-button .content {
-  text-transform: none;
-  color: inherit !important;
-  background-color: inherit !important;
 }
 
 material-button.primary {
@@ -35,7 +27,11 @@ material-button.secondary {
 material-button.tertiary {
   @include tertiary-button;
 }
-
+material-button .content {
+  text-transform: none;
+  color: inherit !important;
+  background-color: inherit !important;
+}
 
 material-list {
   background-color: inherit;
@@ -44,10 +40,11 @@ material-list-item {
   // Taken from `package:angular_components/material_list/mixins`.
   &:not([separator="present"]) {
     &:hover, &:focus, &.active {
-      @include selected-row-color;
+      @include selected-row-color(background-color);
     }
   }
 }
+
 
 
 

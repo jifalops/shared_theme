@@ -1,5 +1,7 @@
 import 'package:shared_theme/shared_theme.dart';
 
+/// See the theme colors at
+/// https://material.io/tools/color/#!/?view.left=1&view.right=0&secondary.color=FFAB00&primary.color=2E7D32
 final themeset = ThemeSet(themes: [
   Theme(
       name: 'Light',
@@ -15,30 +17,37 @@ final themeset = ThemeSet(themes: [
       elements: _darkElements),
 ], fontFaces: _fontFaces);
 
-/// See the theme colors at
-/// https://material.io/tools/color/#!/?view.left=0&view.right=0&secondary.color=651FFF&primary.color=4CAF50
-/// https://material.io/tools/color/#!/?view.left=1&view.right=0&secondary.color=FFAB00&primary.color=2E7D32
+// Declaring shared theme colors here allows you to refer to them as a default
+// value.
+const _primary = ContrastingColors(Color(0xff2e7d32), Colors.white);
+const _primaryLight = ContrastingColors(Color(0xff60ad5e), Colors.black);
+const _primaryDark = ContrastingColors(Color(0xff005005), Colors.white);
+const _secondary = ContrastingColors(Color(0xffffab00), Colors.black);
+const _secondaryLight = ContrastingColors(Color(0xffffdd4b), Colors.black);
+const _secondaryDark = ContrastingColors(Color(0xffc67c00), Colors.black);
+const _error = ContrastingColors(Colors.error, Colors.onError);
+const _notice = ContrastingColors(Color(0xffb39ddb), Colors.black);
+
 class _ThemeColors extends ColorSet {
   const _ThemeColors({
     ContrastingColors background,
     ContrastingColors surface,
     ContrastingColors divider,
   }) : super(
-          primary: const ContrastingColors(Color(0xff2e7d32), Colors.white),
-          primaryLight:
-              const ContrastingColors(Color(0xff60ad5e), Colors.black),
-          primaryDark: const ContrastingColors(Color(0xff005005), Colors.white),
-          secondary: const ContrastingColors(Color(0xffffab00), Colors.black),
-          secondaryLight:
-              const ContrastingColors(Color(0xffffdd4b), Colors.black),
-          secondaryDark:
-              const ContrastingColors(Color(0xffc67c00), Colors.black),
-          error: const ContrastingColors(Colors.error, Colors.onError),
-          notice: const ContrastingColors(Color(0xffb39ddb), Colors.black),
+          primary: _primary,
+          primaryLight: _primaryLight,
+          primaryDark: _primaryDark,
+          secondary: _secondary,
+          secondaryLight: _secondaryLight,
+          secondaryDark: _secondaryDark,
+          error: _error,
+          notice: _notice,
           background: background,
           surface: surface,
           divider: divider,
-          selectedRow: divider
+          selectedRow: divider,
+          textSelection: _primaryLight,
+          textSelectionHandle: _primaryDark,
         );
 }
 
@@ -85,16 +94,17 @@ class _ButtonBase extends Element {
 }
 
 final _lightElements = ElementSet(
-    primaryButton: _ButtonBase(
-        color: _lightColors.secondary.color,
-        font: _darkFonts.button
-            .copyWith(color: _lightColors.secondary.contrast, size: 16.0),
-        shadow: ShadowElevation.dp8),
-    secondaryButton: _ButtonBase(
-        color: _lightColors.primary.color,
-        font: _darkFonts.button.copyWith(color: _lightColors.primary.contrast)),
-    tertiaryButton: _ButtonBase(),
-    inputBase: Element(border: Border.flutterOutlineInput));
+  primaryButton: _ButtonBase(
+      color: _lightColors.secondary.color,
+      font: _darkFonts.button
+          .copyWith(color: _lightColors.secondary.contrast, size: 16.0),
+      shadow: ShadowElevation.dp8),
+  secondaryButton: _ButtonBase(
+      color: _lightColors.primary.color,
+      font: _darkFonts.button.copyWith(color: _lightColors.primary.contrast)),
+  tertiaryButton: _ButtonBase(),
+  inputBase: Element.outlineInput,
+);
 
 final _darkElements = _lightElements.copyWith(
     tertiaryButton: _lightElements.tertiaryButton.copyWith(
