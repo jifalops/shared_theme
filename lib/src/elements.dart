@@ -2,6 +2,10 @@ import 'package:shared_theme/src/css.dart';
 import 'package:shared_theme/src/fonts.dart';
 import 'package:shared_theme/src/colors.dart';
 
+/// Used to scale certain sizes between CSS pixels and Logical pixels.
+/// Currently only used for [BoxSpacing] (margins and padding).
+const _dpToPx = 96 / 160;
+
 /// Combines color, font, margin, padding, border, shadow, text align, and size
 /// constraints.
 ///
@@ -52,8 +56,8 @@ class Element extends CssEntity {
   Map<String, String> get cssValues {
     final map = <String, String>{};
     if (color != null) map['background-color'] = color.toString();
-    if (margin != null) map.addAll(margin.cssValues('margin'));
-    if (padding != null) map.addAll(padding.cssValues('padding'));
+    if (margin != null) map['margin'] = margin.toString();
+    if (padding != null) map['padding'] = padding.toString();
     if (align != null) map['text-align'] = align.toString();
     if (shadow != null) map['box-shadow'] = '($shadow)';
     if (font != null) map.addAll(font.cssValues);
@@ -81,10 +85,10 @@ class SizeLimits extends CssEntity {
 
   @override
   Map<String, String> get cssValues => {
-        'min-height': 'dp(${minHeight})',
-        'max-height': 'dp(${maxHeight})',
-        'min-width': 'dp(${minWidth})',
-        'max-width': 'dp(${maxWidth})',
+        'min-height': '${minHeight}px',
+        'max-height': '${maxHeight}px',
+        'min-width': '${minWidth}px',
+        'max-width': '${maxWidth}px',
       };
 }
 
@@ -109,15 +113,8 @@ class BoxSpacing {
 
   /// CSS value
   @override
-  String toString() => 'dp(${top}) dp(${right}) dp(${bottom}) dp(${left})';
-
-  /// Gets the values with a prefix, e.g. "$prefix-top: ${top}px"
-  Map<String, String> cssValues(String prefix) => {
-        '$prefix-top': 'dp(${top})',
-        '$prefix-right': 'dp(${right})',
-        '$prefix-bottom': 'dp(${bottom})',
-        '$prefix-left': 'dp(${left})',
-      };
+  String toString() =>
+      '${top * _dpToPx}px ${right * _dpToPx}px ${bottom * _dpToPx}px ${left * _dpToPx}px';
 
   @override
   bool operator ==(o) =>
@@ -304,7 +301,7 @@ class BorderSide {
 
   /// CSS value
   @override
-  String toString() => 'dp(${width}) $style ${color?.toString() ?? ''}';
+  String toString() => '${width}px $style ${color?.toString() ?? ''}';
 
   @override
   bool operator ==(o) =>
@@ -327,7 +324,7 @@ class BorderRadius {
   final double y;
 
   @override
-  String toString() => 'dp(${x}) dp(${y})';
+  String toString() => '${x}px ${y}px';
 
   @override
   bool operator ==(o) => o is BorderRadius && x == o.x && y == o.y;

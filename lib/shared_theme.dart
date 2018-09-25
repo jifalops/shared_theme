@@ -80,11 +80,6 @@ class ThemeSet implements MixinAggregator {
   @override
   String toString() => '''
     //
-    // Scale utility (physical pixels)
-    //
-    @import 'package:shared_theme/scale/scale';
-
-    //
     // Global map of themes.
     //
     \$themes: ${asScssMap()} !global;

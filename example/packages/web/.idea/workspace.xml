@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="166a6346-4d2e-4de8-89a2-cae4c234e337" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/_themes.g.scss" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/_themes.g.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lib/scale/_scale.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lib/scale/scale.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../lib/shared_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lib/shared_theme.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../lib/src/elements.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lib/src/elements.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../lib/src/fonts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lib/src/fonts.dart" afterDir="false" />
@@ -106,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/styles.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="84" column="38" lean-forward="true" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+            <state relative-caret-position="180">
+              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -116,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -184,8 +184,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/_themes.g.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="432" column="5" selection-start-line="432" selection-start-column="5" selection-end-line="432" selection-end-column="5" />
+            <state relative-caret-position="-316">
+              <caret line="397" column="5" selection-start-line="397" selection-start-column="5" selection-end-line="397" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -340,18 +340,17 @@
       <option name="presentableId" value="Default" />
       <updated>1537383130804</updated>
       <workItem from="1537383131919" duration="10155000" />
-      <workItem from="1537722052278" duration="51168000" />
+      <workItem from="1537722052278" duration="51789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61323000" />
+    <option name="totallyTimeSpent" value="61944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1593" height="1048" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30191082" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30191082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -364,7 +363,7 @@
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33082706" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33082706" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -506,21 +505,21 @@
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/_themes.g.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="432" column="5" selection-start-line="432" selection-start-column="5" selection-end-line="432" selection-end-column="5" />
+        <state relative-caret-position="-316">
+          <caret line="397" column="5" selection-start-line="397" selection-start-column="5" selection-end-line="397" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="84" column="38" lean-forward="true" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+        <state relative-caret-position="180">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
         </state>
       </provider>
     </entry>
