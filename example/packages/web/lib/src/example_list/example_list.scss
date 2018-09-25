@@ -24,12 +24,9 @@
     .background-color-inverted {
       @include invert-colors('background');
     }
-    .surface-color-inverted {
-      @include invert-colors('surface');
-    }
 
     material-button.primary {
-      margin-bottom: 16px;
+      margin: 12px 0;
     }
   }
 }

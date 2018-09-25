@@ -26,7 +26,13 @@ color: rgba(0, 0, 0, 1.0),
     background: (background-color: rgba(254, 254, 254, 1.0),
 color: rgba(0, 0, 0, 1.0),
 ),
-    surface: (background-color: rgba(254, 254, 254, 1.0),
+    scaffold: (background-color: rgba(254, 254, 254, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    card: (background-color: rgba(254, 254, 254, 1.0),
+color: rgba(0, 0, 0, 1.0),
+),
+    dialog: (background-color: rgba(254, 254, 254, 1.0),
 color: rgba(0, 0, 0, 1.0),
 ),
     divider: (background-color: rgba(238, 238, 238, 1.0),
@@ -38,8 +44,8 @@ color: rgba(255, 255, 255, 1.0),
     notice: (background-color: rgba(179, 157, 219, 1.0),
 color: rgba(0, 0, 0, 1.0),
 ),
-    indicator: (background-color: inherit,
-color: inherit,
+    indicator: (background-color: rgba(255, 171, 0, 1.0),
+color: rgba(0, 0, 0, 1.0),
 ),
     hint: (background-color: inherit,
 color: inherit,
@@ -61,28 +67,28 @@ color: rgba(255, 255, 255, 1.0),
 ),
   ),
     fonts: (
-    display4: (font: normal 100 112.0px Roboto,
+    display4: (font: normal 100 112.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(0, 0, 0, 0.5411764705882353),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    display3: (font: normal 400 56.0px Roboto,
+    display3: (font: normal 400 56.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(0, 0, 0, 0.5411764705882353),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    display2: (font: normal 400 45.0px Roboto,
+    display2: (font: normal 400 45.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(0, 0, 0, 0.5411764705882353),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    display1: (font: normal 400 34.0px Roboto,
+    display1: (font: normal 400 34.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(0, 0, 0, 0.5411764705882353),
@@ -110,21 +116,21 @@ color: rgba(0, 0, 0, 0.8666666666666667),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    body2: (font: normal 600 18.0px Open Sans,
+    body2: (font: normal 600 18.0px Roboto,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(0, 0, 0, 0.8666666666666667),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    body1: (font: normal 400 16.0px Open Sans,
+    body1: (font: normal 400 16.0px Roboto,
 line-height: 1.15,
 text-decoration: none,
 color: rgba(0, 0, 0, 0.8666666666666667),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    caption: (font: normal 400 16.0px Open Sans,
+    caption: (font: normal 400 16.0px Roboto,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(0, 0, 0, 0.5411764705882353),
@@ -185,8 +191,7 @@ border-top-right-radius: 4.0px 4.0px,
 border-bottom-right-radius: 4.0px 4.0px,
 border-bottom-left-radius: 4.0px 4.0px,
 ),
-    inputBase: (margin: 0.0px 0.0px 0.0px 7.199999999999999px,
-padding: 9.6px 4.8px 9.6px 4.8px,
+    inputBase: (padding: 9.6px 4.8px 9.6px 4.8px,
 border-top: 1.0px solid ,
 border-bottom: 1.0px solid ,
 border-left: 1.0px solid ,
@@ -222,7 +227,13 @@ color: rgba(0, 0, 0, 1.0),
     background: (background-color: rgba(51, 51, 51, 1.0),
 color: rgba(255, 255, 255, 1.0),
 ),
-    surface: (background-color: rgba(51, 51, 51, 1.0),
+    scaffold: (background-color: rgba(51, 51, 51, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    card: (background-color: rgba(51, 51, 51, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
+    dialog: (background-color: rgba(51, 51, 51, 1.0),
 color: rgba(255, 255, 255, 1.0),
 ),
     divider: (background-color: rgba(72, 72, 72, 1.0),
@@ -234,8 +245,8 @@ color: rgba(255, 255, 255, 1.0),
     notice: (background-color: rgba(179, 157, 219, 1.0),
 color: rgba(0, 0, 0, 1.0),
 ),
-    indicator: (background-color: inherit,
-color: inherit,
+    indicator: (background-color: rgba(255, 171, 0, 1.0),
+color: rgba(0, 0, 0, 1.0),
 ),
     hint: (background-color: inherit,
 color: inherit,
@@ -257,28 +268,28 @@ color: rgba(255, 255, 255, 1.0),
 ),
   ),
     fonts: (
-    display4: (font: normal 100 112.0px Roboto,
+    display4: (font: normal 100 112.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(255, 255, 255, 0.7019607843137254),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    display3: (font: normal 400 56.0px Roboto,
+    display3: (font: normal 400 56.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(255, 255, 255, 0.7019607843137254),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    display2: (font: normal 400 45.0px Roboto,
+    display2: (font: normal 400 45.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(255, 255, 255, 0.7019607843137254),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    display1: (font: normal 400 34.0px Roboto,
+    display1: (font: normal 400 34.0px Open Sans,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(255, 255, 255, 0.7019607843137254),
@@ -306,21 +317,21 @@ color: rgba(255, 255, 255, 1.0),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    body2: (font: normal 600 18.0px Open Sans,
+    body2: (font: normal 600 18.0px Roboto,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(255, 255, 255, 1.0),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    body1: (font: normal 400 16.0px Open Sans,
+    body1: (font: normal 400 16.0px Roboto,
 line-height: 1.15,
 text-decoration: none,
 color: rgba(255, 255, 255, 1.0),
 letter-spacing: 0.0px,
 word-spacing: 0.0px,
 ),
-    caption: (font: normal 400 16.0px Open Sans,
+    caption: (font: normal 400 16.0px Roboto,
 line-height: 1.0,
 text-decoration: none,
 color: rgba(255, 255, 255, 0.7019607843137254),
@@ -381,8 +392,7 @@ border-top-right-radius: 4.0px 4.0px,
 border-bottom-right-radius: 4.0px 4.0px,
 border-bottom-left-radius: 4.0px 4.0px,
 ),
-    inputBase: (margin: 0.0px 0.0px 0.0px 7.199999999999999px,
-padding: 9.6px 4.8px 9.6px 4.8px,
+    inputBase: (padding: 9.6px 4.8px 9.6px 4.8px,
 border-top: 1.0px solid ,
 border-bottom: 1.0px solid ,
 border-left: 1.0px solid ,
@@ -550,15 +560,35 @@ border-bottom-left-radius: 4.0px 4.0px,
       .background-color {
         @include background-color;
       }
-            @mixin surface-color($include: ('background-color','color'), $exclude: ()) {
+            @mixin scaffold-color($include: ('background-color','color'), $exclude: ()) {
         @include themify {
-          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'surface',  'background-color'); }
-@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'surface',  'color'); }
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'scaffold',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'scaffold',  'color'); }
 
         }
       }
-      .surface-color {
-        @include surface-color;
+      .scaffold-color {
+        @include scaffold-color;
+      }
+            @mixin dialog-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'dialog',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'dialog',  'color'); }
+
+        }
+      }
+      .dialog-color {
+        @include dialog-color;
+      }
+            @mixin card-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'card',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'card',  'color'); }
+
+        }
+      }
+      .card-color {
+        @include card-color;
       }
             @mixin divider-color($include: ('background-color','color'), $exclude: ()) {
         @include themify {
@@ -880,10 +910,9 @@ border-bottom-left-radius: 4.0px 4.0px,
       .tertiary-button {
         @include tertiary-button;
       }
-            @mixin input-base($include: ('margin','padding','border-top','border-bottom','border-left','border-right','border-top-left-radius','border-top-right-radius','border-bottom-right-radius','border-bottom-left-radius'), $exclude: ()) {
+            @mixin input-base($include: ('padding','border-top','border-bottom','border-left','border-right','border-top-left-radius','border-top-right-radius','border-bottom-right-radius','border-bottom-left-radius'), $exclude: ()) {
         @include themify {
-          @if index($include, 'margin') and not index($exclude, 'margin') { margin: themed('elements', 'inputBase',  'margin'); }
-@if index($include, 'padding') and not index($exclude, 'padding') { padding: themed('elements', 'inputBase',  'padding'); }
+          @if index($include, 'padding') and not index($exclude, 'padding') { padding: themed('elements', 'inputBase',  'padding'); }
 @if index($include, 'border-top') and not index($exclude, 'border-top') { border-top: themed('elements', 'inputBase',  'border-top'); }
 @if index($include, 'border-bottom') and not index($exclude, 'border-bottom') { border-bottom: themed('elements', 'inputBase',  'border-bottom'); }
 @if index($include, 'border-left') and not index($exclude, 'border-left') { border-left: themed('elements', 'inputBase',  'border-left'); }

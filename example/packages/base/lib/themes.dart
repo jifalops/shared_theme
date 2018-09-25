@@ -44,9 +44,12 @@ class _ThemeColors extends ColorSet {
           error: _error,
           notice: _notice,
           background: background,
-          surface: surface,
+          scaffold: surface,
+          dialog: surface,
+          card: surface,
           divider: divider,
           selectedRow: divider,
+          indicator: _secondary,
           textSelection: _primaryLight,
           textSelectionHandle: _primaryDark,
         );
@@ -64,20 +67,20 @@ const _darkColors = _ThemeColors(
   divider: ContrastingColors(Color(0xff484848), Colors.white),
 );
 
+final _baseFonts = FontSet.dark.apply(family: 'Open Sans');
+
 // The default font set.
-final _darkFonts = FontSet(
+final _darkFonts = _baseFonts.copyWith(
     headline: FontSet.dark.headline
         .copyWith(weight: 700, height: 2.5, family: 'Ubuntu'),
     title: FontSet.dark.title.copyWith(weight: 700, family: 'Ubuntu'),
     subhead: FontSet.dark.subhead
         .copyWith(size: 18.0, height: 1.75, weight: 300, family: 'Ubuntu'),
-    body2: FontSet.dark.body2
-        .copyWith(size: 18.0, weight: 600, family: 'Open Sans'),
-    body1: FontSet.dark.body1
-        .copyWith(size: 16.0, height: 1.15, family: 'Open Sans'),
-    caption: FontSet.dark.caption.copyWith(size: 16.0, family: 'Open Sans'),
-    button: FontSet.dark.button.copyWith(family: 'Open Sans'));
+    body2: FontSet.dark.body2.copyWith(size: 18.0, weight: 600),
+    body1: FontSet.dark.body1.copyWith(size: 16.0, height: 1.15),
+    caption: FontSet.dark.caption.copyWith(size: 16.0));
 
+// Copy and apply the corresponding light color to each font.
 final _lightFonts = _darkFonts.lighten();
 
 class _ButtonBase extends Element {
@@ -105,7 +108,7 @@ final _lightElements = ElementSet(
       color: _lightColors.primary.color,
       font: _darkFonts.button.copyWith(color: _lightColors.primary.contrast)),
   tertiaryButton: _ButtonBase(),
-  inputBase: Element.outlineInput.copyWith(margin: BoxSpacing.only(left: 12.0)),
+  inputBase: Element.outlineInput,
 );
 
 /// Same as [_lightElements] but with a different text color on the tertiary button.
@@ -114,7 +117,9 @@ final _darkElements = _lightElements.copyWith(
         font: _lightElements.tertiaryButton.font
             .copyWith(color: _lightFonts.button.color)));
 
-/// These will be included in the CSS, and someday into Flutter app's pubspec.yaml.
+/// These will be included in the CSS, and someday into clients' Flutter app,
+/// but for now they must be copied into your Flutter app's pubspec.yaml. The
+/// URL is exactly the same though.
 final _fontFaces = [
   FontFace(
       family: 'Open Sans',

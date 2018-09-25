@@ -83,7 +83,9 @@ class ColorSet implements CssEntityContainer {
     this.secondaryLight: ContrastingColors.none,
     this.secondaryDark: ContrastingColors.none,
     this.background: ContrastingColors.none,
-    this.surface: ContrastingColors.none,
+    this.scaffold: ContrastingColors.none,
+    this.dialog: ContrastingColors.none,
+    this.card: ContrastingColors.none,
     this.divider: ContrastingColors.none,
     this.error: const ContrastingColors(Colors.error, Colors.onError),
     this.notice: ContrastingColors.none,
@@ -104,7 +106,6 @@ class ColorSet implements CssEntityContainer {
   final ContrastingColors secondaryDark;
 
   final ContrastingColors background;
-  final ContrastingColors surface;
   final ContrastingColors divider;
   final ContrastingColors error;
   final ContrastingColors notice;
@@ -116,6 +117,9 @@ class ColorSet implements CssEntityContainer {
   final ContrastingColors highlight;
   final ContrastingColors textSelection;
   final ContrastingColors textSelectionHandle;
+  final ContrastingColors scaffold;
+  final ContrastingColors dialog;
+  final ContrastingColors card;
 
   ColorSet copyWith({
     ContrastingColors primary,
@@ -125,7 +129,6 @@ class ColorSet implements CssEntityContainer {
     ContrastingColors secondaryLight,
     ContrastingColors secondaryDark,
     ContrastingColors background,
-    ContrastingColors surface,
     ContrastingColors divider,
     ContrastingColors error,
     ContrastingColors notice,
@@ -136,6 +139,9 @@ class ColorSet implements CssEntityContainer {
     ContrastingColors hint,
     ContrastingColors splash,
     ContrastingColors selectedRow,
+    ContrastingColors scaffold,
+    ContrastingColors dialog,
+    ContrastingColors card,
   }) =>
       ColorSet(
         primary: primary ?? this.primary,
@@ -145,7 +151,6 @@ class ColorSet implements CssEntityContainer {
         secondaryLight: secondaryLight ?? this.secondaryLight,
         secondaryDark: secondaryDark ?? this.secondaryDark,
         background: background ?? this.background,
-        surface: surface ?? this.surface,
         divider: divider ?? this.divider,
         error: error ?? this.error,
         notice: notice ?? this.notice,
@@ -156,6 +161,9 @@ class ColorSet implements CssEntityContainer {
         highlight: highlight ?? this.highlight,
         textSelectionHandle: textSelectionHandle ?? this.textSelectionHandle,
         textSelection: textSelection ?? this.textSelection,
+        scaffold: scaffold ?? this.scaffold,
+        dialog: dialog ?? this.dialog,
+        card: card ?? this.card,
       );
 
   @override
@@ -167,7 +175,9 @@ class ColorSet implements CssEntityContainer {
     secondaryLight: ${secondaryLight.asScssMap()},
     secondaryDark: ${secondaryDark.asScssMap()},
     background: ${background.asScssMap()},
-    surface: ${surface.asScssMap()},
+    scaffold: ${scaffold.asScssMap()},
+    card: ${card.asScssMap()},
+    dialog: ${dialog.asScssMap()},
     divider: ${divider.asScssMap()},
     error: ${error.asScssMap()},
     notice: ${notice.asScssMap()},
@@ -196,8 +206,11 @@ class ColorSet implements CssEntityContainer {
             List.from(parentKeys)..add('secondaryDark')),
         background.asThemifiedMixin(
             'background-color', List.from(parentKeys)..add('background')),
-        surface.asThemifiedMixin(
-            'surface-color', List.from(parentKeys)..add('surface')),
+        scaffold.asThemifiedMixin(
+            'scaffold-color', List.from(parentKeys)..add('scaffold')),
+        dialog.asThemifiedMixin(
+            'dialog-color', List.from(parentKeys)..add('dialog')),
+        card.asThemifiedMixin('card-color', List.from(parentKeys)..add('card')),
         divider.asThemifiedMixin(
             'divider-color', List.from(parentKeys)..add('divider')),
         error.asThemifiedMixin(

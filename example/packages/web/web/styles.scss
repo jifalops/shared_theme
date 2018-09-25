@@ -1,18 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+// Material imports created by stagehand.
+//@import url(https://fonts.googleapis.com/css?family=Roboto);
+//@import url(https://fonts.googleapis.com/css?family=Material+Icons);
 
 @import 'package:sharedtheme_example_web/src/themes.g';
-
-#test {
-  background-color: red;
-  width: 96px;
-  font-size: 96px;
-  z-index: 1;
-}
-
-* {
-  box-sizing: border-box;
-}
 
 body {
   @include font-body1;
@@ -20,10 +10,17 @@ body {
   margin: 0;
 }
 
-// Set the background color for non-material elements.
+/// Set the background and text color on all elements, with some exceptions.
+/// Exceptions include:
+///   * Most if not all material elements.
+///   * Elements that use the font-* and *-color theme classes.
+///   * Animating elements.
+/// This is a bit of complicated Voodoo, and there may be a better way. Please let me know if you are aware of one.
 *:not(material-ripple):not(material-list-item):not([class*="material-"]):not([class*="font-"]):not([class*="-color"]):not([animated]) {
   @include background-color;
 }
+/// Certain elements, namely material-ripple, needs to have its transparent background restored.
+/// More complicated Voodoo, I am new to Angular and there are probably better ways to do it.
 material-ripple *, [class*="material-"] *:not([animated]), material-input *:not(.animated) {
   background-color: transparent !important;
   color: inherit !important;
@@ -40,12 +37,13 @@ material-button.tertiary {
 }
 material-button .content {
   text-transform: none;
+  // Inherit the colors set by the above mixins.
   color: inherit !important;
   background-color: inherit !important;
 }
 
 material-list {
-  background-color: inherit;
+  background-color: inherit; // Theme background color.
 }
 material-list-item {
   // Taken from `package:angular_components/material_list/mixins`.
@@ -57,17 +55,20 @@ material-list-item {
 }
 
 
-// Material input hack
+// Material input hack.
+// This element was much harder than others to share a theme definition with Flutter.
+// However, it is pretty well duplicated here for both outline and underline input types.
 material-input[type="text"]:not(.no-theme) {
   padding: 12px 0 0 !important;
   .top-section {
     @include input-base;
+    margin-bottom: 2px !important;
 
     .input-container {
       margin: 0 !important;
     }
     .label-text.animated {
-      transform: translateY(-50%) translateY(-8px) !important;
+      transform: translateY(-50%) translateY(-10px) !important;
       padding: 0 2px;
     }
     // Copy Flutter input behavior.

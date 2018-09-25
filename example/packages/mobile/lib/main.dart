@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:sharedtheme_example/config.dart';
 import 'package:sharedtheme_example/themes.dart';
@@ -28,28 +27,11 @@ class _AppState extends State<App> {
               title: Text(appName,
                   style: themer.textStyle(theme.fonts.title).copyWith(
                       color: Color(theme.colors.primary.contrast.argb))),
-              actions: <Widget>[
-                Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Dark',
-                        style: themer.textStyle(theme.fonts.title).copyWith(
-                            color: Color(theme.colors.primary.contrast.argb)),
-                      ),
-                      Switch(
-                          value: theme == themeset.themes.last,
-                          onChanged: (enabled) => setState(() => _setTheme(
-                              enabled
-                                  ? themeset.themes.last
-                                  : themeset.themes.first)))
-                    ])
-              ]),
+              actions: <Widget>[_buildThemeSwitch()]),
           body: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ListView(
-                children: <Widget>[DemoItems()],
-              )),
+            padding: EdgeInsets.all(8.0),
+            child: SingleChildScrollView(child: DemoItems()),
+          ),
         ),
       );
 
@@ -57,6 +39,19 @@ class _AppState extends State<App> {
     theme = t;
     themer.setTheme(theme);
   }
+
+  Widget _buildThemeSwitch() =>
+      Row(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
+        Text(
+          'Dark',
+          style: themer.textStyleColored(
+              theme.fonts.title, themer.contrastOf(theme.colors.primary)),
+        ),
+        Switch(
+            value: theme == themeset.themes.last,
+            onChanged: (enabled) => setState(() => _setTheme(
+                enabled ? themeset.themes.last : themeset.themes.first)))
+      ]);
 }
 
 class DemoItems extends StatelessWidget {
@@ -66,26 +61,12 @@ class DemoItems extends StatelessWidget {
     void _showSnackBar() => Scaffold.of(context)
         .showSnackBar(SnackBar(content: Text("I'm a SnackBar.")));
     Widget _colorWidget(themer.ContrastingColors colors, String text) =>
-        Container(
-            alignment: Alignment.center,
-            height: 56.0,
-            width: 256.0,
-            color: themer.getColor(colors, Theme.of(context).backgroundColor),
-            child: Text(text,
-                style: Theme.of(context).textTheme.body2.copyWith(
-                    color: themer.getContrast(
-                        colors, Theme.of(context).textTheme.body2.color))));
-print(MediaQueryData().devicePixelRatio);
+        _buildColorWidget(context, colors, text);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Container(
-            width: 160.0,
-            color: Colors.red,
-            child:  Text(
-                  'Tj|',
-                  style: TextStyle(fontSize: 160.0),
-                )),
+        Text(
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
         Text('Display4', style: Theme.of(context).textTheme.display4),
         Text('Display3', style: Theme.of(context).textTheme.display3),
         Text('Display2', style: Theme.of(context).textTheme.display2),
@@ -105,17 +86,16 @@ print(MediaQueryData().devicePixelRatio);
         _colorWidget(theme.colors.secondaryDark, 'Secondary Dark'),
         _colorWidget(theme.colors.background, 'Background'),
         _colorWidget(theme.colors.background.invert(), 'Background (inverted)'),
-        _colorWidget(theme.colors.surface, 'Surface'),
-        _colorWidget(theme.colors.surface.invert(), 'Surface (inverted)'),
+        _colorWidget(theme.colors.card, 'Card'),
         _colorWidget(theme.colors.divider, 'Divider'),
         _colorWidget(theme.colors.error, 'Error'),
         _colorWidget(theme.colors.notice, 'Notice'),
         _colorWidget(theme.colors.indicator, 'Indicator'),
         _colorWidget(theme.colors.hint, 'Hint'),
         _colorWidget(theme.colors.selectedRow, 'SelectedRow'),
-        _colorWidget(theme.colors.highlight, 'Highlight'),
-        _colorWidget(theme.colors.splash, 'Splash'),
+        SizedBox(height: 12.0),
         themer.primaryButton(_showSnackBar, text: 'Primary Button'),
+        SizedBox(height: 12.0),
         themer.secondaryButton(_showSnackBar, text: 'Secondary Button'),
         themer.tertiaryButton(_showSnackBar, text: 'Tertiary Button'),
         themer.wrapInput(
@@ -123,4 +103,16 @@ print(MediaQueryData().devicePixelRatio);
       ],
     );
   }
+
+  Widget _buildColorWidget(
+          BuildContext context, themer.ContrastingColors colors, String text) =>
+      Container(
+          alignment: Alignment.center,
+          height: 56.0,
+          width: 256.0,
+          color: themer.colorOf(colors, Theme.of(context).backgroundColor),
+          child: Text(text,
+              style: Theme.of(context).textTheme.body2.copyWith(
+                  color: themer.contrastOf(
+                      colors, Theme.of(context).textTheme.body2.color))));
 }
