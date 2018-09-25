@@ -81,10 +81,10 @@ class SizeLimits extends CssEntity {
 
   @override
   Map<String, String> get cssValues => {
-        'min-height': '${minHeight}px',
-        'max-height': '${maxHeight}px',
-        'min-width': '${minWidth}px',
-        'max-width': '${maxWidth}px',
+        'min-height': 'dp(${minHeight})',
+        'max-height': 'dp(${maxHeight})',
+        'min-width': 'dp(${minWidth})',
+        'max-width': 'dp(${maxWidth})',
       };
 }
 
@@ -109,14 +109,14 @@ class BoxSpacing {
 
   /// CSS value
   @override
-  String toString() => '${top}px ${right}px ${bottom}px ${left}px';
+  String toString() => 'dp(${top}) dp(${right}) dp(${bottom}) dp(${left})';
 
   /// Gets the values with a prefix, e.g. "$prefix-top: ${top}px"
   Map<String, String> cssValues(String prefix) => {
-        '$prefix-top': '${top}px',
-        '$prefix-right': '${right}px',
-        '$prefix-bottom': '${bottom}px',
-        '$prefix-left': '${left}px',
+        '$prefix-top': 'dp(${top})',
+        '$prefix-right': 'dp(${right})',
+        '$prefix-bottom': 'dp(${bottom})',
+        '$prefix-left': 'dp(${left})',
       };
 
   @override
@@ -304,7 +304,7 @@ class BorderSide {
 
   /// CSS value
   @override
-  String toString() => '${width}px $style ${color?.toString() ?? ''}';
+  String toString() => 'dp(${width}) $style ${color?.toString() ?? ''}';
 
   @override
   bool operator ==(o) =>
@@ -327,7 +327,7 @@ class BorderRadius {
   final double y;
 
   @override
-  String toString() => '${x}px ${y}px';
+  String toString() => 'dp(${x}) dp(${y})';
 
   @override
   bool operator ==(o) => o is BorderRadius && x == o.x && y == o.y;
