@@ -50,7 +50,8 @@ class Font extends CssEntity {
 
   @override
   Map<String, String> get cssValues => {
-        'font': '$style $weight ${size}px/$height $family',
+        'font': '$style $weight px(${size}) $family',
+        'line-height': '$height',
         'text-decoration': '$decoration',
         'color': color.toString(),
         'letter-spacing': '${letterSpacing}px',

@@ -105,7 +105,7 @@ final _lightElements = ElementSet(
       color: _lightColors.primary.color,
       font: _darkFonts.button.copyWith(color: _lightColors.primary.contrast)),
   tertiaryButton: _ButtonBase(),
-  inputBase: Element.outlineInput,
+  inputBase: Element.outlineInput.copyWith(margin: BoxSpacing.only(left: 12.0)),
 );
 
 /// Same as [_lightElements] but with a different text color on the tertiary button.

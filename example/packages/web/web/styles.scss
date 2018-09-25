@@ -3,6 +3,21 @@
 
 @import 'package:sharedtheme_example_web/src/themes.g';
 
+#test {
+  background-color: red;
+  width: 96px;
+  font-size: 96px;
+  z-index: 1;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   @include font-body1;
   padding: 0;
@@ -51,6 +66,17 @@ material-input[type="text"]:not(.no-theme) {
   padding: 12px 0 0 !important;
   .top-section {
     @include input-base;
+    @include themify {
+      $top: themed('elements', 'inputBase', 'padding-top');
+      $right: themed('elements', 'inputBase', 'padding-right');
+      $bottom: themed('elements', 'inputBase', 'padding-bottom');
+      $left: themed('elements', 'inputBase', 'padding-left');
+      padding-top: $top / 2;
+      padding-right: $right / 2;
+      padding-bottom: $bottom / 2;
+      padding-left: $left/ 2;
+    }
+
     .input-container {
       margin: 0 !important;
     }

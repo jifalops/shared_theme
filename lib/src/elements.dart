@@ -52,8 +52,8 @@ class Element extends CssEntity {
   Map<String, String> get cssValues {
     final map = <String, String>{};
     if (color != null) map['background-color'] = color.toString();
-    if (margin != null) map['margin'] = margin.toString();
-    if (padding != null) map['padding'] = padding.toString();
+    if (margin != null) map.addAll(margin.cssValues('margin'));
+    if (padding != null) map.addAll(padding.cssValues('padding'));
     if (align != null) map['text-align'] = align.toString();
     if (shadow != null) map['box-shadow'] = '($shadow)';
     if (font != null) map.addAll(font.cssValues);
@@ -109,7 +109,15 @@ class BoxSpacing {
 
   /// CSS value
   @override
-  String toString() => '${top/2}px ${right/2}px ${bottom/2}px ${left/2}px';
+  String toString() => '${top}px ${right}px ${bottom}px ${left}px';
+
+  /// Gets the values with a prefix, e.g. "$prefix-top: ${top}px"
+  Map<String, String> cssValues(String prefix) => {
+        '$prefix-top': '${top}px',
+        '$prefix-right': '${right}px',
+        '$prefix-bottom': '${bottom}px',
+        '$prefix-left': '${left}px',
+      };
 
   @override
   bool operator ==(o) =>

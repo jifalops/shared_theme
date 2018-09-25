@@ -1,410 +1,447 @@
-    // Themes global map
-    $themes: (Light: (name: Light,
+    //
+    // Global map of themes.
+    //
+    $themes: (Light: (
+    name: Light,
     brightness: light,
-    colors: (primary: (background-color: rgba(46, 125, 50, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+    colors: (
+    primary: (background-color: rgba(46, 125, 50, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
     primaryLight: (background-color: rgba(96, 173, 94, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     primaryDark: (background-color: rgba(0, 80, 5, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     secondary: (background-color: rgba(255, 171, 0, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     secondaryLight: (background-color: rgba(255, 221, 75, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     secondaryDark: (background-color: rgba(198, 124, 0, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     background: (background-color: rgba(254, 254, 254, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     surface: (background-color: rgba(254, 254, 254, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     divider: (background-color: rgba(238, 238, 238, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     error: (background-color: rgba(176, 0, 32, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     notice: (background-color: rgba(179, 157, 219, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     indicator: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     hint: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     splash: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     selectedRow: (background-color: rgba(238, 238, 238, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     highlight: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     textSelection: (background-color: rgba(96, 173, 94, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     textSelectionHandle: (background-color: rgba(0, 80, 5, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
-    ),
-    fonts: (display4: (font: normal 100 112.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.5411764705882353),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
+  ),
+    fonts: (
+    display4: (font: normal 100 112.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     display3: (font: normal 400 56.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.5411764705882353),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     display2: (font: normal 400 45.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.5411764705882353),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     display1: (font: normal 400 34.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.5411764705882353),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     headline: (font: normal 700 24.0px/2.5 Ubuntu,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.8666666666666667),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     title: (font: normal 700 20.0px/1.0 Ubuntu,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.8666666666666667),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     subhead: (font: normal 300 18.0px/1.75 Ubuntu,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.8666666666666667),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     body2: (font: normal 600 18.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.8666666666666667),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     body1: (font: normal 400 16.0px/1.15 Open Sans,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.8666666666666667),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     caption: (font: normal 400 16.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.5411764705882353),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.5411764705882353),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     button: (font: normal 500 14.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.8666666666666667),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
-    ),
-    elements: (primaryButton: (background-color: rgba(255, 171, 0, 1.0),
-    padding: 2.0px 4.0px 2.0px 4.0px,
-    text-align: center,
-    box-shadow: (0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)),
-    font: normal 500 16.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+  ),
+    elements: (
+    primaryButton: (background-color: rgba(255, 171, 0, 1.0),
+padding-top: 4.0px,
+padding-right: 8.0px,
+padding-bottom: 4.0px,
+padding-left: 8.0px,
+text-align: center,
+box-shadow: (0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)),
+font: normal 500 16.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
     secondaryButton: (background-color: rgba(46, 125, 50, 1.0),
-    padding: 2.0px 4.0px 2.0px 4.0px,
-    text-align: center,
-    box-shadow: (none),
-    font: normal 500 14.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
+padding-top: 4.0px,
+padding-right: 8.0px,
+padding-bottom: 4.0px,
+padding-left: 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
     tertiaryButton: (background-color: rgba(0, 0, 0, 0.0),
-    padding: 2.0px 4.0px 2.0px 4.0px,
-    text-align: center,
-    box-shadow: (none),
-    font: normal 500 14.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 0.8666666666666667),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
-    inputBase: (padding: 8.0px 4.0px 8.0px 4.0px,
-    border-top: 1.0px solid,
-    border-bottom: 1.0px solid,
-    border-left: 1.0px solid,
-    border-right: 1.0px solid,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
-    ),
-    ), Dark: (name: Dark,
+padding-top: 4.0px,
+padding-right: 8.0px,
+padding-bottom: 4.0px,
+padding-left: 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 0.8666666666666667),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
+    inputBase: (margin-top: 0.0px,
+margin-right: 0.0px,
+margin-bottom: 0.0px,
+margin-left: 12.0px,
+padding-top: 16.0px,
+padding-right: 8.0px,
+padding-bottom: 16.0px,
+padding-left: 8.0px,
+border-top: 1.0px solid ,
+border-bottom: 1.0px solid ,
+border-left: 1.0px solid ,
+border-right: 1.0px solid ,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
+  ),
+  ), Dark: (
+    name: Dark,
     brightness: dark,
-    colors: (primary: (background-color: rgba(46, 125, 50, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+    colors: (
+    primary: (background-color: rgba(46, 125, 50, 1.0),
+color: rgba(255, 255, 255, 1.0),
+),
     primaryLight: (background-color: rgba(96, 173, 94, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     primaryDark: (background-color: rgba(0, 80, 5, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     secondary: (background-color: rgba(255, 171, 0, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     secondaryLight: (background-color: rgba(255, 221, 75, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     secondaryDark: (background-color: rgba(198, 124, 0, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     background: (background-color: rgba(51, 51, 51, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     surface: (background-color: rgba(51, 51, 51, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     divider: (background-color: rgba(72, 72, 72, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     error: (background-color: rgba(176, 0, 32, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     notice: (background-color: rgba(179, 157, 219, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     indicator: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     hint: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     splash: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     selectedRow: (background-color: rgba(72, 72, 72, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
     highlight: (background-color: inherit,
-    color: inherit,
-    ),
+color: inherit,
+),
     textSelection: (background-color: rgba(96, 173, 94, 1.0),
-    color: rgba(0, 0, 0, 1.0),
-    ),
+color: rgba(0, 0, 0, 1.0),
+),
     textSelectionHandle: (background-color: rgba(0, 80, 5, 1.0),
-    color: rgba(255, 255, 255, 1.0),
-    ),
-    ),
-    fonts: (display4: (font: normal 100 112.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 0.7019607843137254),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+color: rgba(255, 255, 255, 1.0),
+),
+  ),
+    fonts: (
+    display4: (font: normal 100 112.0px/1.0 Roboto,
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     display3: (font: normal 400 56.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 0.7019607843137254),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     display2: (font: normal 400 45.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 0.7019607843137254),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     display1: (font: normal 400 34.0px/1.0 Roboto,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 0.7019607843137254),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     headline: (font: normal 700 24.0px/2.5 Ubuntu,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     title: (font: normal 700 20.0px/1.0 Ubuntu,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     subhead: (font: normal 300 18.0px/1.75 Ubuntu,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     body2: (font: normal 600 18.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     body1: (font: normal 400 16.0px/1.15 Open Sans,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     caption: (font: normal 400 16.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 0.7019607843137254),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 0.7019607843137254),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
     button: (font: normal 500 14.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    ),
-    ),
-    elements: (primaryButton: (background-color: rgba(255, 171, 0, 1.0),
-    padding: 2.0px 4.0px 2.0px 4.0px,
-    text-align: center,
-    box-shadow: (0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)),
-    font: normal 500 16.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(0, 0, 0, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+),
+  ),
+    elements: (
+    primaryButton: (background-color: rgba(255, 171, 0, 1.0),
+padding-top: 4.0px,
+padding-right: 8.0px,
+padding-bottom: 4.0px,
+padding-left: 8.0px,
+text-align: center,
+box-shadow: (0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)),
+font: normal 500 16.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(0, 0, 0, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
     secondaryButton: (background-color: rgba(46, 125, 50, 1.0),
-    padding: 2.0px 4.0px 2.0px 4.0px,
-    text-align: center,
-    box-shadow: (none),
-    font: normal 500 14.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
+padding-top: 4.0px,
+padding-right: 8.0px,
+padding-bottom: 4.0px,
+padding-left: 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
     tertiaryButton: (background-color: rgba(0, 0, 0, 0.0),
-    padding: 2.0px 4.0px 2.0px 4.0px,
-    text-align: center,
-    box-shadow: (none),
-    font: normal 500 14.0px/1.0 Open Sans,
-    text-decoration: none,
-    color: rgba(255, 255, 255, 1.0),
-    letter-spacing: 0.0px,
-    word-spacing: 0.0px,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
-    inputBase: (padding: 8.0px 4.0px 8.0px 4.0px,
-    border-top: 1.0px solid,
-    border-bottom: 1.0px solid,
-    border-left: 1.0px solid,
-    border-right: 1.0px solid,
-    border-top-left-radius: 4.0px 4.0px,
-    border-top-right-radius: 4.0px 4.0px,
-    border-bottom-right-radius: 4.0px 4.0px,
-    border-bottom-left-radius: 4.0px 4.0px,
-    ),
-    ),
-    )) !global;
+padding-top: 4.0px,
+padding-right: 8.0px,
+padding-bottom: 4.0px,
+padding-left: 8.0px,
+text-align: center,
+box-shadow: (none),
+font: normal 500 14.0px/1.0 Open Sans,
+text-decoration: none,
+color: rgba(255, 255, 255, 1.0),
+letter-spacing: 0.0px,
+word-spacing: 0.0px,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
+    inputBase: (margin-top: 0.0px,
+margin-right: 0.0px,
+margin-bottom: 0.0px,
+margin-left: 12.0px,
+padding-top: 16.0px,
+padding-right: 8.0px,
+padding-bottom: 16.0px,
+padding-left: 8.0px,
+border-top: 1.0px solid ,
+border-bottom: 1.0px solid ,
+border-left: 1.0px solid ,
+border-right: 1.0px solid ,
+border-top-left-radius: 4.0px 4.0px,
+border-top-right-radius: 4.0px 4.0px,
+border-bottom-right-radius: 4.0px 4.0px,
+border-bottom-left-radius: 4.0px 4.0px,
+),
+  ),
+  )) !global;
 
+    //
     // Font faces
-    @font-face {
+    //
+        @font-face {
       font-family: 'Open Sans';
       font-weight: 400;
       font-style: normal;
       src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Regular.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Open Sans';
       font-weight: 500;
       font-style: normal;
       src: url('packages/sharedtheme_example/assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Open Sans';
       font-weight: 300;
       font-style: normal;
       src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Light.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Open Sans';
       font-weight: 700;
       font-style: normal;
       src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Bold.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Open Sans';
       font-weight: 400;
       font-style: italic;
       src: url('packages/sharedtheme_example/assets/fonts/OpenSans-Italic.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Ubuntu';
       font-weight: 400;
       font-style: normal;
       src: url('packages/sharedtheme_example/assets/fonts/Ubuntu-Regular.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Ubuntu';
       font-weight: 300;
       font-style: normal;
       src: url('packages/sharedtheme_example/assets/fonts/Ubuntu-Light.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Ubuntu';
       font-weight: 700;
@@ -413,19 +450,31 @@
     }
 
 
+    //
     // Themify utility
+    //
     @import 'package:shared_theme/themify';
 
-    // Helper functions
+    //
+    // Functions
+    //
+
+    /// Get a main color of the current theme.
+    /// Can only be used within a `@themify` block.
     @function theme-color($themeColorName) {
       @return themed('colors', $themeColorName, 'background-color');
     }
 
+    /// Get a main color of the current theme.
+    /// Can only be used within a `@themify` block.
     @function theme-contrast($themeColorName) {
       @return themed('colors', $themeColorName, 'color');
     }
 
+    //
     // Mixins
+    //
+
     @mixin invert-colors($themeColorName) {
       @include themify {
         color: theme-color($themeColorName);
@@ -433,855 +482,424 @@
       }
     }
 
-    @mixin primary-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'primary', 'background-color');
-        }
+          @mixin primary-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'primary',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'primary',  'color'); }
 
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'primary', 'color');
         }
-
       }
-    }
-
-    .primary-color {
-      @include primary-color;
-    }
-
-    @mixin primary-color-light($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'primaryLight', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'primaryLight', 'color');
-        }
-
+      .primary-color {
+        @include primary-color;
       }
-    }
+            @mixin primary-color-light($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'primaryLight',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'primaryLight',  'color'); }
 
-    .primary-color-light {
-      @include primary-color-light;
-    }
-
-    @mixin primary-color-dark($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'primaryDark', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'primaryDark', 'color');
-        }
-
       }
-    }
-
-    .primary-color-dark {
-      @include primary-color-dark;
-    }
-
-    @mixin secondary-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'secondary', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'secondary', 'color');
-        }
-
+      .primary-color-light {
+        @include primary-color-light;
       }
-    }
+            @mixin primary-color-dark($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'primaryDark',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'primaryDark',  'color'); }
 
-    .secondary-color {
-      @include secondary-color;
-    }
-
-    @mixin secondary-color-light($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'secondaryLight', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'secondaryLight', 'color');
-        }
-
       }
-    }
-
-    .secondary-color-light {
-      @include secondary-color-light;
-    }
-
-    @mixin secondary-color-dark($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'secondaryDark', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'secondaryDark', 'color');
-        }
-
+      .primary-color-dark {
+        @include primary-color-dark;
       }
-    }
+            @mixin secondary-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'secondary',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'secondary',  'color'); }
 
-    .secondary-color-dark {
-      @include secondary-color-dark;
-    }
-
-    @mixin background-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'background', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'background', 'color');
-        }
-
       }
-    }
-
-    .background-color {
-      @include background-color;
-    }
-
-    @mixin surface-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'surface', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'surface', 'color');
-        }
-
+      .secondary-color {
+        @include secondary-color;
       }
-    }
+            @mixin secondary-color-light($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'secondaryLight',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'secondaryLight',  'color'); }
 
-    .surface-color {
-      @include surface-color;
-    }
-
-    @mixin divider-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'divider', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'divider', 'color');
-        }
-
       }
-    }
-
-    .divider-color {
-      @include divider-color;
-    }
-
-    @mixin error-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'error', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'error', 'color');
-        }
-
+      .secondary-color-light {
+        @include secondary-color-light;
       }
-    }
+            @mixin secondary-color-dark($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'secondaryDark',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'secondaryDark',  'color'); }
 
-    .error-color {
-      @include error-color;
-    }
-
-    @mixin notice-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'notice', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'notice', 'color');
-        }
-
       }
-    }
-
-    .notice-color {
-      @include notice-color;
-    }
-
-    @mixin indicator-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'indicator', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'indicator', 'color');
-        }
-
+      .secondary-color-dark {
+        @include secondary-color-dark;
       }
-    }
+            @mixin background-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'background',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'background',  'color'); }
 
-    .indicator-color {
-      @include indicator-color;
-    }
-
-    @mixin hint-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'hint', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'hint', 'color');
-        }
-
       }
-    }
-
-    .hint-color {
-      @include hint-color;
-    }
-
-    @mixin splash-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'splash', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'splash', 'color');
-        }
-
+      .background-color {
+        @include background-color;
       }
-    }
+            @mixin surface-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'surface',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'surface',  'color'); }
 
-    .splash-color {
-      @include splash-color;
-    }
-
-    @mixin selected-row-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'selectedRow', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'selectedRow', 'color');
-        }
-
       }
-    }
-
-    .selected-row-color {
-      @include selected-row-color;
-    }
-
-    @mixin highlight-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'highlight', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'highlight', 'color');
-        }
-
+      .surface-color {
+        @include surface-color;
       }
-    }
+            @mixin divider-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'divider',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'divider',  'color'); }
 
-    .highlight-color {
-      @include highlight-color;
-    }
-
-    @mixin text-selection-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'textSelection', 'background-color');
         }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'textSelection', 'color');
-        }
-
       }
-    }
-
-    .text-selection-color {
-      @include text-selection-color;
-    }
-
-    @mixin text-selection-handle-color($include: ('background-color', 'color'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('colors', 'textSelectionHandle', 'background-color');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('colors', 'textSelectionHandle', 'color');
-        }
-
+      .divider-color {
+        @include divider-color;
       }
-    }
+            @mixin error-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'error',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'error',  'color'); }
 
-    .text-selection-handle-color {
-      @include text-selection-handle-color;
-    }
-
-    @mixin font-display4($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'display4', 'font');
         }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'display4', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'display4', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'display4', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'display4', 'word-spacing');
-        }
-
       }
-    }
-
-    .font-display4 {
-      @include font-display4;
-    }
-
-    @mixin font-display3($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'display3', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'display3', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'display3', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'display3', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'display3', 'word-spacing');
-        }
-
+      .error-color {
+        @include error-color;
       }
-    }
+            @mixin notice-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'notice',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'notice',  'color'); }
 
-    .font-display3 {
-      @include font-display3;
-    }
-
-    @mixin font-display2($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'display2', 'font');
         }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'display2', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'display2', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'display2', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'display2', 'word-spacing');
-        }
-
       }
-    }
-
-    .font-display2 {
-      @include font-display2;
-    }
-
-    @mixin font-display1($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'display1', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'display1', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'display1', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'display1', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'display1', 'word-spacing');
-        }
-
+      .notice-color {
+        @include notice-color;
       }
-    }
+            @mixin indicator-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'indicator',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'indicator',  'color'); }
 
-    .font-display1 {
-      @include font-display1;
-    }
-
-    @mixin font-headline($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'headline', 'font');
         }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'headline', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'headline', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'headline', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'headline', 'word-spacing');
-        }
-
       }
-    }
-
-    .font-headline {
-      @include font-headline;
-    }
-
-    @mixin font-title($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'title', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'title', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'title', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'title', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'title', 'word-spacing');
-        }
-
+      .indicator-color {
+        @include indicator-color;
       }
-    }
+            @mixin hint-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'hint',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'hint',  'color'); }
 
-    .font-title {
-      @include font-title;
-    }
-
-    @mixin font-subhead($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'subhead', 'font');
         }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'subhead', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'subhead', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'subhead', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'subhead', 'word-spacing');
-        }
-
       }
-    }
-
-    .font-subhead {
-      @include font-subhead;
-    }
-
-    @mixin font-body2($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'body2', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'body2', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'body2', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'body2', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'body2', 'word-spacing');
-        }
-
+      .hint-color {
+        @include hint-color;
       }
-    }
+            @mixin splash-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'splash',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'splash',  'color'); }
 
-    .font-body2 {
-      @include font-body2;
-    }
-
-    @mixin font-body1($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'body1', 'font');
         }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'body1', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'body1', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'body1', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'body1', 'word-spacing');
-        }
-
       }
-    }
-
-    .font-body1 {
-      @include font-body1;
-    }
-
-    @mixin font-caption($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'caption', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'caption', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'caption', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'caption', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'caption', 'word-spacing');
-        }
-
+      .splash-color {
+        @include splash-color;
       }
-    }
+            @mixin selected-row-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'selectedRow',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'selectedRow',  'color'); }
 
-    .font-caption {
-      @include font-caption;
-    }
-
-    @mixin font-button($include: ('font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('fonts', 'button', 'font');
         }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('fonts', 'button', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('fonts', 'button', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('fonts', 'button', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('fonts', 'button', 'word-spacing');
-        }
-
       }
-    }
-
-    .font-button {
-      @include font-button;
-    }
-
-    @mixin primary-button($include: ('background-color', 'padding', 'text-align', 'box-shadow', 'font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-right-radius', 'border-bottom-left-radius'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('elements', 'primaryButton', 'background-color');
-        }
-
-        @if index($include, 'padding') and not index($exclude, 'padding') {
-          padding: themed('elements', 'primaryButton', 'padding');
-        }
-
-        @if index($include, 'text-align') and not index($exclude, 'text-align') {
-          text-align: themed('elements', 'primaryButton', 'text-align');
-        }
-
-        @if index($include, 'box-shadow') and not index($exclude, 'box-shadow') {
-          box-shadow: themed('elements', 'primaryButton', 'box-shadow');
-        }
-
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('elements', 'primaryButton', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('elements', 'primaryButton', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('elements', 'primaryButton', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('elements', 'primaryButton', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('elements', 'primaryButton', 'word-spacing');
-        }
-
-        @if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') {
-          border-top-left-radius: themed('elements', 'primaryButton', 'border-top-left-radius');
-        }
-
-        @if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') {
-          border-top-right-radius: themed('elements', 'primaryButton', 'border-top-right-radius');
-        }
-
-        @if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') {
-          border-bottom-right-radius: themed('elements', 'primaryButton', 'border-bottom-right-radius');
-        }
-
-        @if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') {
-          border-bottom-left-radius: themed('elements', 'primaryButton', 'border-bottom-left-radius');
-        }
-
+      .selected-row-color {
+        @include selected-row-color;
       }
-    }
+            @mixin highlight-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'highlight',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'highlight',  'color'); }
 
-    .primary-button {
-      @include primary-button;
-    }
-
-    @mixin secondary-button($include: ('background-color', 'padding', 'text-align', 'box-shadow', 'font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-right-radius', 'border-bottom-left-radius'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('elements', 'secondaryButton', 'background-color');
         }
-
-        @if index($include, 'padding') and not index($exclude, 'padding') {
-          padding: themed('elements', 'secondaryButton', 'padding');
-        }
-
-        @if index($include, 'text-align') and not index($exclude, 'text-align') {
-          text-align: themed('elements', 'secondaryButton', 'text-align');
-        }
-
-        @if index($include, 'box-shadow') and not index($exclude, 'box-shadow') {
-          box-shadow: themed('elements', 'secondaryButton', 'box-shadow');
-        }
-
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('elements', 'secondaryButton', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('elements', 'secondaryButton', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('elements', 'secondaryButton', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('elements', 'secondaryButton', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('elements', 'secondaryButton', 'word-spacing');
-        }
-
-        @if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') {
-          border-top-left-radius: themed('elements', 'secondaryButton', 'border-top-left-radius');
-        }
-
-        @if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') {
-          border-top-right-radius: themed('elements', 'secondaryButton', 'border-top-right-radius');
-        }
-
-        @if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') {
-          border-bottom-right-radius: themed('elements', 'secondaryButton', 'border-bottom-right-radius');
-        }
-
-        @if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') {
-          border-bottom-left-radius: themed('elements', 'secondaryButton', 'border-bottom-left-radius');
-        }
-
       }
-    }
-
-    .secondary-button {
-      @include secondary-button;
-    }
-
-    @mixin tertiary-button($include: ('background-color', 'padding', 'text-align', 'box-shadow', 'font', 'text-decoration', 'color', 'letter-spacing', 'word-spacing', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-right-radius', 'border-bottom-left-radius'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'background-color') and not index($exclude, 'background-color') {
-          background-color: themed('elements', 'tertiaryButton', 'background-color');
-        }
-
-        @if index($include, 'padding') and not index($exclude, 'padding') {
-          padding: themed('elements', 'tertiaryButton', 'padding');
-        }
-
-        @if index($include, 'text-align') and not index($exclude, 'text-align') {
-          text-align: themed('elements', 'tertiaryButton', 'text-align');
-        }
-
-        @if index($include, 'box-shadow') and not index($exclude, 'box-shadow') {
-          box-shadow: themed('elements', 'tertiaryButton', 'box-shadow');
-        }
-
-        @if index($include, 'font') and not index($exclude, 'font') {
-          font: themed('elements', 'tertiaryButton', 'font');
-        }
-
-        @if index($include, 'text-decoration') and not index($exclude, 'text-decoration') {
-          text-decoration: themed('elements', 'tertiaryButton', 'text-decoration');
-        }
-
-        @if index($include, 'color') and not index($exclude, 'color') {
-          color: themed('elements', 'tertiaryButton', 'color');
-        }
-
-        @if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') {
-          letter-spacing: themed('elements', 'tertiaryButton', 'letter-spacing');
-        }
-
-        @if index($include, 'word-spacing') and not index($exclude, 'word-spacing') {
-          word-spacing: themed('elements', 'tertiaryButton', 'word-spacing');
-        }
-
-        @if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') {
-          border-top-left-radius: themed('elements', 'tertiaryButton', 'border-top-left-radius');
-        }
-
-        @if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') {
-          border-top-right-radius: themed('elements', 'tertiaryButton', 'border-top-right-radius');
-        }
-
-        @if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') {
-          border-bottom-right-radius: themed('elements', 'tertiaryButton', 'border-bottom-right-radius');
-        }
-
-        @if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') {
-          border-bottom-left-radius: themed('elements', 'tertiaryButton', 'border-bottom-left-radius');
-        }
-
+      .highlight-color {
+        @include highlight-color;
       }
-    }
+            @mixin text-selection-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'textSelection',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'textSelection',  'color'); }
 
-    .tertiary-button {
-      @include tertiary-button;
-    }
-
-    @mixin input-base($include: ('padding', 'border-top', 'border-bottom', 'border-left', 'border-right', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-right-radius', 'border-bottom-left-radius'), $exclude: ()) {
-      @include themify {
-        @if index($include, 'padding') and not index($exclude, 'padding') {
-          padding: themed('elements', 'inputBase', 'padding');
         }
-
-        @if index($include, 'border-top') and not index($exclude, 'border-top') {
-          border-top: themed('elements', 'inputBase', 'border-top');
-        }
-
-        @if index($include, 'border-bottom') and not index($exclude, 'border-bottom') {
-          border-bottom: themed('elements', 'inputBase', 'border-bottom');
-        }
-
-        @if index($include, 'border-left') and not index($exclude, 'border-left') {
-          border-left: themed('elements', 'inputBase', 'border-left');
-        }
-
-        @if index($include, 'border-right') and not index($exclude, 'border-right') {
-          border-right: themed('elements', 'inputBase', 'border-right');
-        }
-
-        @if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') {
-          border-top-left-radius: themed('elements', 'inputBase', 'border-top-left-radius');
-        }
-
-        @if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') {
-          border-top-right-radius: themed('elements', 'inputBase', 'border-top-right-radius');
-        }
-
-        @if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') {
-          border-bottom-right-radius: themed('elements', 'inputBase', 'border-bottom-right-radius');
-        }
-
-        @if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') {
-          border-bottom-left-radius: themed('elements', 'inputBase', 'border-bottom-left-radius');
-        }
-
       }
-    }
+      .text-selection-color {
+        @include text-selection-color;
+      }
+            @mixin text-selection-handle-color($include: ('background-color','color'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('colors', 'textSelectionHandle',  'background-color'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('colors', 'textSelectionHandle',  'color'); }
 
-    .input-base {
-      @include input-base;
-    }
+        }
+      }
+      .text-selection-handle-color {
+        @include text-selection-handle-color;
+      }
+            @mixin font-display4($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'display4',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'display4',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'display4',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'display4',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'display4',  'word-spacing'); }
+
+        }
+      }
+      .font-display4 {
+        @include font-display4;
+      }
+            @mixin font-display3($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'display3',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'display3',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'display3',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'display3',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'display3',  'word-spacing'); }
+
+        }
+      }
+      .font-display3 {
+        @include font-display3;
+      }
+            @mixin font-display2($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'display2',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'display2',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'display2',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'display2',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'display2',  'word-spacing'); }
+
+        }
+      }
+      .font-display2 {
+        @include font-display2;
+      }
+            @mixin font-display1($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'display1',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'display1',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'display1',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'display1',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'display1',  'word-spacing'); }
+
+        }
+      }
+      .font-display1 {
+        @include font-display1;
+      }
+            @mixin font-headline($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'headline',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'headline',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'headline',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'headline',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'headline',  'word-spacing'); }
+
+        }
+      }
+      .font-headline {
+        @include font-headline;
+      }
+            @mixin font-title($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'title',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'title',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'title',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'title',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'title',  'word-spacing'); }
+
+        }
+      }
+      .font-title {
+        @include font-title;
+      }
+            @mixin font-subhead($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'subhead',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'subhead',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'subhead',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'subhead',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'subhead',  'word-spacing'); }
+
+        }
+      }
+      .font-subhead {
+        @include font-subhead;
+      }
+            @mixin font-body2($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'body2',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'body2',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'body2',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'body2',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'body2',  'word-spacing'); }
+
+        }
+      }
+      .font-body2 {
+        @include font-body2;
+      }
+            @mixin font-body1($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'body1',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'body1',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'body1',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'body1',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'body1',  'word-spacing'); }
+
+        }
+      }
+      .font-body1 {
+        @include font-body1;
+      }
+            @mixin font-caption($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'caption',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'caption',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'caption',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'caption',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'caption',  'word-spacing'); }
+
+        }
+      }
+      .font-caption {
+        @include font-caption;
+      }
+            @mixin font-button($include: ('font','text-decoration','color','letter-spacing','word-spacing'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'font') and not index($exclude, 'font') { font: themed('fonts', 'button',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('fonts', 'button',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('fonts', 'button',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('fonts', 'button',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('fonts', 'button',  'word-spacing'); }
+
+        }
+      }
+      .font-button {
+        @include font-button;
+      }
+            @mixin primary-button($include: ('background-color','padding-top','padding-right','padding-bottom','padding-left','text-align','box-shadow','font','text-decoration','color','letter-spacing','word-spacing','border-top-left-radius','border-top-right-radius','border-bottom-right-radius','border-bottom-left-radius'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('elements', 'primaryButton',  'background-color'); }
+@if index($include, 'padding-top') and not index($exclude, 'padding-top') { padding-top: themed('elements', 'primaryButton',  'padding-top'); }
+@if index($include, 'padding-right') and not index($exclude, 'padding-right') { padding-right: themed('elements', 'primaryButton',  'padding-right'); }
+@if index($include, 'padding-bottom') and not index($exclude, 'padding-bottom') { padding-bottom: themed('elements', 'primaryButton',  'padding-bottom'); }
+@if index($include, 'padding-left') and not index($exclude, 'padding-left') { padding-left: themed('elements', 'primaryButton',  'padding-left'); }
+@if index($include, 'text-align') and not index($exclude, 'text-align') { text-align: themed('elements', 'primaryButton',  'text-align'); }
+@if index($include, 'box-shadow') and not index($exclude, 'box-shadow') { box-shadow: themed('elements', 'primaryButton',  'box-shadow'); }
+@if index($include, 'font') and not index($exclude, 'font') { font: themed('elements', 'primaryButton',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('elements', 'primaryButton',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('elements', 'primaryButton',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('elements', 'primaryButton',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('elements', 'primaryButton',  'word-spacing'); }
+@if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') { border-top-left-radius: themed('elements', 'primaryButton',  'border-top-left-radius'); }
+@if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') { border-top-right-radius: themed('elements', 'primaryButton',  'border-top-right-radius'); }
+@if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') { border-bottom-right-radius: themed('elements', 'primaryButton',  'border-bottom-right-radius'); }
+@if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') { border-bottom-left-radius: themed('elements', 'primaryButton',  'border-bottom-left-radius'); }
+
+        }
+      }
+      .primary-button {
+        @include primary-button;
+      }
+            @mixin secondary-button($include: ('background-color','padding-top','padding-right','padding-bottom','padding-left','text-align','box-shadow','font','text-decoration','color','letter-spacing','word-spacing','border-top-left-radius','border-top-right-radius','border-bottom-right-radius','border-bottom-left-radius'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('elements', 'secondaryButton',  'background-color'); }
+@if index($include, 'padding-top') and not index($exclude, 'padding-top') { padding-top: themed('elements', 'secondaryButton',  'padding-top'); }
+@if index($include, 'padding-right') and not index($exclude, 'padding-right') { padding-right: themed('elements', 'secondaryButton',  'padding-right'); }
+@if index($include, 'padding-bottom') and not index($exclude, 'padding-bottom') { padding-bottom: themed('elements', 'secondaryButton',  'padding-bottom'); }
+@if index($include, 'padding-left') and not index($exclude, 'padding-left') { padding-left: themed('elements', 'secondaryButton',  'padding-left'); }
+@if index($include, 'text-align') and not index($exclude, 'text-align') { text-align: themed('elements', 'secondaryButton',  'text-align'); }
+@if index($include, 'box-shadow') and not index($exclude, 'box-shadow') { box-shadow: themed('elements', 'secondaryButton',  'box-shadow'); }
+@if index($include, 'font') and not index($exclude, 'font') { font: themed('elements', 'secondaryButton',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('elements', 'secondaryButton',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('elements', 'secondaryButton',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('elements', 'secondaryButton',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('elements', 'secondaryButton',  'word-spacing'); }
+@if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') { border-top-left-radius: themed('elements', 'secondaryButton',  'border-top-left-radius'); }
+@if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') { border-top-right-radius: themed('elements', 'secondaryButton',  'border-top-right-radius'); }
+@if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') { border-bottom-right-radius: themed('elements', 'secondaryButton',  'border-bottom-right-radius'); }
+@if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') { border-bottom-left-radius: themed('elements', 'secondaryButton',  'border-bottom-left-radius'); }
+
+        }
+      }
+      .secondary-button {
+        @include secondary-button;
+      }
+            @mixin tertiary-button($include: ('background-color','padding-top','padding-right','padding-bottom','padding-left','text-align','box-shadow','font','text-decoration','color','letter-spacing','word-spacing','border-top-left-radius','border-top-right-radius','border-bottom-right-radius','border-bottom-left-radius'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'background-color') and not index($exclude, 'background-color') { background-color: themed('elements', 'tertiaryButton',  'background-color'); }
+@if index($include, 'padding-top') and not index($exclude, 'padding-top') { padding-top: themed('elements', 'tertiaryButton',  'padding-top'); }
+@if index($include, 'padding-right') and not index($exclude, 'padding-right') { padding-right: themed('elements', 'tertiaryButton',  'padding-right'); }
+@if index($include, 'padding-bottom') and not index($exclude, 'padding-bottom') { padding-bottom: themed('elements', 'tertiaryButton',  'padding-bottom'); }
+@if index($include, 'padding-left') and not index($exclude, 'padding-left') { padding-left: themed('elements', 'tertiaryButton',  'padding-left'); }
+@if index($include, 'text-align') and not index($exclude, 'text-align') { text-align: themed('elements', 'tertiaryButton',  'text-align'); }
+@if index($include, 'box-shadow') and not index($exclude, 'box-shadow') { box-shadow: themed('elements', 'tertiaryButton',  'box-shadow'); }
+@if index($include, 'font') and not index($exclude, 'font') { font: themed('elements', 'tertiaryButton',  'font'); }
+@if index($include, 'text-decoration') and not index($exclude, 'text-decoration') { text-decoration: themed('elements', 'tertiaryButton',  'text-decoration'); }
+@if index($include, 'color') and not index($exclude, 'color') { color: themed('elements', 'tertiaryButton',  'color'); }
+@if index($include, 'letter-spacing') and not index($exclude, 'letter-spacing') { letter-spacing: themed('elements', 'tertiaryButton',  'letter-spacing'); }
+@if index($include, 'word-spacing') and not index($exclude, 'word-spacing') { word-spacing: themed('elements', 'tertiaryButton',  'word-spacing'); }
+@if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') { border-top-left-radius: themed('elements', 'tertiaryButton',  'border-top-left-radius'); }
+@if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') { border-top-right-radius: themed('elements', 'tertiaryButton',  'border-top-right-radius'); }
+@if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') { border-bottom-right-radius: themed('elements', 'tertiaryButton',  'border-bottom-right-radius'); }
+@if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') { border-bottom-left-radius: themed('elements', 'tertiaryButton',  'border-bottom-left-radius'); }
+
+        }
+      }
+      .tertiary-button {
+        @include tertiary-button;
+      }
+            @mixin input-base($include: ('margin-top','margin-right','margin-bottom','margin-left','padding-top','padding-right','padding-bottom','padding-left','border-top','border-bottom','border-left','border-right','border-top-left-radius','border-top-right-radius','border-bottom-right-radius','border-bottom-left-radius'), $exclude: ()) {
+        @include themify {
+          @if index($include, 'margin-top') and not index($exclude, 'margin-top') { margin-top: themed('elements', 'inputBase',  'margin-top'); }
+@if index($include, 'margin-right') and not index($exclude, 'margin-right') { margin-right: themed('elements', 'inputBase',  'margin-right'); }
+@if index($include, 'margin-bottom') and not index($exclude, 'margin-bottom') { margin-bottom: themed('elements', 'inputBase',  'margin-bottom'); }
+@if index($include, 'margin-left') and not index($exclude, 'margin-left') { margin-left: themed('elements', 'inputBase',  'margin-left'); }
+@if index($include, 'padding-top') and not index($exclude, 'padding-top') { padding-top: themed('elements', 'inputBase',  'padding-top'); }
+@if index($include, 'padding-right') and not index($exclude, 'padding-right') { padding-right: themed('elements', 'inputBase',  'padding-right'); }
+@if index($include, 'padding-bottom') and not index($exclude, 'padding-bottom') { padding-bottom: themed('elements', 'inputBase',  'padding-bottom'); }
+@if index($include, 'padding-left') and not index($exclude, 'padding-left') { padding-left: themed('elements', 'inputBase',  'padding-left'); }
+@if index($include, 'border-top') and not index($exclude, 'border-top') { border-top: themed('elements', 'inputBase',  'border-top'); }
+@if index($include, 'border-bottom') and not index($exclude, 'border-bottom') { border-bottom: themed('elements', 'inputBase',  'border-bottom'); }
+@if index($include, 'border-left') and not index($exclude, 'border-left') { border-left: themed('elements', 'inputBase',  'border-left'); }
+@if index($include, 'border-right') and not index($exclude, 'border-right') { border-right: themed('elements', 'inputBase',  'border-right'); }
+@if index($include, 'border-top-left-radius') and not index($exclude, 'border-top-left-radius') { border-top-left-radius: themed('elements', 'inputBase',  'border-top-left-radius'); }
+@if index($include, 'border-top-right-radius') and not index($exclude, 'border-top-right-radius') { border-top-right-radius: themed('elements', 'inputBase',  'border-top-right-radius'); }
+@if index($include, 'border-bottom-right-radius') and not index($exclude, 'border-bottom-right-radius') { border-bottom-right-radius: themed('elements', 'inputBase',  'border-bottom-right-radius'); }
+@if index($include, 'border-bottom-left-radius') and not index($exclude, 'border-bottom-left-radius') { border-bottom-left-radius: themed('elements', 'inputBase',  'border-bottom-left-radius'); }
+
+        }
+      }
+      .input-base {
+        @include input-base;
+      }
+      
+  

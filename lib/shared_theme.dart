@@ -98,6 +98,13 @@ class ThemeSet implements MixinAggregator {
     // Functions
     //
 
+    /// Turns logical pixels (dp) into CSS pixels (px).
+    /// See the script in `index.html` that changes the `--px-per-dp` CSS
+    /// variable according to the value of `window.devicePixelRatio.`
+    @function px(\$dp) {
+      @return calc(#{\$dp}px * var(--px-per-dp, 0.6));
+    }
+
     /// Get a main color of the current theme.
     /// Can only be used within a `@themify` block.
     @function theme-color(\$themeColorName) {

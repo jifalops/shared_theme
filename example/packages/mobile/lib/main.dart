@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:sharedtheme_example/config.dart';
 import 'package:sharedtheme_example/themes.dart';
@@ -74,9 +75,17 @@ class DemoItems extends StatelessWidget {
                 style: Theme.of(context).textTheme.body2.copyWith(
                     color: themer.getContrast(
                         colors, Theme.of(context).textTheme.body2.color))));
+print(MediaQueryData().devicePixelRatio);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        Container(
+            width: 160.0,
+            color: Colors.red,
+            child:  Text(
+                  'Tj|',
+                  style: TextStyle(fontSize: 160.0),
+                )),
         Text('Display4', style: Theme.of(context).textTheme.display4),
         Text('Display3', style: Theme.of(context).textTheme.display3),
         Text('Display2', style: Theme.of(context).textTheme.display2),
