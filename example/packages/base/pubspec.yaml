@@ -5,7 +5,7 @@ author: Jacob Phillips <jifalops@gmail.com>
 homepage: https://github.com/jifalops/shared_theme/tree/master/example/packages/base
 
 dependencies:
-  shared_theme: ^0.0.1
+  shared_theme: any
   meta: ^1.1.6
 
 dev_dependencies:

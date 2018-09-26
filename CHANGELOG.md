@@ -1,3 +1,3 @@
-## [0.0.1] - September 26, 2018
+## [0.0.2] - September 26, 2018
 
 * First release.

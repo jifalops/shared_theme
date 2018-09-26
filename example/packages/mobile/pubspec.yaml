@@ -10,7 +10,7 @@ environment:
 dependencies:
   sharedtheme_example:
     path: ../base
-  shared_theme_flutter: ^0.0.1
+  shared_theme_flutter: any
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2

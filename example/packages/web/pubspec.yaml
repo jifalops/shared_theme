@@ -8,7 +8,7 @@ environment:
   sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
-  shared_theme: ^0.0.1
+  shared_theme: any
   sharedtheme_example:
     path: ../base
   angular: ^5.0.0
