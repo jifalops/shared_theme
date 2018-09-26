@@ -25,9 +25,9 @@ included, and in particular, see its
 
 Mobile light | Mobile dark
 -|-
-![mobile-light](example/images/mobile-light.png) | ![mobile-dark](example/images/mobile-dark.png)
+![mobile-light](https://github.com/jifalops/shared_theme/tree/master/example/images/mobile-light.png) | ![mobile-dark](https://github.com/jifalops/shared_theme/tree/master/example/images/mobile-dark.png)
 
 Web light | Web dark
 -|-
-![web-light](example/images/web-light.png) | ![web-dark](example/images/web-dark.png)
+![web-light](https://github.com/jifalops/shared_theme/tree/master/example/images/web-light.png) | ![web-dark](https://github.com/jifalops/shared_theme/tree/master/example/images/web-dark.png)
 

@@ -127,6 +127,7 @@ class ThemeSet implements MixinAggregator {
     // Mixins
     //
 
+    /// Use a theme color as the foreground and contrast as the background.
     @mixin invert-colors(\$themeColorName) {
       @include themify {
         color: theme-color(\$themeColorName);
