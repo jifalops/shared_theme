@@ -1,3 +1,5 @@
+/// Classes that can describe themselves using a map of CSS properties should
+/// extend or mixin this class.
 abstract class CssEntity implements ScssMap {
   const CssEntity();
 
@@ -35,14 +37,17 @@ abstract class CssEntity implements ScssMap {
       .join('\n');
 }
 
+// Collects mixins
 abstract class MixinAggregator implements ScssMap {
   List<String> getMixins();
 }
 
+/// Wraps a [CssEntity], adding to its [parentKeys] at mixin definition time.
 abstract class CssEntityContainer implements ScssMap {
   List<String> getMixins(List<String> parentKeys);
 }
 
+// Can describe its properties in an SCSS map.
 abstract class ScssMap {
   String asScssMap();
 }

@@ -2,6 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:shared_theme/src/colors.dart';
 import 'package:shared_theme/src/css.dart';
 
+/// Font properties that can be mapped to Flutter and CSS.
 class Font extends CssEntity {
   const Font({
     this.size: 16.0,
@@ -59,93 +60,7 @@ class Font extends CssEntity {
       };
 }
 
-/// Italic or not.
-class FontStyle {
-  const FontStyle._(this._name);
-  final String _name;
-
-  static const normal = FontStyle._('normal');
-  static const italic = FontStyle._('italic');
-
-  /// CSS value
-  @override
-  toString() => _name;
-}
-
-/// Underline, etc.
-class TextDecoration {
-  const TextDecoration({
-    this.lines: const [],
-    this.style: TextDecorationStyle.solid,
-    this.color,
-  });
-  final List<TextDecorationLine> lines;
-  final TextDecorationStyle style;
-  final Color color;
-
-  /// CSS value
-  @override
-  String toString() => lines.isEmpty
-      ? 'none'
-      : '${lines.join(' ')} $style ${color?.toString() ?? ''}';
-}
-
-class TextDecorationLine {
-  const TextDecorationLine._(this._name);
-  final String _name;
-
-  static const underline = TextDecorationLine._('underline');
-  static const overline = TextDecorationLine._('overline');
-  static const lineThrough = TextDecorationLine._('line-through');
-
-  /// CSS value
-  @override
-  toString() => _name;
-}
-
-class TextDecorationStyle {
-  const TextDecorationStyle._(this._name);
-  final String _name;
-
-  static const solid = TextDecorationStyle._('solid');
-  static const double = TextDecorationStyle._('double');
-  static const dotted = TextDecorationStyle._('dotted');
-  static const dashed = TextDecorationStyle._('dashed');
-  static const wavy = TextDecorationStyle._('wavy');
-
-  /// CSS value
-  @override
-  toString() => _name;
-}
-
-/// A CSS `@font-face` definition.
-class FontFace {
-  const FontFace({
-    @required this.family,
-    @required this.url,
-    this.weight: 400,
-    this.style: FontStyle.normal,
-  });
-  final String family;
-  final String url;
-  final int weight;
-  final FontStyle style;
-
-  /// CSS `@font-face` value.
-  @override
-  String toString() => '''
-    @font-face {
-      font-family: '$family';
-      font-weight: $weight;
-      font-style: $style;
-      src: url('$url') format('${FontFormat.parse(url)}');
-    }
-''';
-
-  String asCssImport() => '@import url($url);';
-  String asHtmlLink() => '<link rel="stylesheet" type="text/css" href="$url">';
-}
-
+/// The types of formats a [FontFace] can have.
 class FontFormat {
   const FontFormat._(this._name);
   final String _name;
@@ -255,6 +170,7 @@ class FontSet implements CssEntityContainer {
         button: button ?? this.button,
       );
 
+  /// Modify one or more values in each [Font] in this [FontSet].
   FontSet apply({
     double size,
     String family,
@@ -435,6 +351,95 @@ class FontSet implements CssEntityContainer {
     caption: _Fonts.captionWhite,
     button: _Fonts.buttonWhite,
   );
+}
+
+/// Italic or not.
+class FontStyle {
+  const FontStyle._(this._name);
+  final String _name;
+
+  static const normal = FontStyle._('normal');
+  static const italic = FontStyle._('italic');
+
+  /// CSS value.
+  @override
+  toString() => _name;
+}
+
+/// Underline, line-through, solid, dashed, color, etc.
+class TextDecoration {
+  const TextDecoration({
+    this.lines: const [],
+    this.style: TextDecorationStyle.solid,
+    this.color,
+  });
+  final List<TextDecorationLine> lines;
+  final TextDecorationStyle style;
+  final Color color;
+
+  /// CSS value
+  @override
+  String toString() => lines.isEmpty
+      ? 'none'
+      : '${lines.join(' ')} $style ${color?.toString() ?? ''}';
+}
+
+/// A the types of lines that can be in a [TextDecoration].
+class TextDecorationLine {
+  const TextDecorationLine._(this._name);
+  final String _name;
+
+  static const underline = TextDecorationLine._('underline');
+  static const overline = TextDecorationLine._('overline');
+  static const lineThrough = TextDecorationLine._('line-through');
+
+  /// CSS value
+  @override
+  toString() => _name;
+}
+
+/// An enum-like class.
+class TextDecorationStyle {
+  const TextDecorationStyle._(this._name);
+  final String _name;
+
+  static const solid = TextDecorationStyle._('solid');
+  static const double = TextDecorationStyle._('double');
+  static const dotted = TextDecorationStyle._('dotted');
+  static const dashed = TextDecorationStyle._('dashed');
+  static const wavy = TextDecorationStyle._('wavy');
+
+  /// CSS value
+  @override
+  toString() => _name;
+}
+
+/// A CSS `@font-face` definition.
+class FontFace {
+  const FontFace({
+    @required this.family,
+    @required this.url,
+    this.weight: 400,
+    this.style: FontStyle.normal,
+  });
+  final String family;
+  final String url;
+  final int weight;
+  final FontStyle style;
+
+  /// CSS `@font-face` value.
+  @override
+  String toString() => '''
+    @font-face {
+      font-family: '$family';
+      font-weight: $weight;
+      font-style: $style;
+      src: url('$url') format('${FontFormat.parse(url)}');
+    }
+''';
+
+  String asCssImport() => '@import url($url);';
+  String asHtmlLink() => '<link rel="stylesheet" type="text/css" href="$url">';
 }
 
 /// Default fonts from material design.

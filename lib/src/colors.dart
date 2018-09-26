@@ -1,8 +1,7 @@
 import 'package:meta/meta.dart';
 import 'package:shared_theme/src/css.dart';
 
-/// Platform independent representation of a color in the red-green-blue scheme
-/// with an optional alpha (opacity) component.
+/// A color in the red-green-blue scheme with optional alpha.
 class Color {
   /// Alpha Red Green Blue.
   final int argb;
@@ -51,15 +50,19 @@ class Color {
 }
 
 /// A color and its contrast.
+///
+/// The colors can both be `null` to use platform defaults such as a base theme
+/// color in Flutter or "inherit" for CSS.
 class ContrastingColors extends CssEntity {
   const ContrastingColors(this.color, this.contrast);
 
   /// The main color, usually used as a background.
   final Color color;
 
-  /// The color that contrasts [color].
+  /// A color that contrasts [color].
   final Color contrast;
 
+  /// Swap [color] and [contrast].
   ContrastingColors invert() => ContrastingColors(contrast, color);
 
   /// Uses [color] for the CSS `background-color`, and [contrast] for the CSS
@@ -70,6 +73,7 @@ class ContrastingColors extends CssEntity {
         'color': contrast?.toString() ?? 'inherit',
       };
 
+  /// Both colors are `null`.
   static const none = ContrastingColors(null, null);
 }
 

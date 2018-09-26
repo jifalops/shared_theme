@@ -1,8 +1,21 @@
+/// *Write your themes once and easily use them in Flutter and on the web.*
 ///
+/// ### Theme
 ///
+/// A [Theme] is a [ColorSet], [FontSet], and an [ElementSet], which
+/// are abstract containers for defining properties such as border, padding, etc.
 ///
-/// It is recommended you import this library using the `as` directive, e.g.
-/// `import 'package:shared_theme/shared_theme' as themer;`
+/// ### ThemeSet
+///
+/// Themes are typically combined into a single [ThemeSet] per application. The
+/// ThemeSet adds support for bundled [FontFace]s, and [ThemeSet.toString()]
+/// returns an SCSS string that fully represents the ThemeSet.
+///
+/// ## Example
+///
+/// There is a [complete example](https://github.com/jifalops/shared_theme/tree/master/example)
+/// included, and in particular, here is its
+/// [ThemeSet definition](https://github.com/jifalops/shared_theme/blob/master/example/packages/base/lib/themes.dart).
 library shared_theme;
 
 import 'package:meta/meta.dart';
@@ -125,6 +138,7 @@ class ThemeSet implements MixinAggregator {
   ''';
 }
 
+/// An enum-like class.
 class Brightness {
   const Brightness._(this._name);
   final String _name;

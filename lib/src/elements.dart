@@ -6,8 +6,8 @@ import 'package:shared_theme/src/colors.dart';
 /// Currently only used for [BoxSpacing] (margins and padding).
 const _dpToPx = 96 / 160;
 
-/// Combines color, font, margin, padding, border, shadow, text align, and size
-/// constraints.
+/// An abstract container with commonly used properties such as color, font,
+/// margin, padding, border, shadow, text align, and size constraints.
 ///
 /// Leave a property `null` to inherit from the underlying platform.
 class Element extends CssEntity {
@@ -66,12 +66,63 @@ class Element extends CssEntity {
     return map;
   }
 
+  /// An element with the border and padding of Flutter's underline input type.
   static const underlineInput =
       Element(border: Border.underlineInput, padding: BoxSpacing.inputPadding);
+
+  /// An element with the border and padding of Flutter's outline input type.
   static const outlineInput =
       Element(border: Border.outlineInput, padding: BoxSpacing.inputPadding);
 }
 
+/// The named elements in a theme.
+class ElementSet implements CssEntityContainer {
+  const ElementSet({
+    this.primaryButton: const Element(),
+    this.secondaryButton: const Element(),
+    this.tertiaryButton: const Element(),
+    this.inputBase: const Element(),
+  });
+  final Element primaryButton;
+  final Element secondaryButton;
+  final Element tertiaryButton;
+  final Element inputBase;
+
+  ElementSet copyWith({
+    Element primaryButton,
+    Element secondaryButton,
+    Element tertiaryButton,
+    Element inputBase,
+  }) =>
+      ElementSet(
+        primaryButton: primaryButton ?? this.primaryButton,
+        secondaryButton: secondaryButton ?? this.secondaryButton,
+        tertiaryButton: tertiaryButton ?? this.tertiaryButton,
+        inputBase: inputBase ?? this.inputBase,
+      );
+
+  @override
+  String asScssMap() => '''(
+    primaryButton: ${primaryButton.asScssMap()},
+    secondaryButton: ${secondaryButton.asScssMap()},
+    tertiaryButton: ${tertiaryButton.asScssMap()},
+    inputBase: ${inputBase.asScssMap()},
+  )''';
+
+  @override
+  List<String> getMixins(List<String> parentKeys) => <String>[
+        primaryButton.asThemifiedMixin(
+            'primary-button', List.from(parentKeys)..add('primaryButton')),
+        secondaryButton.asThemifiedMixin(
+            'secondary-button', List.from(parentKeys)..add('secondaryButton')),
+        tertiaryButton.asThemifiedMixin(
+            'tertiary-button', List.from(parentKeys)..add('tertiaryButton')),
+        inputBase.asThemifiedMixin(
+            'input-base', List.from(parentKeys)..add('inputBase')),
+      ];
+}
+
+/// Height and width min/max limits. Defaults to unlimited.
 class SizeLimits extends CssEntity {
   const SizeLimits(
       {this.minHeight: 0.0,
@@ -111,7 +162,7 @@ class BoxSpacing {
   final double bottom;
   final double left;
 
-  /// CSS value
+  /// CSS value.
   @override
   String toString() =>
       '${top * _dpToPx}px ${right * _dpToPx}px ${bottom * _dpToPx}px ${left * _dpToPx}px';
@@ -128,10 +179,12 @@ class BoxSpacing {
 
   static const zero = BoxSpacing(0.0);
 
+  /// The padding to mimic Flutter's TextField input.
   static const inputPadding =
       BoxSpacing.symmetric(horizontal: 8.0, vertical: 16.0);
 }
 
+/// How text should be aligned in a container, e.g. an [Element].
 class TextAlign {
   const TextAlign._(this._name);
   final String _name;
@@ -143,6 +196,7 @@ class TextAlign {
   static const start = TextAlign._('start');
   static const end = TextAlign._('end');
 
+  /// CSS value.
   @override
   String toString() => _name;
 }
@@ -213,6 +267,7 @@ const _keyPenumbraOpacity = 0.14;
 const _ambientShadowOpacity = 0.12;
 const _shadowTransition = 'box-shadow .28s cubic-bezier(.4, 0, .2, 1)';
 
+/// A border has four [BorderSides] and four corners, each a [BorderRadius].
 class Border extends CssEntity {
   const Border({BorderSide sides, BorderRadius radii})
       : top = sides,
@@ -284,22 +339,27 @@ class Border extends CssEntity {
   int get hashCode => toString().hashCode;
 
   static const none = Border();
+
+  /// Mimics the border in Flutter's underline input.
   static const underlineInput = Border.complex(
       bottom: BorderSide(style: BorderStyle.solid, width: 1.0),
       topLeft: BorderRadius(4.0),
       topRight: BorderRadius(4.0));
+
+  /// Mimics the border in Flutter's outline input.
   static const outlineInput = Border(
       sides: BorderSide(style: BorderStyle.solid, width: 1.0),
       radii: BorderRadius(4.0));
 }
 
+/// One side of a [Border].
 class BorderSide {
   const BorderSide({this.width: 1.0, this.style: BorderStyle.none, this.color});
   final double width;
   final BorderStyle style;
   final Color color;
 
-  /// CSS value
+  /// CSS value.
   @override
   String toString() => '${width}px $style ${color?.toString() ?? ''}';
 
@@ -315,6 +375,7 @@ class BorderSide {
   static const none = BorderSide();
 }
 
+/// A corner of a [Border].
 class BorderRadius {
   const BorderRadius([double radius = 0.0])
       : x = radius,
@@ -334,6 +395,7 @@ class BorderRadius {
   static const zero = BorderRadius(0.0);
 }
 
+/// An enum-like class.
 class BorderStyle {
   const BorderStyle._(this._name);
   final String _name;
@@ -341,53 +403,7 @@ class BorderStyle {
   static const BorderStyle none = BorderStyle._('none');
   static const BorderStyle solid = BorderStyle._('solid');
 
-  /// CSS value
+  /// CSS value.
   @override
   String toString() => _name;
-}
-
-class ElementSet implements CssEntityContainer {
-  const ElementSet({
-    this.primaryButton: const Element(),
-    this.secondaryButton: const Element(),
-    this.tertiaryButton: const Element(),
-    this.inputBase: const Element(),
-  });
-  final Element primaryButton;
-  final Element secondaryButton;
-  final Element tertiaryButton;
-  final Element inputBase;
-
-  ElementSet copyWith({
-    Element primaryButton,
-    Element secondaryButton,
-    Element tertiaryButton,
-    Element inputBase,
-  }) =>
-      ElementSet(
-        primaryButton: primaryButton ?? this.primaryButton,
-        secondaryButton: secondaryButton ?? this.secondaryButton,
-        tertiaryButton: tertiaryButton ?? this.tertiaryButton,
-        inputBase: inputBase ?? this.inputBase,
-      );
-
-  @override
-  String asScssMap() => '''(
-    primaryButton: ${primaryButton.asScssMap()},
-    secondaryButton: ${secondaryButton.asScssMap()},
-    tertiaryButton: ${tertiaryButton.asScssMap()},
-    inputBase: ${inputBase.asScssMap()},
-  )''';
-
-  @override
-  List<String> getMixins(List<String> parentKeys) => <String>[
-        primaryButton.asThemifiedMixin(
-            'primary-button', List.from(parentKeys)..add('primaryButton')),
-        secondaryButton.asThemifiedMixin(
-            'secondary-button', List.from(parentKeys)..add('secondaryButton')),
-        tertiaryButton.asThemifiedMixin(
-            'tertiary-button', List.from(parentKeys)..add('tertiaryButton')),
-        inputBase.asThemifiedMixin(
-            'input-base', List.from(parentKeys)..add('inputBase')),
-      ];
 }
