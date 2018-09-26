@@ -1,20 +1,20 @@
 name: sharedtheme_example_web
-description: A web app that uses AngularDart Components
-# version: 1.0.0
-# homepage: https://www.example.com
-# author: Jacob Phillips <email@example.com>
+description: Example use of shared_theme for web
+version: 1.0.0
+author: Jacob Phillips <jifalops@gmail.com>
+homepage: https://github.com/jifalops/shared_theme/tree/master/example/packages/web
 
 environment:
   sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
-  shared_theme:
-    path: ../../..
+  shared_theme: ^0.0.1
   sharedtheme_example:
     path: ../base
   angular: ^5.0.0
   angular_components: ^0.9.0
   bootstrap_sass: ^4.1.2
+  # This is temporary while the main project migrates to using webdev.
   pwa:
     git: https://github.com/jifalops/pwa
 

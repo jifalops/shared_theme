@@ -1,7 +1,3 @@
 # sharedtheme_example_web
 
-A web app that uses [AngularDart](https://webdev.dartlang.org/angular) and
-[AngularDart Components](https://webdev.dartlang.org/components).
-
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+Use `pub run theme_builder.dart` to take the themes in `../base/lib/themes.dart` and compile them into `./lib/src/_themes.g.scss`.

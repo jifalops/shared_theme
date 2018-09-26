@@ -1,6 +1,4 @@
-# Cross-platform App Example
-
-## System setup
+# System setup
 
 I'm going to largely leave this up to you, but this project was created using VS Code and the beta channel of Flutter on a Linux/Ubuntu system, and for the web version it helps to have WebStorm.
 
@@ -14,7 +12,7 @@ Android Studio | https://developer.android.com/studio
 
 > Web applications require the normal Dart SDK, and cannot use the one that comes prepackaged with Flutter.
 
-### Environment (Linux/Ubuntu)
+## Environment (Linux/Ubuntu)
 
 In my `~/.profile` I have the following to access the command-line tools. This assumes the Flutter repo is at `~/flutter` and Android tools, etc. (optional) are at at `~/android`.
 
@@ -42,7 +40,7 @@ fi
 export PATH
 ```
 
-### Completing system setup
+## Completing system setup
 
 For the web version you should make two additional binaries available through pub, `webdev` and `stagehand`.
 
@@ -89,12 +87,11 @@ Finally, here is my `flutter doctor` output for reference.
     • Android SDK built for x86 64 • emulator-5554 • android-x64 • Android 7.1.1 (API 25) (emulator)
 ```
 
-
-## Project setup
+# Project setup
 
 The project will require three packages, one for mobile (Flutter), one for the web (AngularDart), and a package for things they share.
 
-### Initial directory structure
+## Initial directory structure
 
 ```sh
 > mkdir <project_name> && cd "$_"      # Create and change to project directory.
@@ -102,14 +99,14 @@ The project will require three packages, one for mobile (Flutter), one for the w
 > mkdir base                           # The shared package goes in this folder.
 ```
 
-### Mobile package creation
+## Mobile package creation
 
 ```sh
 > flutter create <project_name>_mobile # This will be the name of the flutter package.
 > mv <project_name>_mobile mobile      # rename the directory to remove unnecessary verboseness.
 ```
 
-### Web package creation
+## Web package creation
 
 ```sh
 > mkdir <project_name>_web  && cd "$_" # The dir name will be the name of the web package.
@@ -119,7 +116,7 @@ The project will require three packages, one for mobile (Flutter), one for the w
 > mv <project_name>_web web            # Rename dir for easier use.
 ```
 
-### Directory structure
+## Directory structure
 
 Each package requires a `pubspec.yaml` and should have a `README.md`. For package layout conventions see https://www.dartlang.org/tools/pub/package-layout.
 

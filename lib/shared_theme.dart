@@ -14,7 +14,7 @@
 /// ## Example
 ///
 /// There is a [complete example](https://github.com/jifalops/shared_theme/tree/master/example)
-/// included, and in particular, here is its
+/// included, and in particular, see its
 /// [ThemeSet definition](https://github.com/jifalops/shared_theme/blob/master/example/packages/base/lib/themes.dart).
 library shared_theme;
 

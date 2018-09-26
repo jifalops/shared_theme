@@ -1,27 +1,18 @@
 name: sharedtheme_example_mobile
-description: Example use of shared_theme for mobile
-
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# Read more about versioning at semver.org.
-version: 1.0.0+1
+description: Example use of shared_theme_flutter for mobile
+version: 1.0.0
+author: Jacob Phillips <jifalops@gmail.com>
+homepage: https://github.com/jifalops/shared_theme/tree/master/example/packages/mobile
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.0.0 <3.0.0"
 
 dependencies:
   sharedtheme_example:
     path: ../base
-  shared_theme_flutter:
-    path: ../../../../shared_theme_flutter
+  shared_theme_flutter: ^0.0.1
   flutter:
     sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
