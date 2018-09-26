@@ -1,4 +1,4 @@
-// For a complete working example, see https://github.com/jifalops/shared_theme/example/packages/
+// For a complete working example, see https://github.com/jifalops/shared_theme/example
 import 'package:shared_theme/shared_theme.dart';
 
 /// See the theme colors at

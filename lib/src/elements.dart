@@ -265,7 +265,6 @@ class ShadowElevation {
 const _keyUmbraOpacity = 0.2;
 const _keyPenumbraOpacity = 0.14;
 const _ambientShadowOpacity = 0.12;
-const _shadowTransition = 'box-shadow .28s cubic-bezier(.4, 0, .2, 1)';
 
 /// A border has four [BorderSide]s and four corners, each a [BorderRadius].
 class Border extends CssEntity {
