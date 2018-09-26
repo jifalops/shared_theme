@@ -1,19 +1,22 @@
 /// *Write your themes once and easily use them in Flutter and on the web.*
 ///
-/// ### Theme
+/// ## Synopsis
 ///
 /// A [Theme] is a [ColorSet], [FontSet], and an [ElementSet], which
 /// are abstract containers for defining properties such as border, padding, etc.
 ///
-/// ### ThemeSet
-///
-/// Themes are typically combined into a single [ThemeSet] per application. The
+/// Themes are typically combined into a single [ThemeSet] per application.
 /// ThemeSet adds support for bundled [FontFace]s, and [ThemeSet.toString()]
-/// returns an SCSS string that fully represents the ThemeSet.
+/// returns an SCSS string that fully represents it.
+///
+/// In Flutter, a Theme is converted into Flutter's ThemeData by using the
+/// [`shared_theme_flutter`](https://pub.dartlang.org/packages/shared_theme_flutter)
+/// package's [`themeData()`](https://pub.dartlang.org/documentation/shared_theme_flutter/latest/shared_theme_flutter/themeData.html)
+/// function.
 ///
 /// ## Example
 ///
-/// There is a [complete example](https://github.com/jifalops/shared_theme/tree/master/example)
+/// There is a complete [example](https://github.com/jifalops/shared_theme/tree/master/example)
 /// included, and in particular, see its
 /// [ThemeSet definition](https://github.com/jifalops/shared_theme/blob/master/example/packages/base/lib/themes.dart).
 library shared_theme;

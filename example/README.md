@@ -4,11 +4,11 @@ This fully functional example is comprised of three packages.
 
 Package | Description | Platform dependencies
 -|-|-
-base | Contains the shared theme, configuration, and assets. | none
-mobile | A Flutter app that uses the shared theme. | Flutter
-web | A web app that uses the shared theme. | AngularDart
+[base](packages/base) | Contains the shared theme, configuration, and assets. | none
+[mobile](packages/mobile) | A Flutter app that uses the shared theme. | Flutter
+[web](packages/web) | A web app that uses the shared theme. | AngularDart
 
-[example.dart](example.dart) here is simply a copy of [packages/base/lib/themes.dart](packages/base/lib/themes.dart). It serves as the example on Dart pub.
+The [example.dart](example.dart) here is simply a copy of [packages/base/lib/themes.dart](packages/base/lib/themes.dart). It serves as the example on Dart pub.
 
 ## Screenshots of this example
 

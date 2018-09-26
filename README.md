@@ -9,7 +9,7 @@ are abstract containers for defining properties such as border, padding, etc.
 
 Themes are typically combined into a single `ThemeSet` per application. ThemeSet adds support for bundled `FontFace`s, and `ThemeSet.toString()` returns an SCSS string that fully represents it.
 
-In Flutter, a Theme is converted into Flutter's ThemeData by using the `shared_theme_flutter` package's `themeData()` function.
+In Flutter, a Theme is converted into Flutter's ThemeData by using the [`shared_theme_flutter`](https://pub.dartlang.org/packages/shared_theme_flutter) package's [`themeData()`](https://pub.dartlang.org/documentation/shared_theme_flutter/latest/shared_theme_flutter/themeData.html) function.
 
 ## Example
 
