@@ -18,8 +18,8 @@ final themeset = ThemeSet(themes: [
       elements: _darkElements),
 ], fontFaces: _fontFaces);
 
-// Declaring shared theme colors here allows you to refer to them as a default
-// value.
+// Declaring common theme colors here allows you to refer to them as a default
+// value in contructors.
 const _primary = ContrastingColors(Color(0xff2e7d32), Colors.white);
 const _primaryLight = ContrastingColors(Color(0xff60ad5e), Colors.black);
 const _primaryDark = ContrastingColors(Color(0xff005005), Colors.white);
@@ -153,3 +153,9 @@ final _fontFaces = [
       url: 'packages/sharedtheme_example/assets/fonts/Ubuntu-Bold.ttf',
       weight: 700),
 ];
+
+
+void main() {
+  /// A very long string.
+  print(themeset.toString());
+}

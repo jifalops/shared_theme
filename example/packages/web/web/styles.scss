@@ -16,12 +16,14 @@ body {
 ///   * Most if not all material elements.
 ///   * Elements that use the font-* and *-color theme classes.
 ///   * Animating elements.
-/// This is a bit of complicated Voodoo, and there may be a better way. Please let me know if you are aware of one.
+/// This is a bit of complicated Voodoo, and there may be a better way.
+/// Please let me know if you are aware of one.
 *:not(material-ripple):not(material-list-item):not([class*="material-"]):not([class*="font-"]):not([class*="-color"]):not([animated]) {
   @include background-color;
 }
-/// Certain elements, namely material-ripple, needs to have its transparent background restored.
-/// More complicated Voodoo, I am new to Angular and there are probably better ways to do it.
+/// Certain elements, namely material-ripple, needs to have its transparent
+/// background restored. More complicated Voodoo, I am new to Angular and there
+/// are probably better ways to do it.
 material-ripple *, [class*="material-"] *:not([animated]), material-input *:not(.animated) {
   background-color: transparent !important;
   color: inherit !important;
@@ -56,9 +58,10 @@ material-list-item {
 }
 
 
-// Material input hack.
-// This element was much harder than others to share a theme definition with Flutter.
-// However, it is pretty well duplicated here for both outline and underline input types.
+/// Material input hack.
+/// This element was much harder than others to share a theme definition with
+/// Flutter. However, it is pretty well duplicated here for both outline and
+/// underline input types.
 material-input[type="text"]:not(.no-theme) {
   padding: 12px 0 0 !important;
   .top-section {
@@ -72,9 +75,10 @@ material-input[type="text"]:not(.no-theme) {
       transform: translateY(-50%) translateY(-10px) !important;
       padding: 0 2px;
     }
-    // Copy Flutter input behavior.
-    // hint color: the border and text color.
-    // if no hint color:  use primary color for light themes and secondary color for dark themes.
+    /// Copy Flutter input behavior.
+    /// hint color: the border and text color.
+    /// if no hint color, use primary color for light themes and secondary color
+    /// for dark themes.
     &:focus-within {
       @include themify {
         $hint: theme-color('hint');

@@ -2,20 +2,18 @@
 
 Easily share a theme between Flutter and the web.
 
-## Theme
+## Synopsis
 
 A `Theme` is a `ColorSet`, `FontSet`, and an `ElementSet`, which
 are abstract containers for defining properties such as border, padding, etc.
 
-## ThemeSet
+Themes are typically combined into a single `ThemeSet` per application. ThemeSet adds support for bundled `FontFace`s, and `ThemeSet.toString()` returns an SCSS string that fully represents it.
 
-Themes are typically combined into a single `ThemeSet` per application. The
-ThemeSet adds support for bundled `FontFace`s, and `ThemeSet.toString()`
-returns an SCSS string that fully represents the ThemeSet.
+In Flutter, a Theme is converted into Flutter's ThemeData by using the `shared_theme_flutter` package's `themeData()` function.
 
 ## Example
 
-There is a [complete example](https://github.com/jifalops/shared_theme/tree/master/example)
+There is a complete [example](https://github.com/jifalops/shared_theme/tree/master/example)
 included, and in particular, see its
 [ThemeSet definition](https://github.com/jifalops/shared_theme/blob/master/example/packages/base/lib/themes.dart).
 
@@ -25,9 +23,9 @@ included, and in particular, see its
 
 Mobile light | Mobile dark
 -|-
-![mobile-light](https://github.com/jifalops/shared_theme/tree/master/example/images/mobile-light.png) | ![mobile-dark](https://github.com/jifalops/shared_theme/tree/master/example/images/mobile-dark.png)
+![mobile-light](example/images/mobile-light.png) | ![mobile-dark](example/images/mobile-dark.png)
 
 Web light | Web dark
 -|-
-![web-light](https://github.com/jifalops/shared_theme/tree/master/example/images/web-light.png) | ![web-dark](https://github.com/jifalops/shared_theme/tree/master/example/images/web-dark.png)
+![web-light](example/images/web-light.png) | ![web-dark](example/images/web-dark.png)
 
