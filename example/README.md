@@ -11,7 +11,7 @@ Package | Description | Platform dependencies
 
 The [example.dart](example.dart) here is simply a copy of [packages/base/lib/themes.dart](packages/base/lib/themes.dart). It serves as the example on Dart pub.
 
-## Screenshots of this example
+## Screenshots
 
 Mobile light | Mobile dark
 -|-

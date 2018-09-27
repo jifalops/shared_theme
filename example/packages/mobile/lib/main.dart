@@ -33,7 +33,7 @@ class _AppState extends State<App> {
           appBar: AppBar(
               title: Text(appName,
                   style: themer.textStyle(theme.fonts.title).copyWith(
-                      color: Color(theme.colors.primary.contrast.argb))),
+                      color: themer.contrastOf(theme.colors.primary))),
               actions: <Widget>[_buildThemeSwitch()]),
           body: Padding(
             padding: EdgeInsets.all(8.0),
