@@ -19,15 +19,10 @@ class _AppState extends State<App> {
     // Set a default theme synchronously. If you want to wait until the user's
     // preferred theme is read from SharedPreferences, you'll need to show some
     // UI to the user in the mean time, such as a spinner or a splash screen.
-    themer.currentTheme = theme = themeset.themes.first;
+    _setTheme(themeset.themes.first);
 
     // Lookup the preferred theme.
-    SharedPreferences.getInstance().then((prefs) {
-      final t = themeset.getThemeByName(prefs.getString('theme'));
-      if (t != null) {
-        _setTheme(t);
-      }
-    });
+    _readTheme();
   }
 
   @override
@@ -48,7 +43,8 @@ class _AppState extends State<App> {
       );
 
   void _setTheme(themer.Theme t) {
-    themer.currentTheme = theme = t;
+    theme = t;
+    themer.setTheme(t);
   }
 
   Widget _buildThemeSwitch() =>
@@ -59,14 +55,26 @@ class _AppState extends State<App> {
               theme.fonts.title, themer.contrastOf(theme.colors.primary)),
         ),
         Switch(
-            value: theme.brightness == themer.Brightness.dark,
-            onChanged: (enabled) {
-              setState(() => _setTheme(themeset.getThemeByBrightness(
-                  enabled ? themer.Brightness.dark : themer.Brightness.light)));
-              SharedPreferences.getInstance()
-                  .then((prefs) => prefs.setString('theme', theme.name));
-            })
+          value: theme.brightness == themer.Brightness.dark,
+          onChanged: (enabled) => _toggleTheme(),
+        )
       ]);
+
+  void _readTheme() async {
+    final prefs = await SharedPreferences.getInstance();
+    try {
+      final name = prefs.getString('theme');
+      setState(() => _setTheme(themeset.getTheme(name)));
+    } catch (noSavedTheme) {}
+  }
+
+  void _toggleTheme() async {
+    setState(() => _setTheme(theme == themeset.themes.first
+        ? themeset.themes.last
+        : themeset.themes.first));
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('theme', theme.name);
+  }
 }
 
 class DemoItems extends StatelessWidget {

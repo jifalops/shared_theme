@@ -481,7 +481,7 @@
         <entry key="shared_theme">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../../lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_theme-0.1.1/lib" />
             </list>
           </value>
         </entry>
@@ -710,6 +710,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/sass-1.13.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/sass_builder-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/scratch_space-0.0.3+1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_theme-0.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf-0.7.3+3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_packages_handler-1.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_static-0.2.8/lib" />
@@ -732,7 +733,6 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-1.0.9/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/yaml-2.1.15/lib" />
       <root url="file://$PROJECT_DIR$/../base/lib" />
-      <root url="file://$PROJECT_DIR$/../../../lib" />
     </CLASSES>
     <SOURCES />
   </library>

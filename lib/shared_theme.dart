@@ -74,6 +74,10 @@ class ThemeSet implements MixinAggregator {
   final List<Theme> themes;
   final List<FontFace> fontFaces;
 
+  /// Use [getThemeByName()].
+  @deprecated
+  Theme getTheme(String name) => getThemeByName(name);
+
   /// Return the first theme with a name that matches [name].
   Theme getThemeByName(String name) =>
       themes.firstWhere((theme) => theme.name == name, orElse: () => null);

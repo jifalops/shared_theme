@@ -12,5 +12,10 @@
   </head>
   <body>
     <my-app>Loading...</my-app>
+    <script>
+      // Set the theme without waiting for Angular to load.
+      let name = window.localStorage['theme'] || 'Light';
+      document.documentElement.className = `theme-${name}`;
+    </script>
   </body>
 </html>
