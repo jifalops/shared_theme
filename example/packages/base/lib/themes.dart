@@ -86,12 +86,13 @@ final _lightFonts = _darkFonts.lighten();
 class _ButtonBase extends Element {
   _ButtonBase(
       {Color color: Colors.transparent,
+      Border border,
       Font font,
       ShadowElevation shadow: ShadowElevation.none})
       : super(
             align: TextAlign.center,
             padding: BoxSpacing.symmetric(vertical: 4.0, horizontal: 8.0),
-            border: Border(radii: BorderRadius(4.0)),
+            border: border ?? Border(radii: BorderRadius(999.0)),
             font: font ?? _darkFonts.button,
             shadow: shadow,
             color: color);
@@ -103,6 +104,7 @@ final _lightElements = ElementSet(
       color: _lightColors.secondary.color,
       font: _darkFonts.button
           .copyWith(color: _lightColors.secondary.contrast, size: 16.0),
+      border: Border(radii: BorderRadius.asymmetric(99.0, 29.0)),
       shadow: ShadowElevation.dp8),
   secondaryButton: _ButtonBase(
       color: _lightColors.primary.color,
