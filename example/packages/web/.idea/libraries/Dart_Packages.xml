@@ -450,13 +450,6 @@
             </list>
           </value>
         </entry>
-        <entry key="pwa">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/git/pwa-29d8f6e8bdf2cebf1a51fff51b2a7f14cf79b2ca/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="quiver">
           <value>
             <list>
@@ -482,13 +475,6 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/scratch_space-0.0.3+1/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="service_worker">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/service_worker-0.2.3/lib" />
             </list>
           </value>
         </entry>
@@ -656,7 +642,6 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/git/pwa-29d8f6e8bdf2cebf1a51fff51b2a7f14cf79b2ca/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/analyzer-0.32.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/angular-5.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/angular_ast-0.5.6/lib" />
@@ -725,7 +710,6 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/sass-1.13.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/sass_builder-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/scratch_space-0.0.3+1/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/service_worker-0.2.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf-0.7.3+3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_packages_handler-1.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_static-0.2.8/lib" />

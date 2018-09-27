@@ -74,8 +74,14 @@ class ThemeSet implements MixinAggregator {
   final List<Theme> themes;
   final List<FontFace> fontFaces;
 
-  Theme getTheme(String name) =>
+  /// Return the first theme with a name that matches [name].
+  Theme getThemeByName(String name) =>
       themes.firstWhere((theme) => theme.name == name, orElse: () => null);
+
+  /// Return the first theme with a brightness that matches [brightness].
+  Theme getThemeByBrightness(Brightness brightness) =>
+      themes.firstWhere((theme) => theme.brightness == brightness,
+          orElse: () => null);
 
   @override
   String asScssMap() =>

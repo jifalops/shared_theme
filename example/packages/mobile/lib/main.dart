@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sharedtheme_example/config.dart';
 import 'package:sharedtheme_example/themes.dart';
 import 'package:shared_theme_flutter/shared_theme_flutter.dart' as themer;
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(App());
 
@@ -15,7 +16,18 @@ class _AppState extends State<App> {
   @override
   void initState() {
     super.initState();
-    _setTheme(themeset.themes.first);
+    // Set a default theme synchronously. If you want to wait until the user's
+    // preferred theme is read from SharedPreferences, you'll need to show some
+    // UI to the user in the mean time, such as a spinner or a splash screen.
+    themer.currentTheme = theme = themeset.themes.first;
+
+    // Lookup the preferred theme.
+    SharedPreferences.getInstance().then((prefs) {
+      final t = themeset.getThemeByName(prefs.getString('theme'));
+      if (t != null) {
+        _setTheme(t);
+      }
+    });
   }
 
   @override
@@ -36,8 +48,7 @@ class _AppState extends State<App> {
       );
 
   void _setTheme(themer.Theme t) {
-    theme = t;
-    themer.setTheme(theme);
+    themer.currentTheme = theme = t;
   }
 
   Widget _buildThemeSwitch() =>
@@ -48,9 +59,13 @@ class _AppState extends State<App> {
               theme.fonts.title, themer.contrastOf(theme.colors.primary)),
         ),
         Switch(
-            value: theme == themeset.themes.last,
-            onChanged: (enabled) => setState(() => _setTheme(
-                enabled ? themeset.themes.last : themeset.themes.first)))
+            value: theme.brightness == themer.Brightness.dark,
+            onChanged: (enabled) {
+              setState(() => _setTheme(themeset.getThemeByBrightness(
+                  enabled ? themer.Brightness.dark : themer.Brightness.light)));
+              SharedPreferences.getInstance()
+                  .then((prefs) => prefs.setString('theme', theme.name));
+            })
       ]);
 }
 

@@ -1,6 +1,7 @@
 # Shared Theme Example
 
-This fully functional example is comprised of three packages.
+This fully functional example is comprised of three packages. Use the links for
+more information about each package.
 
 Package | Description | Platform dependencies
 -|-|-

@@ -1,3 +1,7 @@
+## [0.1.2] - September 27, 2018
+
+* Add persistance to examples, doc improvements.
+
 ## [0.1.1] - September 26, 2018
 
 * Analyzer fixes.
