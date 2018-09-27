@@ -43,6 +43,7 @@ material-button .content {
   // Inherit the colors set by the above mixins.
   color: inherit !important;
   background-color: inherit !important;
+  border-radius: inherit !important;
 }
 
 material-list {
