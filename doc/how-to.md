@@ -25,6 +25,7 @@ Two new packages are introduced, [shared_theme][18] and [shared_theme_flutter][1
         1. [Subsequent Runs](#Subsequent_Runs)
 4. [Adding Elements](#Adding_Elements)
 5. [Adding Fonts and Assets](#Adding_Fonts_and_Assets)
+6. [Screenshots](#Screenshots)
 
 <a name="Getting_Started"></a>
 ## Getting Started
@@ -320,6 +321,8 @@ Hot-restart your Flutter app and `pub run build_themes.dart` in your web app to 
 
 To see how to use custom fonts and shared assets, see [themes.dart][17] from the `shared_theme` package's example.
 
+
+<a name="Screenshots"></a>
 ## Screenshots
 
 Mobile light | Mobile dark
