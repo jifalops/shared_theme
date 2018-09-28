@@ -1,10 +1,9 @@
 import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
+import 'package:sharedtheme_example/config.dart';
 import 'src/example_list/example_list.dart';
 
-// AngularDart info: https://webdev.dartlang.org/angular
-// Components info: https://webdev.dartlang.org/components
 
 @Component(
   selector: 'my-app',
@@ -19,6 +18,7 @@ import 'src/example_list/example_list.dart';
   ],
 )
 class AppComponent {
+  static const name = appName;
   bool dark = window.localStorage['theme'] == 'Dark';
 
   void toggle() {

@@ -1,8 +1,9 @@
 <header class="material-header shadow">
     <div class="material-header-row">
-        <span class="font-title">Shared Theme Demo</span>
+        <span class="font-title">{{name}}</span>
         <div class="material-spacer"></div>
-        <material-toggle class="font-title" label="Dark" [checked]="dark" (checkedChange)="toggle()"></material-toggle>
+        <material-toggle class="font-title" label="Dark" [checked]="dark"
+            (checkedChange)="toggle()"></material-toggle>
     </div>
 </header>
 <div id="content">

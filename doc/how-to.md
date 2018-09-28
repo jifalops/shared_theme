@@ -6,27 +6,23 @@ This guide will walk you through setting up a project with themes that can be us
 
 **TL;DR**: See a complete example [here][5].
 
+This how-to introduces two new packages, [shared_theme][18] and [shared_theme_flutter][19].
+
 ## Contents
 
 1. [Getting Started](#Getting_Started)
-
-    1.1 [Generate the Packages](#Generate_the_Packages)
-
-    1.2 [Add Dependencies](#Add_Dependencies)
-
-    1.3 [Name the App](#Name_the_App)
-
+    1. [Generate the Packages](#Generate_the_Packages)
+    2. [Add Dependencies](#Add_Dependencies)
+    3. [Name the App](#Name_the_App)
 2. [Create Your Themes](#Create_Your_Themes)
-
-    2.1. [Choose Brand Colors](#Choose_Brand_Colors)
-
+    1. [Choose Brand Colors](#Choose_Brand_Colors)
 3. [Try it](#Try_it)
-
-    3.1. [Run the Flutter App](#Run_the_Flutter_App)
-
-    3.2. [Run the Web App](#Run_the_Web_App)
-
-        3.2.1. [First_Run](#First_Run)
+    1. [Run the Flutter App](#Run_the_Flutter_App)
+    2. [Run the Web App](#Run_the_Web_App)
+        1. [First Run](#First_Run)
+        1. [Subsequent Runs](#Subsequent_Runs)
+4. [Adding Elements](#Adding_Elements)
+5. [Adding Fonts and Assets](#Adding_Fonts_and_Assets)
 
 <a name="Getting_Started"></a>
 ## Getting Started
@@ -107,6 +103,7 @@ dependencies:
   <project_name>:
     path: ../base
   shared_theme_flutter: ^0.1.2
+  shared_preferences: ^0.4.2    # For persisting theme preference.
 ```
 
 The web packages requires a dev dependency as well.
@@ -222,129 +219,9 @@ Now change your `themeset` declaration to use `_lightColors` and `_darkColors`.
 <a name="Run_the_Flutter_App"></a>
 ### Run the Flutter App
 
-Replace `packages/mobile/lib/main.dart` with the following and run it using `flutter run` or your IDE. Be sure to replace `<project_name>` with your base package's name.
+Replace the contents of `mobile/lib/main.dart` with the example [here][6]. Be sure to replace "`<project_name>`" in the imports with the name of your base package.
 
-```dart
-import 'package:flutter/material.dart';
-import 'package:<project_name>/config.dart';
-import 'package:<project_name>/themes.dart';
-import 'package:shared_theme_flutter/shared_theme_flutter.dart' as themer;
-
-void main() => runApp(App());
-
-class App extends StatefulWidget {
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  themer.Theme theme;
-
-  @override
-  void initState() {
-    super.initState();
-    _setTheme(themeset.themes.first);
-  }
-
-  @override
-  Widget build(BuildContext context) => MaterialApp(
-        title: appName,
-        theme: themer.themeData(theme),
-        home: Scaffold(
-          appBar: AppBar(
-              title: Text(appName,
-                  style: themer.textStyle(theme.fonts.title).copyWith(
-                      color: themer.contrastOf(theme.colors.primary))),
-              actions: <Widget>[_buildThemeSwitch()]),
-          body: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: SingleChildScrollView(child: DemoItems()),
-          ),
-        ),
-      );
-
-  void _setTheme(themer.Theme t) {
-    theme = t;
-    themer.currentTheme = t;
-  }
-
-  Widget _buildThemeSwitch() =>
-      Row(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
-        Text(
-          'Dark',
-          style: themer.textStyleColored(
-              theme.fonts.title, themer.contrastOf(theme.colors.primary)),
-        ),
-        Switch(
-          value: theme.brightness == themer.Brightness.dark,
-          onChanged: (enabled) => _toggleTheme(),
-        )
-      ]);
-
-  void _toggleTheme() {
-    setState(() => _setTheme(theme == themeset.themes.first
-        ? themeset.themes.last
-        : themeset.themes.first));
-  }
-}
-
-class DemoItems extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final theme = themer.currentTheme;
-    void _showSnackBar() => Scaffold.of(context)
-        .showSnackBar(SnackBar(content: Text("I'm a SnackBar.")));
-    Widget _colorWidget(themer.ContrastingColors colors, String text) =>
-        _buildColorWidget(context, colors, text);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-        Text('Display4', style: Theme.of(context).textTheme.display4),
-        Text('Display3', style: Theme.of(context).textTheme.display3),
-        Text('Display2', style: Theme.of(context).textTheme.display2),
-        Text('Display1', style: Theme.of(context).textTheme.display1),
-        Text('Headline', style: Theme.of(context).textTheme.headline),
-        Text('Title', style: Theme.of(context).textTheme.title),
-        Text('Subhead', style: Theme.of(context).textTheme.subhead),
-        Text('Body2', style: Theme.of(context).textTheme.body2),
-        Text('Body1', style: Theme.of(context).textTheme.body1),
-        Text('Button', style: Theme.of(context).textTheme.button),
-        Text('Caption', style: Theme.of(context).textTheme.caption),
-        _colorWidget(theme.colors.primary, 'Primary'),
-        _colorWidget(theme.colors.primaryLight, 'Primary Light'),
-        _colorWidget(theme.colors.primaryDark, 'Primary Dark'),
-        _colorWidget(theme.colors.secondary, 'Secondary ("Accent")'),
-        _colorWidget(theme.colors.secondaryLight, 'Secondary Light'),
-        _colorWidget(theme.colors.secondaryDark, 'Secondary Dark'),
-        _colorWidget(theme.colors.background, 'Background'),
-        _colorWidget(theme.colors.background.invert(), 'Background (inverted)'),
-        _colorWidget(theme.colors.card, 'Card'),
-        _colorWidget(theme.colors.divider, 'Divider'),
-        _colorWidget(theme.colors.error, 'Error'),
-        SizedBox(height: 12.0),
-        themer.primaryButton(_showSnackBar, text: 'Primary Button'),
-        SizedBox(height: 12.0),
-        themer.secondaryButton(_showSnackBar, text: 'Secondary Button'),
-        themer.wrapInput(
-            TextField(decoration: InputDecoration(labelText: 'Input'))),
-      ],
-    );
-  }
-
-  Widget _buildColorWidget(
-          BuildContext context, themer.ContrastingColors colors, String text) =>
-      Container(
-          alignment: Alignment.center,
-          height: 56.0,
-          width: 256.0,
-          color: themer.colorOf(colors, Theme.of(context).backgroundColor),
-          child: Text(text,
-              style: Theme.of(context).textTheme.body2.copyWith(
-                  color: themer.contrastOf(
-                      colors, Theme.of(context).textTheme.body2.color))));
-}
-```
+Run the example by using `flutter run` or the equivalent in your IDE.
 
 <a name="Run_the_Web_App"></a>
 ### Run the Web App
@@ -352,12 +229,111 @@ class DemoItems extends StatelessWidget {
 <a name="First_Run"></a>
 #### First Run
 
+Before running the web project for the first time, several files have to be modified or created. They are described by the following table, which links to each file in the [gist][7].
 
+File | Description
+-|-
+[`bin/build_themes.dart`][8] | Script to generate `lib/src/_themes.g.scss`.
+[`web/index.html`][9] | Add small script to load saved theme.
+[`web/styles.scss`][10] | Global styles for the web app.
+[`lib/app_component.dart`][11] | The main component of the app.
+[`lib/app_component.html`][12] | The main component of the app.
+[`lib/app_component.scss`][13] | The main component of the app.
+[`lib/src/example_list/example_list.dart`][14] | Demo of current theme.
+[`lib/src/example_list/example_list.html`][15] | Demo of current theme.
+[`lib/src/example_list/example_list.scss`][16] | Demo of current theme.
 
+Be sure to replace any occurrences of "`<project_name>`" with the name of your base package, or for the case of `index.html`, your app's name.
 
+Generate your initial themes file and start the local server.
+
+```sh
+> pub run build_themes.dart
+> webdev serve
+```
+
+<a name="Subsequent_Runs"></a>
+#### Subsequent Runs
+
+Since `webdev serve` runs indefinitely, it helps to have a second terminal open and run `pub run theme_builder.dart` any time you make theme changes in the base package. The webdev server will then pickup those changes automatically.
+
+<a name="Adding_Elements"></a>
+## Adding Elements
+
+The theme looks pretty good so far, but those buttons and input field in the demos are bare. Let's add some elements to the theme.
+
+Add the following to the bottom of `base/lib/themes.dart`.
+
+```dart
+class _ButtonBase extends Element {
+  _ButtonBase({
+    Color color,
+    Font font,
+    ShadowElevation shadow: ShadowElevation.none,
+  }) : super(
+          align: TextAlign.center,
+          padding: BoxSpacing.symmetric(vertical: 4.0, horizontal: 8.0),
+          border: Border(radii: BorderRadius(4.0)),
+          font: font,
+          shadow: shadow,
+          color: color,
+        );
+}
+final _elements = ElementSet(
+  primaryButton: _ButtonBase(
+      color: _lightColors.secondary.color,
+      font: FontSet.dark.button
+          .copyWith(color: _lightColors.secondary.contrast, size: 16.0),
+      shadow: ShadowElevation.dp8),
+  secondaryButton: _ButtonBase(
+      color: _lightColors.primary.color,
+      font: FontSet.dark.button.copyWith(color: _lightColors.primary.contrast)),
+  inputBase: Element.outlineInput,
+);
+```
+
+Now your themeset declaration should look like this.
+
+```dart
+final themeset = ThemeSet(themes: [
+  Theme(
+      name: 'Light',
+      brightness: Brightness.light,
+      colors: _lightColors,
+      fonts: FontSet.dark,
+      elements: _elements),
+  Theme(
+      name: 'Dark',
+      brightness: Brightness.dark,
+      colors: _darkColors,
+      fonts: FontSet.light,
+      elements: _elements),
+]);
+```
+
+Hot-restart your Flutter app and `pub run build_themes.dart` in your web app to see the changes!
+
+<a name="Adding_Fonts_and_Assets"></a>
+## Adding Fonts and Assets
+
+To see how to use custom fonts and shared assets, see [themes.dart][17] from the `shared_theme` package's example.
 
 [1]: https://flutter.io/get-started/install
 [2]: https://webdev.dartlang.org/guides/get-started#2-install-dart
 [3]: https://webdev.dartlang.org/guides/get-started#3-get-cli-tools-or-webstorm-or-both
 [4]: https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=009688&secondary.color=FF6D00
 [5]: https://github.com/jifalops/shared_theme/tree/master/example
+[6]: https://gist.github.com/jifalops/4db10fb8b8b22b2896e8adac24938c33#file-main-dart
+[7]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2
+[8]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-bin-build_themes-dart
+[9]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-web-index-html
+[10]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-web-styles-scss
+[11]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-lib-app_component-dart
+[12]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-lib-app_component-html
+[13]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-lib-app_component-scss
+[14]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-lib-src-example_list-example_list-dart
+[15]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-lib-src-example_list-example_list-html
+[16]: https://gist.github.com/jifalops/ca4b209936637df8fb6e28118ce11ce2#file-lib-src-example_list-example_list-scss
+[17]: https://github.com/jifalops/shared_theme/blob/master/example/packages/base/lib/themes.dart
+[18]: https://pub.dartlang.org/packages/shared_theme
+[19]: https://pub.dartlang.org/packages/shared_theme_flutter
