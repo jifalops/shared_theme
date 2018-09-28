@@ -1,12 +1,14 @@
 # How to Share a Theme between Flutter and the Web
 
-This guide will walk you through setting up a project with themes that can be used in Flutter and on the Web. It assumes you have [Flutter][1] and the the [Dart SDK][2] installed and accessible on your system's path,  with `webdev` and `stagehand` activated by pub ([instructions][3]).
+This how-to will get you set up with a project that has a light and dark theme that work both in Flutter and on the Web.
+
+You should have [Flutter][1] and the the [Dart SDK][2] installed and accessible on your system's path,  with `webdev` and `stagehand` activated by pub ([instructions][3]).
 
 > Although AngularDart is used in this guide, the CSS generated here  can be used without it.
 
 **TL;DR**: See a complete example [here][5].
 
-This how-to introduces two new packages, [shared_theme][18] and [shared_theme_flutter][19].
+Two new packages are introduced, [shared_theme][18] and [shared_theme_flutter][19].
 
 ## Contents
 
@@ -318,6 +320,16 @@ Hot-restart your Flutter app and `pub run build_themes.dart` in your web app to 
 
 To see how to use custom fonts and shared assets, see [themes.dart][17] from the `shared_theme` package's example.
 
+## Screenshots
+
+Mobile light | Mobile dark
+-|-
+![mobile-light][20] | ![mobile-dark][21]
+
+Web light | Web dark
+-|-
+![web-light][22] | ![web-dark][23]
+
 [1]: https://flutter.io/get-started/install
 [2]: https://webdev.dartlang.org/guides/get-started#2-install-dart
 [3]: https://webdev.dartlang.org/guides/get-started#3-get-cli-tools-or-webstorm-or-both
@@ -337,3 +349,7 @@ To see how to use custom fonts and shared assets, see [themes.dart][17] from the
 [17]: https://github.com/jifalops/shared_theme/blob/master/example/packages/base/lib/themes.dart
 [18]: https://pub.dartlang.org/packages/shared_theme
 [19]: https://pub.dartlang.org/packages/shared_theme_flutter
+[20]: https://github.com/jifalops/shared_theme/blob/master/example/images/mobile-light.png
+[21]: https://github.com/jifalops/shared_theme/blob/master/example/images/mobile-dark.png
+[22]: https://github.com/jifalops/shared_theme/blob/master/example/images/web-light.png
+[23]: https://github.com/jifalops/shared_theme/blob/master/example/images/web-dark.png
