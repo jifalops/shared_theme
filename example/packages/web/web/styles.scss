@@ -4,39 +4,34 @@
 //@import 'package:angular_components/css/material/material';
 @import 'package:sharedtheme_example_web/src/themes.g';
 
+/// Force all elements to be transparent by default. This makes theming elements
+/// easier because many of the angular components set background colors to white.
+///
+/// It doesn't effect some elements, for example material-list needed to have
+/// its background changed manually.
+* {
+  background-color: transparent;
+}
+
 body {
+  @include background-color;
   @include font-body1;
   padding: 0;
   margin: 0;
 }
 
-/// Set the background and text color on all elements, with some exceptions.
-/// Exceptions include:
-///   * Most if not all material elements.
-///   * Elements that use the font-* and *-color theme classes.
-///   * Animating elements.
-/// This is a bit of complicated Voodoo, and there may be a better way.
-/// Please let me know if you are aware of one.
-*:not(material-ripple):not(material-list-item):not([class*="material-"]):not([class*="font-"]):not([class*="-color"]):not([animated]) {
-  @include background-color;
-}
-/// Certain elements, namely material-ripple, needs to have its transparent
-/// background restored. More complicated Voodoo, I am new to Angular and there
-/// are probably better ways to do it.
-material-ripple *, [class*="material-"] *:not([animated]), material-input *:not(.animated) {
-  background-color: transparent !important;
-  color: inherit !important;
-}
-
 material-button.primary {
   @include primary-button;
 }
+
 material-button.secondary {
   @include secondary-button;
 }
+
 material-button.tertiary {
   @include tertiary-button;
 }
+
 material-button .content {
   text-transform: none;
   // Inherit the colors set by the above mixins.
@@ -46,12 +41,17 @@ material-button .content {
 }
 
 material-list {
-  background-color: inherit; // Theme background color.
+  @include background-color;
 }
+
 material-list-item {
+
   // Taken from `package:angular_components/material_list/mixins`.
   &:not([separator="present"]) {
-    &:hover, &:focus, &.active {
+
+    &:hover,
+    &:focus,
+    &.active {
       @include selected-row-color(background-color);
     }
   }
@@ -63,7 +63,17 @@ material-list-item {
 /// Flutter. However, it is pretty well duplicated here for both outline and
 /// underline input types.
 material-input[type="text"]:not(.no-theme) {
-  padding: 12px 0 0 !important;
+  padding: 16px 0 0 !important;
+  @include background-color;
+
+  .label-text {
+    @include background-color;
+  }
+
+  .underline {
+    display: none;
+  }
+
   .top-section {
     @include input-base;
     margin-bottom: 2px !important;
@@ -71,10 +81,12 @@ material-input[type="text"]:not(.no-theme) {
     .input-container {
       margin: 0 !important;
     }
+
     .label-text.animated {
       transform: translateY(-50%) translateY(-10px) !important;
       padding: 0 2px;
     }
+
     /// Copy Flutter input behavior.
     /// hint color: the border and text color.
     /// if no hint color, use primary color for light themes and secondary color
@@ -82,21 +94,29 @@ material-input[type="text"]:not(.no-theme) {
     &:focus-within {
       @include themify {
         $hint: theme-color('hint');
-        @if $hint and $hint != 'inherit' {
+
+        @if $hint and $hint !='inherit' {
           border-color: $hint;
+
           .label-text {
             color: $hint !important;
           }
-        } @else {
-          @if themed('brightness') == 'light' {
+        }
+
+        @else {
+          @if themed('brightness')=='light' {
             $color: theme-color('primary');
             border-color: $color;
+
             .label-text {
               color: $color !important;
             }
-          } @else {
+          }
+
+          @else {
             $color: theme-color('secondary');
             border-color: $color;
+
             .label-text {
               color: $color !important;
             }
@@ -106,4 +126,3 @@ material-input[type="text"]:not(.no-theme) {
     }
   }
 }
-

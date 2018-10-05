@@ -4,7 +4,7 @@ This how-to will get you set up with a project that has a light and dark theme t
 
 You should have [Flutter][1] and the the [Dart SDK][2] installed and accessible on your system's path,  with `webdev` and `stagehand` activated by pub ([instructions][3]).
 
-> Although AngularDart is used in this guide, the CSS generated here  can be used without it.
+> Although AngularDart is used in this guide, the CSS generated here can be used without it.
 
 **TL;DR**: See a complete example [here][5].
 

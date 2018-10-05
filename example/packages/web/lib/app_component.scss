@@ -2,6 +2,7 @@
 
 :host {
   .material-header {
+    @include font-title;
     @include primary-color;
   }
   #content {
