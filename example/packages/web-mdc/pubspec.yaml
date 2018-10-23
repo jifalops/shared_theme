@@ -1,0 +1,25 @@
+name: sharedtheme_example_web
+description: Example use of shared_theme for web
+version: 1.0.0
+author: Jacob Phillips <jifalops@gmail.com>
+homepage: https://github.com/jifalops/shared_theme/tree/master/example/packages/web
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
+dependencies:
+  sharedtheme_example:
+    path: ../base
+  mdc_web: any
+
+dev_dependencies:
+  angular_test: ^2.0.0
+  build_runner: ^0.10.0
+  build_test: ^0.10.2
+  build_web_compilers: ^0.4.0
+  test: ^1.0.0
+  sass_builder:
+  # This is a temporary work around to have sass_builder include node_modules
+    # when it looks for .scss files. The workaround will no longer be needed
+    # when https://github.com/dart-league/sass_builder/pull/47 is released.
+    git: https://github.com/jifalops/sass_builder

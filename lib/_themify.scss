@@ -10,7 +10,7 @@
 ///   }
 /// }
 /// ```
-@mixin themify {
+@mixin themify($themes: $themes) {
   @each $theme, $map in $themes {
 
     .theme-#{$theme} & {

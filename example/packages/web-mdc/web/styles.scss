@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+
+@import "themes.g";
+
+:root {
+  @include themify {
+    $mdc-theme-primary: themed('colors', 'primary', 'background-color');
+    $mdc-theme-secondary: themed('colors', 'secondary', 'background-color');
+    $mdc-theme-on-primary: themed('colors', 'primary', 'color');
+    $mdc-theme-on-secondary: themed('colors', 'secondary', 'color');
+    $mdc-theme-background: themed('colors', 'background', 'background-color');
+  }
+}
+
+@import "material-components-web/material-components-web";
+
+
+
+.mdc-button.primary {
+  @include mdc-elevation(2.0);
+  @include mdc-button-container-fill-color(secondary);
+  @include mdc-button-ink-color(on-secondary);
+  @include mdc-states;
+  // Add ripple via scss mixins.
+  // @include mdc-ripple-surface;
+  // @include mdc-ripple-radius-bounded;
+  // @include mdc-states-base-color(black);
+  // @include mdc-states-hover-opacity(.1);
+  // @include mdc-states-focus-opacity(.3);
+  // @include mdc-states-press-opacity(.4);
+
+}
+
+.mdc-button.secondary {
+  @include mdc-button-container-fill-color(primary);
+  @include mdc-button-ink-color(on-primary);
+  @include mdc-states;
+}
+
+.mdc-button.tertiary {
+  @include mdc-button-outline-color(gray);
+  @include mdc-button-ink-color(mdc-theme-accessible-ink-color('background'));
+  @include mdc-states;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  @include background-color;
+}
